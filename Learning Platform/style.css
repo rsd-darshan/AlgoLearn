@@ -1,0 +1,232 @@
+/* Base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.5s ease-in-out;
+}
+
+body {
+    background-color: #f9f9f9; /* Default white theme background */
+    color: #333;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 20px 2em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+body.dark-theme header {
+    background-color: #222;
+    color: #fff;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+}
+
+header nav a {
+    color: #007ACC;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.5s, transform 0.5s;
+}
+
+body.dark-theme header nav a {
+    color: #ddd;
+}
+
+header nav a:hover {
+    color: #005fa3;
+    transform: scale(1.1);
+}
+
+/* Toggle button styles */
+.nav-toggle {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007ACC;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.dark-theme .nav-toggle {
+    background-color: #555;
+}
+
+/* Toggle button styles */
+.nav-toggle {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007ACC;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.dark-theme .nav-toggle {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: none; /* Hide the navigation menu on small screens */
+        flex-direction: column;
+    }
+
+    .nav-toggle {
+        display: block; /* Show the toggle button */
+    }
+
+    .nav-open {
+        display: flex; /* Display the nav when open */
+    }
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+body.dark-theme .content h1, body.dark-theme .content h2 {
+    color: #ffffff;
+}
+
+.content {
+    max-width: 600px;
+    width: 100%;
+}
+
+.content h1, .content h2 {
+    color: #007ACC;
+    font-size: 2.5rem;
+    transition: color 0.5s ease-in-out;
+}
+
+body.dark-theme .content p {
+    color: #ccc;
+}
+
+.content p {
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.image img {
+    max-height: 80vh;
+    max-width: 100%;
+    border-radius: 10px;
+    transition: filter 0.5s ease-in-out;
+}
+
+.image img:hover {
+    filter: brightness(1.2);
+}
+
+@media (max-width: 768px) {
+    .content h1, .content h2 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    main {
+        flex-direction: column; /* Stack content vertically */
+        align-items: flex-start; /* Align items to the start */
+        padding: 80px 20px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .image img {
+        width: 100%; /* Ensure image takes full width */
+        max-height: 60vh; /* Limit the height */
+    }
+}
+
+/* Decrease the size of Toggle Theme button */
+.theme-toggle {
+    padding: 3px 7px; /* Further reduced padding */
+    font-size: 12px;   /* Smaller font size */
+    margin-top: 10px;  /* Adjust margin to align */
+    background-color: #007ACC; /* Background color */
+    color: white;      /* Text color */
+    border-radius: 5px;
+    cursor: pointer;
+    border: none; /* Remove border */
+}
+
+/* Align Toggle Theme button */
+@media (max-width: 768px) {
+    .theme-toggle {
+        position: absolute;
+        top: 20px; /* Align closer to the top */
+        right: 20px; /* Align to the right */
+    }
+}
+
+
+.theme-toggle:hover {
+    background-color: #005fa3;
+}
+
+body.dark-theme .theme-toggle {
+    background-color: #555;
+}
+
+body.dark-theme .theme-toggle:hover {
+    background-color: #777;
+}
+
+.courses-list li, .Tutors-list li {
+    opacity: 0;
+    transform: translateY(10px); /* Slightly reduce translateY */
+    transition: opacity 0.3s, transform 0.3s; /* Reduce animation duration */
+}
+
+.courses-list li.visible, .Tutors-list li.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle, .back-button, .close-button {
+        padding: 15px 25px; /* Increase button padding */
+        font-size: 1.2em; /* Increase font size */
+        margin: 10px; /* Add some margin for spacing */
+    }
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}

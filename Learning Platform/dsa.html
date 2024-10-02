@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Course</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #cbcdcf;
+            color: rgb(1, 1, 1);
+            padding: 1em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #4848d8;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 1em;
+        }
+        pre {
+            background-color: #ffffff;
+            border: 1px solid #040404;
+            padding: 1em;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section-title {
+            cursor: pointer;
+            color: #0a0a0a;
+            font-weight: bold;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            margin-bottom: 0.5em;
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            background-color: #282525;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .section-title:hover {
+            background-color: #e1e1e1;
+        }
+        .content {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            margin-bottom: 1em;
+        }
+        .collapsible {
+            background-color: #f1f1f1;
+            border: none;
+            color: #0612ef;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: #000000;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212";
+        }
+        .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: rgb(19, 18, 18);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Structures and Algorithms (DSA) Course</h1>
+        <nav>
+            <a href="course.html">Back to Courses</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Course Overview</h2>
+        <p>This course covers various topics in Data Structures and Algorithms, including arrays, linked lists, trees, sorting algorithms, and more. Each section provides detailed explanations and examples to help you understand and apply DSA concepts.</p>
+        <div id="sections">
+            <button class="collapsible">Arrays</button>
+            <div class="collapsible-content" style="background-color: #f9f9f9;">
+                <div class="content">
+                    <h3>Introduction to Arrays</h3>
+                    <p>An array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together.</p>
+                    <pre><code>// Example: Array in Java
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+}
+</code></pre>
+                    <h3>Common Array Operations</h3>
+                    <p>Common operations on arrays include traversal, insertion, deletion, searching, and sorting.</p>
+                    <pre><code>// Example: Inserting an element into an array
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = new int[6];
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+        arr[3] = 4;
+        arr[4] = 5;
+        int n = 5;
+        int x = 6;
+        int pos = 3;
+        for (int i = n - 1; i >= pos - 1; i--) {
+            arr[i + 1] = arr[i];
+        }
+        arr[pos - 1] = x;
+        n++;
+        for (int i = 0; i < n; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Linked Lists</button>
+            <div class="collapsible-content" style="background-color: #f0f9ff;">
+                <div class="content">
+                    <h3>Introduction to Linked Lists</h3>
+                    <p>A linked list is a linear data structure where each element is a separate object, known as a node, which contains a value and a reference to the next node.</p>
+                    <pre><code>// Example: Singly Linked List in Java
+class Node {
+    int data;
+    Node next;
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+public class Main {
+    Node head;
+
+    public void insert(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+    }
+
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        Main list = new Main();
+        list.insert(1);
+        list.insert(2);
+        list.insert(3);
+        list.insert(4);
+        list.printList();  // Output: 1 2 3 4
+    }
+}
+</code></pre>
+                    <h3>Doubly Linked List</h3>
+                    <p>A doubly linked list is a linked list in which each node contains a reference to the next node as well as the previous node.</p>
+                    <pre><code>// Example: Doubly Linked List in Java
+class Node {
+    int data;
+    Node prev;
+    Node next;
+    Node(int d) {
+        data = d;
+    }
+}
+
+public class Main {
+    Node head;
+
+    public void insert(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            newNode.prev = temp;
+        }
+    }
+
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        Main list = new Main();
+        list.insert(1);
+        list.insert(2);
+        list.insert(3);
+        list.insert(4);
+        list.printList();  // Output: 1 2 3 4
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Stacks</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to Stacks</h3>
+                    <p>A stack is a linear data structure that follows the LIFO (Last In First Out) principle. The operations on a stack are push, pop, and peek.</p>
+                    <pre><code>// Example: Stack in Java
+class Stack {
+    static final int MAX = 1000;
+    int top;
+    int[] stack = new int[MAX];
+
+    Stack() {
+        top = -1;
+    }
+
+    boolean isEmpty() {
+        return (top < 0);
+    }
+
+    boolean push(int x) {
+        if (top >= (MAX - 1)) {
+            System.out.println("Stack Overflow");
+            return false;
+        } else {
+            stack[++top] = x;
+            System.out.println(x + " pushed into stack");
+            return true;
+        }
+    }
+
+    int pop() {
+        if (top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        } else {
+            int x = stack[top--];
+            return x;
+        }
+    }
+
+    int peek() {
+        if (top < 0) {
+            System.out.println("Stack Underflow");
+            return 0;
+        } else {
+            return stack[top];
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Stack stack = new Stack();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        System.out.println(stack.pop() + " popped from stack");
+    }
+}
+</code></pre>
+                    <h3>Applications of Stacks</h3>
+                    <p>Stacks are used in various applications, including:</p>
+                    <ul>
+                        <li>Function call management in programming languages</li>
+                        <li>Expression evaluation and syntax parsing</li>
+                        <li>Backtracking algorithms (e.g., solving mazes, navigating file systems)</li>
+                        <li>Implementing undo mechanisms in text editors</li>
+                    </ul>
+                    <pre><code>// Example: Balanced Parentheses using Stack
+import java.util.Stack;
+
+public class Main {
+    public static boolean isBalanced(String expression) {
+        Stack<Character> stack = new Stack<>();
+        for (char ch : expression.toCharArray()) {
+            if (ch == '(' || ch == '[' || ch == '{') {
+                stack.push(ch);
+            } else {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                char last = stack.peek();
+                if (ch == ')' && last == '(' || ch == ']' && last == '[' || ch == '}' && last == '{') {
+                    stack.pop();
+                } else {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        String expression = "{[()]}";
+        System.out.println("Is the expression balanced? " + isBalanced(expression));
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Queues</button>
+            <div class="collapsible-content" style="background-color: #f0fff0;">
+                <div class="content">
+                    <h3>Introduction to Queues</h3>
+                    <p>A queue is a linear data structure that follows the FIFO (First In First Out) principle. The operations on a queue are enqueue, dequeue, front, and rear.</p>
+                    <pre><code>// Example: Queue in Java
+class Queue {
+    static final int MAX = 1000;
+    int front, rear, size;
+    int[] queue = new int[MAX];
+
+    Queue() {
+        front = this.size = 0;
+        rear = MAX - 1;
+    }
+
+    boolean isFull() {
+        return (size == MAX);
+    }
+
+    boolean isEmpty() {
+        return (size == 0);
+    }
+
+    boolean enqueue(int item) {
+        if (isFull()) {
+            System.out.println("Queue Overflow");
+            return false;
+        }
+        rear = (rear + 1) % MAX;
+        queue[rear] = item;
+        size = size + 1;
+        System.out.println(item + " enqueued to queue");
+        return true;
+    }
+
+    int dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue Underflow");
+            return -1;
+        }
+        int item = queue[front];
+        front = (front + 1) % MAX;
+        size = size - 1;
+        return item;
+    }
+
+    int front() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        return queue[front];
+    }
+
+    int rear() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        return queue[rear];
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Queue queue = new Queue();
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.enqueue(40);
+        System.out.println(queue.dequeue() + " dequeued from queue");
+    }
+}
+</code></pre>
+                    <h3>Applications of Queues</h3>
+                    <p>Queues are used in various applications, including:</p>
+                    <ul>
+                        <li>CPU scheduling and disk scheduling</li>
+                        <li>Handling of interrupts in real-time systems</li>
+                        <li>Call center phone systems to hold people calling them in order</li>
+                        <li>Simulation of real-world queuing situations (e.g., waiting lines)</li>
+                    </ul>
+                    <pre><code>// Example: Generating Binary Numbers using Queue
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Main {
+    public static void generateBinaryNumbers(int n) {
+        Queue<String> queue = new LinkedList<>();
+        queue.add("1");
+        while (n-- > 0) {
+            String s1 = queue.poll();
+            System.out.println(s1);
+            String s2 = s1;
+            queue.add(s1 + "0");
+            queue.add(s2 + "1");
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 10;
+        generateBinaryNumbers(n);
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Trees</button>
+            <div class="collapsible-content" style="background-color: #e1f5fe;">
+                <div class="content">
+                    <h3>Introduction to Trees</h3>
+                    <p>A tree is a hierarchical data structure that consists of nodes connected by edges. The topmost node is called the root, and each node contains a value and a list of references to other nodes (its children).</p>
+                    <pre><code>// Example: Binary Tree in Java
+class Node {
+    int data;
+    Node left, right;
+    public Node(int item) {
+        data = item;
+        left = right = null;
+    }
+}
+
+class BinaryTree {
+    Node root;
+
+    BinaryTree() {
+        root = null;
+    }
+
+    void printInorder(Node node) {
+        if (node == null)
+            return;
+
+        printInorder(node.left);
+        System.out.print(node.data + " ");
+        printInorder(node.right);
+    }
+
+    void printInorder() {
+        printInorder(root);
+    }
+
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        tree.printInorder();  // Output: 4 2 5 1 3
+    }
+}
+</code></pre>
+                    <h3>Tree Traversal</h3>
+                    <p>Tree traversal is the process of visiting all the nodes in a tree. The three most common types of tree traversal are:</p>
+                    <ul>
+                        <li>Inorder Traversal</li>
+                        <li>Preorder Traversal</li>
+                        <li>Postorder Traversal</li>
+                    </ul>
+                    <pre><code>// Example: Preorder Traversal in Java
+class Node {
+    int data;
+    Node left, right;
+
+    Node(int item) {
+        data = item;
+        left = right = null;
+    }
+}
+
+class BinaryTree {
+    Node root;
+
+    void printPreorder(Node node) {
+        if (node == null)
+            return;
+
+        System.out.print(node.data + " ");
+        printPreorder(node.left);
+        printPreorder(node.right);
+    }
+
+    void printPreorder() {
+        printPreorder(root);
+    }
+
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        tree.printPreorder();  // Output: 1 2 4 5 3
+    }
+}
+</code></pre>
+                    <h3>Binary Search Tree (BST)</h3>
+                    <p>A Binary Search Tree (BST) is a tree in which all the nodes follow the below properties:</p>
+                    <ul>
+                        <li>The left subtree of a node contains only nodes with keys lesser than the node’s key.</li>
+                        <li>The right subtree of a node contains only nodes with keys greater than the node’s key.</li>
+                        <li>The left and right subtree each must also be a binary search tree.</li>
+                    </ul>
+                    <pre><code>// Example: Binary Search Tree in Java
+class Node {
+    int data;
+    Node left, right;
+
+    public Node(int item) {
+        data = item;
+        left = right = null;
+    }
+}
+
+class BinarySearchTree {
+    Node root;
+
+    BinarySearchTree() {
+        root = null;
+    }
+
+    void insert(int data) {
+        insertRec(root, data);
+    }
+
+    Node insertRec(Node root, int data) {
+        if (root == null) {
+            root = new Node(data);
+            return root;
+        }
+        if (data < root.data)
+            root.left = insertRec(root.left, data);
+        else if (data > root.data)
+            root.right = insertRec(root.right, data);
+        return root;
+    }
+
+    void inorder() {
+        inorderRec(root);
+    }
+
+    void inorderRec(Node root) {
+        if (root != null) {
+            inorderRec(root.left);
+            System.out.print(root.data + " ");
+            inorderRec(root.right);
+        }
+    }
+
+    public static void main(String[] args) {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(50);
+        tree.insert(30);
+        tree.insert(20);
+        tree.insert(40);
+        tree.insert(70);
+        tree.insert(60);
+        tree.insert(80);
+        tree.inorder();  // Output: 20 30 40 50 60 70 80
+    }
+}
+</code></pre>
+                    <h3>AVL Trees</h3>
+                    <p>An AVL tree is a self-balancing binary search tree where the difference between the heights of left and right subtrees cannot be more than one for all nodes.</p>
+                    <pre><code>// Example: AVL Tree in Java
+class Node {
+    int key, height;
+    Node left, right;
+
+    Node(int d) {
+        key = d;
+        height = 1;
+    }
+}
+
+class AVLTree {
+    Node root;
+
+    int height(Node N) {
+        if (N == null)
+            return 0;
+        return N.height;
+    }
+
+    int max(int a, int b) {
+        return (a > b) ? a : b;
+    }
+
+    Node rightRotate(Node y) {
+        Node x = y.left;
+        Node T2 = x.right;
+        x.right = y;
+        y.left = T2;
+        y.height = max(height(y.left), height(y.right)) + 1;
+        x.height = max(height(x.left), height(x.right)) + 1;
+        return x;
+    }
+
+    Node leftRotate(Node x) {
+        Node y = x.right;
+        Node T2 = y.left;
+        y.left = x;
+        x.right = T2;
+        x.height = max(height(x.left), height(x.right)) + 1;
+        y.height = max(height(y.left), height(y.right)) + 1;
+        return y;
+    }
+
+    int getBalance(Node N) {
+        if (N == null)
+            return 0;
+        return height(N.left) - height(N.right);
+    }
+
+    Node insert(Node node, int key) {
+        if (node == null)
+            return (new Node(key));
+        if (key < node.key)
+            node.left = insert(node.left, key);
+        else if (key > node.key)
+            node.right = insert(node.right, key);
+        else
+            return node;
+        node.height = 1 + max(height(node.left), height(node.right));
+        int balance = getBalance(node);
+        if (balance > 1 && key < node.left.key)
+            return rightRotate(node);
+        if (balance < -1 && key > node.right.key)
+            return leftRotate(node);
+        if (balance > 1 && key > node.left.key) {
+            node.left = leftRotate(node.left);
+            return rightRotate(node);
+        }
+        if (balance < -1 && key < node.right.key) {
+            node.right = rightRotate(node.right);
+            return leftRotate(node);
+        }
+        return node;
+    }
+
+    void preOrder(Node node) {
+        if (node != null) {
+            System.out.print(node.key + " ");
+            preOrder(node.left);
+            preOrder(node.right);
+        }
+    }
+
+    public static void main(String[] args) {
+        AVLTree tree = new AVLTree();
+        tree.root = tree.insert(tree.root, 10);
+        tree.root = tree.insert(tree.root, 20);
+        tree.root = tree.insert(tree.root, 30);
+        tree.root = tree.insert(tree.root, 40);
+        tree.root = tree.insert(tree.root, 50);
+        tree.root = tree.insert(tree.root, 25);
+        System.out.println("Preorder traversal of constructed tree is : ");
+        tree.preOrder(tree.root);  // Output: 30 20 10 25 40 50
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Graphs</button>
+            <div class="collapsible-content" style="background-color: #f0f9ff;">
+                <div class="content">
+                    <h3>Introduction to Graphs</h3>
+                    <p>A graph is a collection of nodes (also called vertices) and edges connecting them. Graphs can be used to represent various real-world problems, such as social networks, transportation networks, and more.</p>
+                    <pre><code>// Example: Graph Representation using Adjacency List
+import java.util.LinkedList;
+
+class Graph {
+    private int V;
+    private LinkedList<Integer> adj[];
+
+    Graph(int v) {
+        V = v;
+        adj = new LinkedList[v];
+        for (int i = 0; i < v; ++i)
+            adj[i] = new LinkedList();
+    }
+
+    void addEdge(int v, int w) {
+        adj[v].add(w);
+    }
+
+    void printGraph() {
+        for (int v = 0; v < V; ++v) {
+            System.out.print("Adjacency list of vertex " + v);
+            for (Integer node : adj[v]) {
+                System.out.print(" -> " + node);
+            }
+            System.out.println("\n");
+        }
+    }
+
+    public static void main(String[] args) {
+        Graph g = new Graph(4);
+
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
+
+        g.printGraph();
+    }
+}
+</code></pre>
+                    <h3>Breadth-First Search (BFS)</h3>
+                    <p>BFS is an algorithm for traversing or searching tree or graph data structures. It starts at the root (or an arbitrary node) and explores the neighbor nodes at the present depth prior to moving on to nodes at the next depth level.</p>
+                    <pre><code>// Example: Breadth-First Search in Java
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Graph {
+    private int V;
+    private LinkedList<Integer> adj[];
+
+    Graph(int v) {
+        V = v;
+        adj = new LinkedList[v];
+        for (int i = 0; i < v; ++i)
+            adj[i] = new LinkedList();
+    }
+
+    void addEdge(int v, int w) {
+        adj[v].add(w);
+    }
+
+    void BFS(int s) {
+        boolean visited[] = new boolean[V];
+        Queue<Integer> queue = new LinkedList<>();
+
+        visited[s] = true;
+        queue.add(s);
+
+        while (!queue.isEmpty()) {
+            s = queue.poll();
+            System.out.print(s + " ");
+
+            for (Integer node : adj[s]) {
+                if (!visited[node]) {
+                    visited[node] = true;
+                    queue.add(node);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Graph g = new Graph(4);
+
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
+
+        System.out.println("Breadth-First Traversal starting from vertex 2:");
+
+        g.BFS(2);  // Output: 2 0 3 1
+    }
+}
+</code></pre>
+                    <h3>Depth-First Search (DFS)</h3>
+                    <p>DFS is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root in the case of a graph) and explores as far as possible along each branch before backtracking.</p>
+                    <pre><code>// Example: Depth-First Search in Java
+import java.util.Iterator;
+import java.util.LinkedList;
+
+class Graph {
+    private int V;
+    private LinkedList<Integer> adj[];
+
+    Graph(int v) {
+        V = v;
+        adj = new LinkedList[v];
+        for (int i = 0; i < v; ++i)
+            adj[i] = new LinkedList();
+    }
+
+    void addEdge(int v, int w) {
+        adj[v].add(w);
+    }
+
+    void DFSUtil(int v, boolean visited[]) {
+        visited[v] = true;
+        System.out.print(v + " ");
+
+        for (Integer n : adj[v]) {
+            if (!visited[n]) {
+                DFSUtil(n, visited);
+            }
+        }
+    }
+
+    void DFS(int v) {
+        boolean visited[] = new boolean[V];
+        DFSUtil(v, visited);
+    }
+
+    public static void main(String[] args) {
+        Graph g = new Graph(4);
+
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
+
+        System.out.println("Depth-First Traversal starting from vertex 2:");
+
+        g.DFS(2);  // Output: 2 0 1 3
+    }
+}
+</code></pre>
+                    <h3>Applications of Graphs</h3>
+                    <p>Graphs are used in various applications, including:</p>
+                    <ul>
+                        <li>Social networks</li>
+                        <li>Computer networks</li>
+                        <li>Transport networks</li>
+                        <li>Dependency graphs</li>
+                        <li>Recommendation systems</li>
+                    </ul>
+                    <pre><code>// Example: Finding Shortest Path using BFS
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Graph {
+    private int V;
+    private LinkedList<Integer> adj[];
+
+    Graph(int v) {
+        V = v;
+        adj = new LinkedList[v];
+        for (int i = 0; i < v; ++i)
+            adj[i] = new LinkedList();
+    }
+
+    void addEdge(int v, int w) {
+        adj[v].add(w);
+    }
+
+    int findShortestPath(int src, int dest) {
+        boolean visited[] = new boolean[V];
+        int[] distance = new int[V];
+        Queue<Integer> queue = new LinkedList<>();
+
+        visited[src] = true;
+        queue.add(src);
+        distance[src] = 0;
+
+        while (!queue.isEmpty()) {
+            int s = queue.poll();
+
+            for (Integer node : adj[s]) {
+                if (!visited[node]) {
+                    visited[node] = true;
+                    distance[node] = distance[s] + 1;
+                    queue.add(node);
+
+                    if (node == dest) {
+                        return distance[node];
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Graph g = new Graph(6);
+
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 3);
+        g.addEdge(2, 3);
+        g.addEdge(3, 4);
+        g.addEdge(4, 5);
+
+        System.out.println("Shortest path between 0 and 5: " + g.findShortestPath(0, 5));
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Sorting Algorithms</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to Sorting Algorithms</h3>
+                    <p>Sorting is the process of arranging data in a particular order. Common sorting algorithms include Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, and Quick Sort.</p>
+                    <pre><code>// Example: Bubble Sort in Java
+public class Main {
+    static void bubbleSort(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++)
+            for (int j = 0; j < n - i - 1; j++)
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {64, 34, 25, 12, 22, 11, 90};
+        bubbleSort(arr);
+        System.out.println("Sorted array");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+</code></pre>
+                    <h3>Selection Sort</h3>
+                    <p>Selection Sort is a simple sorting algorithm that divides the input list into two parts: the sublist of items already sorted, which is built up from left to right at the front (left) of the list, and the sublist of items remaining to be sorted that occupy the rest of the list.</p>
+                    <pre><code>// Example: Selection Sort in Java
+public class Main {
+    static void selectionSort(int arr[]) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < n; j++)
+                if (arr[j] < arr[minIdx])
+                    minIdx = j;
+            int temp = arr[minIdx];
+            arr[minIdx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {64, 25, 12, 22, 11};
+        selectionSort(arr);
+        System.out.println("Sorted array");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+</code></pre>
+                    <h3>Insertion Sort</h3>
+                    <p>Insertion Sort is a simple sorting algorithm that works similarly to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.</p>
+                    <pre><code>// Example: Insertion Sort in Java
+public class Main {
+    static void insertionSort(int arr[]) {
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {12, 11, 13, 5, 6};
+        insertionSort(arr);
+        System.out.println("Sorted array");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+</code></pre>
+                    <h3>Merge Sort</h3>
+                    <p>Merge Sort is a divide-and-conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.</p>
+                    <pre><code>// Example: Merge Sort in Java
+public class Main {
+    void merge(int arr[], int l, int m, int r) {
+        int n1 = m - l + 1;
+        int n2 = r - m;
+
+        int L[] = new int[n1];
+        int R[] = new int[n2];
+
+        for (int i = 0; i < n1; ++i)
+            L[i] = arr[l + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = arr[m + 1 + j];
+
+        int i = 0, j = 0;
+
+        int k = l;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    void sort(int arr[], int l, int r) {
+        if (l < r) {
+            int m = (l + r) / 2;
+
+            sort(arr, l, m);
+            sort(arr, m + 1, r);
+
+            merge(arr, l, m, r);
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {12, 11, 13, 5, 6, 7};
+        Main ob = new Main();
+        ob.sort(arr, 0, arr.length - 1);
+        System.out.println("Sorted array");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+</code></pre>
+                    <h3>Quick Sort</h3>
+                    <p>Quick Sort is a highly efficient sorting algorithm and is based on partitioning of an array into smaller arrays. A large array is partitioned into two arrays, one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.</p>
+                    <pre><code>// Example: Quick Sort in Java
+public class Main {
+    int partition(int arr[], int low, int high) {
+        int pivot = arr[high];
+        int i = (low - 1);
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+
+        return i + 1;
+    }
+
+    void sort(int arr[], int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+
+            sort(arr, low, pi - 1);
+            sort(arr, pi + 1, high);
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {10, 7, 8, 9, 1, 5};
+        int n = arr.length;
+
+        Main ob = new Main();
+        ob.sort(arr, 0, n - 1);
+
+        System.out.println("Sorted array");
+        for (int i = 0; i < n; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Dynamic Programming</button>
+            <div class="collapsible-content" style="background-color: #f0fff0;">
+                <div class="content">
+                    <h3>Introduction to Dynamic Programming</h3>
+                    <p>Dynamic Programming (DP) is a method for solving a complex problem by breaking it down into simpler subproblems and solving each of those subproblems just once, storing their solutions.</p>
+                    <pre><code>// Example: Fibonacci Series using Dynamic Programming
+public class Main {
+    static int fib(int n, int[] memo) {
+        if (memo[n] != -1) {
+            return memo[n];
+        }
+        if (n <= 1) {
+            memo[n] = n;
+        } else {
+            memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+        }
+        return memo[n];
+    }
+
+    public static void main(String[] args) {
+        int n = 10;
+        int[] memo = new int[n + 1];
+        for (int i = 0; i < memo.length; i++) {
+            memo[i] = -1;
+        }
+        System.out.println("Fibonacci number at position " + n + " is: " + fib(n, memo));
+    }
+}
+</code></pre>
+                    <h3>Knapsack Problem</h3>
+                    <p>The knapsack problem is a problem in combinatorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.</p>
+                    <pre><code>// Example: 0-1 Knapsack Problem using Dynamic Programming
+public class Main {
+    static int knapSack(int W, int wt[], int val[], int n) {
+        int K[][] = new int[n + 1][W + 1];
+
+        for (int i = 0; i <= n; i++) {
+            for (int w = 0; w <= W; w++) {
+                if (i == 0 || w == 0)
+                    K[i][w] = 0;
+                else if (wt[i - 1] <= w)
+                    K[i][w] = Math.max(val[i - 1] + K[i - 1][w - wt[i - 1]], K[i - 1][w]);
+                else
+                    K[i][w] = K[i - 1][w];
+            }
+        }
+        return K[n][W];
+    }
+
+    public static void main(String args[]) {
+        int val[] = {60, 100, 120};
+        int wt[] = {10, 20, 30};
+        int W = 50;
+        int n = val.length;
+        System.out.println(knapSack(W, wt, val, n));  // Output: 220
+    }
+}
+</code></pre>
+                    <h3>Longest Common Subsequence</h3>
+                    <p>The longest common subsequence (LCS) problem is the problem of finding the longest subsequence common to all sequences in a set of sequences (often just two sequences).</p>
+                    <pre><code>// Example: Longest Common Subsequence in Java
+public class Main {
+    int lcs(char[] X, char[] Y, int m, int n) {
+        int L[][] = new int[m + 1][n + 1];
+
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (i == 0 || j == 0)
+                    L[i][j] = 0;
+                else if (X[i - 1] == Y[j - 1])
+                    L[i][j] = L[i - 1][j - 1] + 1;
+                else
+                    L[i][j] = Math.max(L[i - 1][j], L[i][j - 1]);
+            }
+        }
+        return L[m][n];
+    }
+
+    public static void main(String[] args) {
+        Main lcs = new Main();
+        String s1 = "AGGTAB";
+        String s2 = "GXTXAYB";
+        char[] X = s1.toCharArray();
+        char[] Y = s2.toCharArray();
+        int m = X.length;
+        int n = Y.length;
+        System.out.println("Length of LCS is " + lcs.lcs(X, Y, m, n));  // Output: 4
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Greedy Algorithms</button>
+            <div class="collapsible-content" style="background-color: #e1f5fe;">
+                <div class="content">
+                    <h3>Introduction to Greedy Algorithms</h3>
+                    <p>Greedy algorithms build up a solution piece by piece, always choosing the next piece that offers the most immediate benefit. Greedy algorithms are used to solve optimization problems.</p>
+                    <pre><code>// Example: Activity Selection Problem
+                        import java.util.Arrays;
+                        import java.util.Comparator;
+                        
+                        class Activity {
+                            int start, finish;
+                        
+                            public Activity(int start, int finish) {
+                                this.start = start;
+                                this.finish = finish;
+                            }
+                        }
+                        
+                        public class Main {
+                            static void printMaxActivities(int s[], int f[], int n) {
+                                Activity activities[] = new Activity[n];
+                                for (int i = 0; i < n; i++) {
+                                    activities[i] = new Activity(s[i], f[i]);
+                                }
+                        
+                                Arrays.sort(activities, new Comparator<Activity>() {
+                                    @Override
+                                    public int compare(Activity a1, Activity a2) {
+                                        return a1.finish - a2.finish;
+                                    }
+                                });
+                        
+                                System.out.println("Selected activities:");
+                                int i = 0;
+                                System.out.println("Activity: " + i + " (start: " + activities[i].start + ", finish: " + activities[i].finish + ")");
+                                for (int j = 1; j < n; j++) {
+                                    if (activities[j].start >= activities[i].finish) {
+                                        System.out.println("Activity: " + j + " (start: " + activities[j].start + ", finish: " + activities[j].finish + ")");
+                                        i = j;
+                                    }
+                                }
+                            }
+                        
+                            public static void main(String[] args) {
+                                int s[] = {1, 3, 0, 5, 8, 5};
+                                int f[] = {2, 4, 6, 7, 9, 9};
+                                int n = s.length;
+                        
+                                printMaxActivities(s, f, n);  // Output: Activity: 0, Activity: 1, Activity: 3, Activity: 4
+                            }
+                        }
+                    </code></pre>
+                    The idea is to assign variable-length codes to input characters, with shorter codes assigned to more frequent characters. This is accomplished by building a binary tree called a Huffman tree.
+
+                    <pre><code>// Example: Huffman Coding in Java
+import java.util.PriorityQueue;
+import java.util.Comparator;
+
+class HuffmanNode {
+    int data;
+    char c;
+    HuffmanNode left;
+    HuffmanNode right;
+}
+
+class MyComparator implements Comparator<HuffmanNode> {
+    public int compare(HuffmanNode x, HuffmanNode y) {
+        return x.data - y.data;
+    }
+}
+
+public class Main {
+    public static void printCode(HuffmanNode root, String s) {
+        if (root.left == null && root.right == null && Character.isLetter(root.c)) {
+            System.out.println(root.c + ":" + s);
+            return;
+        }
+        printCode(root.left, s + "0");
+        printCode(root.right, s + "1");
+    }
+
+    public static void main(String[] args) {
+        int n = 6;
+        char[] charArray = {'a', 'b', 'c', 'd', 'e', 'f'};
+        int[] charfreq = {5, 9, 12, 13, 16, 45};
+
+        PriorityQueue<HuffmanNode> q = new PriorityQueue<HuffmanNode>(n, new MyComparator());
+
+        for (int i = 0; i < n; i++) {
+            HuffmanNode hn = new HuffmanNode();
+            hn.c = charArray[i];
+            hn.data = charfreq[i];
+            hn.left = null;
+            hn.right = null;
+            q.add(hn);
+        }
+
+        HuffmanNode root = null;
+
+        while (q.size() > 1) {
+            HuffmanNode x = q.peek();
+            q.poll();
+            HuffmanNode y = q.peek();
+            q.poll();
+            HuffmanNode f = new HuffmanNode();
+            f.data = x.data + y.data;
+            f.c = '-';
+            f.left = x;
+            f.right = y;
+            root = f;
+            q.add(f);
+        }
+
+        printCode(root, "");
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Backtracking</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to Backtracking</h3>
+                    <p>Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, removing solutions that fail to satisfy the constraints of the problem at any point of time (by backtracking).</p>
+                    <pre><code>// Example: N-Queens Problem
+public class Main {
+    final int N = 4;
+
+    void printSolution(int board[][]) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++)
+                System.out.print(" " + board[i][j] + " ");
+            System.out.println();
+        }
+    }
+
+    boolean isSafe(int board[][], int row, int col) {
+        for (int i = 0; i < col; i++)
+            if (board[row][i] == 1)
+                return false;
+        for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
+            if (board[i][j] == 1)
+                return false;
+        for (int i = row, j = col; j >= 0 && i < N; i++, j--)
+            if (board[i][j] == 1)
+                return false;
+        return true;
+    }
+
+    boolean solveNQUtil(int board[][], int col) {
+        if (col >= N)
+            return true;
+        for (int i = 0; i < N; i++) {
+            if (isSafe(board, i, col)) {
+                board[i][col] = 1;
+                if (solveNQUtil(board, col + 1) == true)
+                    return true;
+                board[i][col] = 0;
+            }
+        }
+        return false;
+    }
+
+    boolean solveNQ() {
+        int board[][] = { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
+
+        if (solveNQUtil(board, 0) == false) {
+            System.out.print("Solution does not exist");
+            return false;
+        }
+
+        printSolution(board);
+        return true;
+    }
+
+    public static void main(String args[]) {
+        Main Queen = new Main();
+        Queen.solveNQ();
+    }
+}
+</code></pre>
+                    <h3>Sudoku Solver</h3>
+                    <p>Sudoku is a popular number puzzle game. The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 grids that compose the grid contain all of the digits from 1 to 9.</p>
+                    <pre><code>// Example: Sudoku Solver in Java
+public class Main {
+    final static int N = 9;
+
+    static boolean isSafe(int[][] board, int row, int col, int num) {
+        for (int x = 0; x < N; x++)
+            if (board[row][x] == num)
+                return false;
+
+        for (int x = 0; x < N; x++)
+            if (board[x][col] == num)
+                return false;
+
+        int startRow = row - row % 3, startCol = col - col % 3;
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                if (board[i + startRow][j + startCol] == num)
+                    return false;
+
+        return true;
+    }
+
+    static boolean solveSudoku(int[][] board, int n) {
+        int row = -1;
+        int col = -1;
+        boolean isEmpty = true;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 0) {
+                    row = i;
+                    col = j;
+                    isEmpty = false;
+                    break;
+                }
+            }
+            if (!isEmpty)
+                break;
+        }
+        if (isEmpty)
+            return true;
+
+        for (int num = 1; num <= n; num++) {
+            if (isSafe(board, row, col, num)) {
+                board[row][col] = num;
+                if (solveSudoku(board, n))
+                    return true;
+                else
+                    board[row][col] = 0;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[][] board = new int[][] { { 5, 3, 0, 0, 7, 0, 0, 0, 0 }, { 6, 0, 0, 1, 9, 5, 0, 0, 0 },
+                { 0, 9, 8, 0, 0, 0, 0, 6, 0 }, { 8, 0, 0, 0, 6, 0, 0, 0, 3 }, { 4, 0, 0, 8, 0, 3, 0, 0, 1 },
+                { 7, 0, 0, 0, 2, 0, 0, 0, 6 }, { 0, 6, 0, 0, 0, 0, 2, 8, 0 }, { 0, 0, 0, 4, 1, 9, 0, 0, 5 },
+                { 0, 0, 0, 0, 8, 0, 0, 7, 9 } };
+        int N = board.length;
+
+        if (solveSudoku(board, N))
+            for (int r = 0; r < N; r++) {
+                for (int d = 0; d < N; d++) {
+                    System.out.print(board[r][d]);
+                    System.out.print(" ");
+                }
+                System.out.print("\n");
+
+                if ((r + 1) % 3 == 0)
+                    System.out.print("");
+            }
+        else
+            System.out.println("No solution exists");
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Divide and Conquer</button>
+            <div class="collapsible-content" style="background-color: #f0fff0;">
+                <div class="content">
+                    <h3>Introduction to Divide and Conquer</h3>
+                    <p>Divide and Conquer is an algorithmic paradigm. A typical Divide and Conquer algorithm consists of the following three steps:</p>
+                    <ul>
+                        <li>Divide: Break the given problem into subproblems of the same type.</li>
+                        <li>Conquer: Recursively solve these subproblems.</li>
+                        <li>Combine: Appropriately combine the answers.</li>
+                    </ul>
+                    <pre><code>// Example: Merge Sort in Java
+public class Main {
+    void merge(int arr[], int l, int m, int r) {
+        int n1 = m - l + 1;
+        int n2 = r - m;
+
+        int L[] = new int[n1];
+        int R[] = new int[n2];
+
+        for (int i = 0; i < n1; ++i)
+            L[i] = arr[l + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = arr[m + 1 + j];
+
+        int i = 0, j = 0;
+
+        int k = l;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    void sort(int arr[], int l, int r) {
+        if (l < r) {
+            int m = (l + r) / 2;
+
+            sort(arr, l, m);
+            sort(arr, m + 1, r);
+
+            merge(arr, l, m, r);
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {12, 11, 13, 5, 6, 7};
+        Main ob = new Main();
+        ob.sort(arr, 0, arr.length - 1);
+        System.out.println("Sorted array");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+    }
+}
+</code></pre>
+                    <h3>Binary Search</h3>
+                    <p>Binary Search is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is successful.</p>
+                    <pre><code>// Example: Binary Search in Java
+public class Main {
+    int binarySearch(int arr[], int l, int r, int x) {
+        if (r >= l) {
+            int mid = l + (r - l) / 2;
+            if (arr[mid] == x)
+                return mid;
+            if (arr[mid] > x)
+                return binarySearch(arr, l, mid - 1, x);
+            return binarySearch(arr, mid + 1, r, x);
+        }
+        return -1;
+    }
+
+    public static void main(String args[]) {
+        Main ob = new Main();
+        int arr[] = {2, 3, 4, 10, 40};
+        int n = arr.length;
+        int x = 10;
+        int result = ob.binarySearch(arr, 0, n - 1, x);
+        if (result == -1)
+            System.out.println("Element not present");
+        else
+            System.out.println("Element found at index " + result);
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Heap</button>
+            <div class="collapsible-content" style="background-color: #e1f5fe;">
+                <div class="content">
+                    <h3>Introduction to Heap</h3>
+                    <p>A Heap is a special tree-based data structure in which the tree is a complete binary tree. Heaps are of two types:</p>
+                    <ul>
+                        <li>Max-Heap: In a Max-Heap, the key present at the root node must be the greatest among the keys present at all of its children.</li>
+                        <li>Min-Heap: In a Min-Heap, the key present at the root node must be the smallest among the keys present at all of its children.</li>
+                    </ul>
+                    <pre><code>// Example: Max-Heap in Java
+public class Main {
+    public void heapify(int arr[], int n, int i) {
+        int largest = i;
+        int l = 2 * i + 1;
+        int r = 2 * i + 2;
+
+        if (l < n && arr[l] > arr[largest])
+            largest = l;
+
+        if (r < n && arr[r] > arr[largest])
+            largest = r;
+
+        if (largest != i) {
+            int swap = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = swap;
+
+            heapify(arr, n, largest);
+        }
+    }
+
+    public void sort(int arr[]) {
+        int n = arr.length;
+
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heapify(arr, n, i);
+
+        for (int i = n - 1; i > 0; i--) {
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+
+            heapify(arr, i, 0);
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {12, 11, 13, 5, 6, 7};
+        int n = arr.length;
+
+        Main ob = new Main();
+        ob.sort(arr);
+
+        System.out.println("Sorted array is");
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Trie</button>
+            <div class="collapsible-content" style="background-color: #f0fff0;">
+                <div class="content">
+                    <h3>Introduction to Trie</h3>
+                    <p>A Trie is a special type of tree used to store associative data structures. A Trie is used to store a dynamic set or associative array where the keys are usually strings.</p>
+                    <pre><code>// Example: Trie in Java
+import java.util.HashMap;
+import java.util.Map;
+
+class TrieNode {
+    Map<Character, TrieNode> children = new HashMap<>();
+    boolean endOfWord;
+}
+
+public class Main {
+    private final TrieNode root;
+
+    public Main() {
+        root = new TrieNode();
+    }
+
+    public void insert(String word) {
+        TrieNode current = root;
+        for (char ch : word.toCharArray()) {
+            current = current.children.computeIfAbsent(ch, c -> new TrieNode());
+        }
+        current.endOfWord = true;
+    }
+
+    public boolean search(String word) {
+        TrieNode current = root;
+        for (char ch : word.toCharArray()) {
+            current = current.children.get(ch);
+            if (current == null) {
+                return false;
+            }
+        }
+        return current.endOfWord;
+    }
+
+    public static void main(String[] args) {
+        Main trie = new Main();
+        trie.insert("hello");
+        trie.insert("world");
+
+        System.out.println(trie.search("hello"));  // Output: true
+        System.out.println(trie.search("world"));  // Output: true
+        System.out.println(trie.search("hell"));   // Output: false
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Graph Algorithms</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Graph Algorithms</h3>
+                    <p>Graph algorithms are a set of instructions that traverse (visits nodes of a) graph. These algorithms are often used to solve problems in real-life such as shortest path, network flow, and many more. Some common graph algorithms include:</p>
+                    <ul>
+                        <li>Dijkstra's Algorithm</li>
+                        <li>Bellman-Ford Algorithm</li>
+                        <li>Floyd-Warshall Algorithm</li>
+                        <li>Prim's Algorithm</li>
+                        <li>Kruskal's Algorithm</li>
+                    </ul>
+                    <pre><code>// Example: Dijkstra's Algorithm in Java
+import java.util.*;
+
+public class Main {
+    static class Graph {
+        private int V;
+        private LinkedList<Edge>[] adj;
+
+        static class Edge {
+            int v;
+            int weight;
+
+            Edge(int v, int weight) {
+                this.v = v;
+                this.weight = weight;
+            }
+        }
+
+        Graph(int V) {
+            this.V = V;
+            adj = new LinkedList[V];
+            for (int i = 0; i < V; ++i)
+                adj[i] = new LinkedList<>();
+        }
+
+        void addEdge(int u, int v, int weight) {
+            Edge edge = new Edge(v, weight);
+            adj[u].add(edge);
+        }
+
+        void dijkstra(int src) {
+            PriorityQueue<Edge> pq = new PriorityQueue<>(V, Comparator.comparingInt(o -> o.weight));
+            int[] dist = new int[V];
+
+            Arrays.fill(dist, Integer.MAX_VALUE);
+            pq.add(new Edge(src, 0));
+            dist[src] = 0;
+
+            while (!pq.isEmpty()) {
+                Edge edge = pq.poll();
+                int u = edge.v;
+
+                for (Edge e : adj[u]) {
+                    int v = e.v;
+                    int weight = e.weight;
+                    if (dist[v] > dist[u] + weight) {
+                        dist[v] = dist[u] + weight;
+                        pq.add(new Edge(v, dist[v]));
+                    }
+                }
+            }
+
+            System.out.println("Vertex Distance from Source");
+            for (int i = 0; i < V; i++)
+                System.out.println(i + " \t\t " + dist[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        int V = 5;
+        Graph graph = new Graph(V);
+        graph.addEdge(0, 1, 9);
+        graph.addEdge(0, 2, 6);
+        graph.addEdge(0, 3, 5);
+        graph.addEdge(0, 4, 3);
+        graph.addEdge(2, 1, 2);
+        graph.addEdge(2, 3, 4);
+
+        graph.dijkstra(0);
+    }
+}
+</code></pre>
+                    <h3>Bellman-Ford Algorithm</h3>
+                    <p>The Bellman-Ford algorithm computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph. It is slower than Dijkstra's algorithm for the same problem but more versatile, as it is capable of handling graphs in which some of the edge weights are negative numbers.</p>
+                    <pre><code>// Example: Bellman-Ford Algorithm in Java
+import java.util.*;
+
+public class Main {
+    static class Edge {
+        int src, dest, weight;
+        Edge() {
+            src = dest = weight = 0;
+        }
+    }
+
+    int V, E;
+    Edge edge[];
+
+    Main(int v, int e) {
+        V = v;
+        E = e;
+        edge = new Edge[e];
+        for (int i = 0; i < e; ++i)
+            edge[i] = new Edge();
+    }
+
+    void BellmanFord(Main graph, int src) {
+        int V = graph.V, E = graph.E;
+        int dist[] = new int[V];
+
+        for (int i = 0; i < V; ++i)
+            dist[i] = Integer.MAX_VALUE;
+        dist[src] = 0;
+
+        for (int i = 1; i < V; ++i) {
+            for (int j = 0; j < E; ++j) {
+                int u = graph.edge[j].src;
+                int v = graph.edge[j].dest;
+                int weight = graph.edge[j].weight;
+                if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v])
+                    dist[v] = dist[u] + weight;
+            }
+        }
+
+        for (int j = 0; j < E; ++j) {
+            int u = graph.edge[j].src;
+            int v = graph.edge[j].dest;
+            int weight = graph.edge[j].weight;
+            if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+                System.out.println("Graph contains negative weight cycle");
+                return;
+            }
+        }
+        printArr(dist, V);
+    }
+
+    void printArr(int dist[], int V) {
+        System.out.println("Vertex Distance from Source");
+        for (int i = 0; i < V; ++i)
+            System.out.println(i + "\t\t" + dist[i]);
+    }
+
+    public static void main(String[] args) {
+        int V = 5;
+        int E = 8;
+
+        Main graph = new Main(V, E);
+
+        graph.edge[0].src = 0;
+        graph.edge[0].dest = 1;
+        graph.edge[0].weight = -1;
+
+        graph.edge[1].src = 0;
+        graph.edge[1].dest = 2;
+        graph.edge[1].weight = 4;
+
+        graph.edge[2].src = 1;
+        graph.edge[2].dest = 2;
+        graph.edge[2].weight = 3;
+
+        graph.edge[3].src = 1;
+        graph.edge[3].dest = 3;
+        graph.edge[3].weight = 2;
+
+        graph.edge[4].src = 1;
+        graph.edge[4].dest = 4;
+        graph.edge[4].weight = 2;
+
+        graph.edge[5].src = 3;
+        graph.edge[5].dest = 2;
+        graph.edge[5].weight = 5;
+
+        graph.edge[6].src = 3;
+        graph.edge[6].dest = 1;
+        graph.edge[6].weight = 1;
+
+        graph.edge[7].src = 4;
+        graph.edge[7].dest = 3;
+        graph.edge[7].weight = -3;
+
+        graph.BellmanFord(graph, 0);
+    }
+}
+</code></pre>
+                    <h3>Floyd-Warshall Algorithm</h3>
+                    <p>The Floyd-Warshall algorithm is an algorithm for finding shortest paths in a weighted graph with positive or negative edge weights (but with no negative cycles).</p>
+                    <pre><code>// Example: Floyd-Warshall Algorithm in Java
+public class Main {
+    final static int INF = 99999, V = 4;
+
+    void floydWarshall(int graph[][]) {
+        int dist[][] = new int[V][V];
+        int i, j, k;
+
+        for (i = 0; i < V; i++)
+            for (j = 0; j < V; j++)
+                dist[i][j] = graph[i][j];
+
+        for (k = 0; k < V; k++) {
+            for (i = 0; i < V; i++) {
+                for (j = 0; j < V; j++) {
+                    if (dist[i][k] + dist[k][j] < dist[i][j])
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                }
+            }
+        }
+
+        printSolution(dist);
+    }
+
+    void printSolution(int dist[][]) {
+        System.out.println("The following matrix shows the shortest distances between every pair of vertices");
+        for (int i = 0; i < V; ++i) {
+            for (int j = 0; j < V; ++j) {
+                if (dist[i][j] == INF)
+                    System.out.print("INF ");
+                else
+                    System.out.print(dist[i][j] + "   ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        int graph[][] = { {0, 5, INF, 10}, {INF, 0, 3, INF}, {INF, INF, 0, 1}, {INF, INF, INF, 0} };
+        Main a = new Main();
+        a.floydWarshall(graph);
+    }
+}
+</code></pre>
+                    <h3>Prim's Algorithm</h3>
+                    <p>Prim's algorithm is a greedy algorithm that finds a minimum spanning tree for a weighted undirected graph. This means it finds a subset of the edges that forms a tree that includes every vertex, where the total weight of all the edges in the tree is minimized.</p>
+                    <pre><code>// Example: Prim's Algorithm in Java
+import java.util.*;
+
+public class Main {
+    static final int V = 5;
+
+    int minKey(int key[], boolean mstSet[]) {
+        int min = Integer.MAX_VALUE, min_index = -1;
+        for (int v = 0; v < V; v++)
+            if (!mstSet[v] && key[v] < min) {
+                min = key[v];
+                min_index = v;
+            }
+        return min_index;
+    }
+
+    void printMST(int parent[], int graph[][]) {
+        System.out.println("Edge \tWeight");
+        for (int i = 1; i < V; i++)
+            System.out.println(parent[i] + " - " + i + "\t" + graph[i][parent[i]]);
+    }
+
+    void primMST(int graph[][]) {
+        int parent[] = new int[V];
+        int key[] = new int[V];
+        boolean mstSet[] = new boolean[V];
+
+        for (int i = 0; i < V; i++) {
+            key[i] = Integer.MAX_VALUE;
+            mstSet[i] = false;
+        }
+
+        key[0] = 0;
+        parent[0] = -1;
+
+        for (int count = 0; count < V - 1; count++) {
+            int u = minKey(key, mstSet);
+            mstSet[u] = true;
+
+            for (int v = 0; v < V; v++)
+                if (graph[u][v] != 0 && !mstSet[v] && graph[u][v] < key[v]) {
+                    parent[v] = u;
+                    key[v] = graph[u][v];
+                }
+        }
+
+        printMST(parent, graph);
+    }
+
+    public static void main(String[] args) {
+        int graph[][] = new int[][] { {0, 2, 0, 6, 0}, {2, 0, 3, 8, 5}, {0, 3, 0, 0, 7}, {6, 8, 0, 0, 9}, {0, 5, 7, 9, 0} };
+        Main t = new Main();
+        t.primMST(graph);
+    }
+}
+</code></pre>
+                    <h3>Kruskal's Algorithm</h3>
+                    <p>Kruskal's algorithm is a minimum spanning tree algorithm that finds an edge of the least possible weight that connects any two trees in the forest. It is a greedy algorithm in graph theory as it finds a minimum spanning tree for a connected weighted graph adding increasing cost arcs at each step.</p>
+                    <pre><code>// Example: Kruskal's Algorithm in Java
+import java.util.*;
+
+class Edge implements Comparable<Edge> {
+    int src, dest, weight;
+
+    public int compareTo(Edge compareEdge) {
+        return this.weight - compareEdge.weight;
+    }
+}
+
+class subset {
+    int parent, rank;
+}
+
+public class Main {
+    int V, E;
+    Edge edge[];
+
+    Main(int v, int e) {
+        V = v;
+        E = e;
+        edge = new Edge[E];
+        for (int i = 0; i < e; ++i)
+            edge[i] = new Edge();
+    }
+
+    int find(subset subsets[], int i) {
+        if (subsets[i].parent != i)
+            subsets[i].parent = find(subsets, subsets[i].parent);
+        return subsets[i].parent;
+    }
+
+    void Union(subset subsets[], int x, int y) {
+        int xroot = find(subsets, x);
+        int yroot = find(subsets, y);
+
+        if (subsets[xroot].rank < subsets[yroot].rank)
+            subsets[xroot].parent = yroot;
+        else if (subsets[xroot].rank > subsets[yroot].rank)
+            subsets[yroot].parent = xroot;
+        else {
+            subsets[yroot].parent = xroot;
+            subsets[xroot].rank++;
+        }
+    }
+
+    void KruskalMST() {
+        Edge result[] = new Edge[V];
+        int e = 0;
+        int i = 0;
+        for (i = 0; i < V; ++i)
+            result[i] = new Edge();
+
+        Arrays.sort(edge);
+
+        subset subsets[] = new subset[V];
+        for (i = 0; i < V; ++i)
+            subsets[i] = new subset();
+
+        for (int v = 0; v < V; ++v) {
+            subsets[v].parent = v;
+            subsets[v].rank = 0;
+        }
+
+        i = 0;
+
+        while (e < V - 1) {
+            Edge next_edge = new Edge();
+            next_edge = edge[i++];
+
+            int x = find(subsets, next_edge.src);
+            int y = find(subsets, next_edge.dest);
+
+            if (x != y) {
+                result[e++] = next_edge;
+                Union(subsets, x, y);
+            }
+        }
+
+        System.out.println("Following are the edges in the constructed MST");
+        for (i = 0; i < e; ++i)
+            System.out.println(result[i].src + " -- " + result[i].dest + " == " + result[i].weight);
+    }
+
+    public static void main(String[] args) {
+        int V = 4;
+        int E = 5;
+        Main graph = new Main(V, E);
+
+        graph.edge[0].src = 0;
+        graph.edge[0].dest = 1;
+        graph.edge[0].weight = 10;
+
+        graph.edge[1].src = 0;
+        graph.edge[1].dest = 2;
+        graph.edge[1].weight = 6;
+
+        graph.edge[2].src = 0;
+        graph.edge[2].dest = 3;
+        graph.edge[2].weight = 5;
+
+        graph.edge[3].src = 1;
+        graph.edge[3].dest = 3;
+        graph.edge[3].weight = 15;
+
+        graph.edge[4].src = 2;
+        graph.edge[4].dest = 3;
+        graph.edge[4].weight = 4;
+
+        graph.KruskalMST();
+    }
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Complexity Analysis</button>
+            <div class="collapsible-content" style="background-color: #f0fff0;">
+                <div class="content">
+                    <h3>Introduction to Complexity Analysis</h3>
+                    <p>Complexity analysis is a technique to measure the efficiency of an algorithm. There are two types of complexity analysis:</p>
+                    <ul>
+                        <li>Time Complexity: The amount of time taken by an algorithm to run as a function of the length of the input.</li>
+                        <li>Space Complexity: The amount of memory space required by an algorithm to run as a function of the length of the input.</li>
+                    </ul>
+                    <pre><code>// Example: Time Complexity of Bubble Sort
+public class Main {
+    static void bubbleSort(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {64, 34, 25, 12, 22, 11, 90};
+        bubbleSort(arr);
+        System.out.println("Sorted array");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+</code></pre>
+                    <h3>Big O Notation</h3>
+                    <p>Big O notation is used to describe the upper bound of the time complexity of an algorithm. It gives the worst-case scenario of an algorithm's time complexity.</p>
+                    <pre><code>// Example: Big O Notation
+public class Main {
+    static void printPairs(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                System.out.println("(" + arr[i] + ", " + arr[j] + ")");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5};
+        printPairs(arr);
+    }
+}
+</code></pre>
+                    <h3>Big Omega Notation</h3>
+                    <p>Big Omega notation is used to describe the lower bound of the time complexity of an algorithm. It gives the best-case scenario of an algorithm's time complexity.</p>
+                    <pre><code>// Example: Big Omega Notation
+public class Main {
+    static void constantTimeOperation(int n) {
+        System.out.println("Hello, World!");
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+        constantTimeOperation(n);
+    }
+}
+</code></pre>
+                    <h3>Big Theta Notation</h3>
+                    <p>Big Theta notation is used to describe the tight bound of the time complexity of an algorithm. It gives both the upper and lower bound of an algorithm's time complexity.</p>
+                    <pre><code>// Example: Big Theta Notation
+public class Main {
+    static void linearTimeOperation(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5};
+        linearTimeOperation(arr);
+    }
+}
+</code></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const collapsibles = document.querySelectorAll('.collapsible');
+        collapsibles.forEach(collapsible => {
+            collapsible.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+                        

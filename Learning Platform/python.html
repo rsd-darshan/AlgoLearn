@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Course</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #cbcdcf;
+            color: rgb(1, 1, 1);
+            padding: 1em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #4848d8;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 1em;
+        }
+        pre {
+            background-color: #ffffff;
+            border: 1px solid #040404;
+            padding: 1em;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section-title {
+            cursor: pointer;
+            color: #0a0a0a;
+            font-weight: bold;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            margin-bottom: 0.5em;
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            background-color: #282525;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .section-title:hover {
+            background-color: #e1e1e1;
+        }
+        .content {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            margin-bottom: 1em;
+        }
+        .collapsible {
+            background-color: #f1f1f1;
+            border: none;
+            color: #0612ef;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: #000000;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212";
+        }
+        .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: rgb(19, 18, 18);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Python Course</h1>
+        <nav>
+            <a href="course.html">Back to Courses</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Course Overview</h2>
+        <p>Python is a powerful programming language that is easy to learn and fun to use. It is widely used in web development, data science, automation, and more.</p>
+        <div id="sections">
+            <button class="collapsible">Introduction to Python</button>
+            <div class="collapsible-content" style="background-color: #f9f9f9;">
+                <div class="content">
+                    <h3>History and Features of Python</h3>
+                    <p>Python was created by Guido van Rossum and first released in 1991. It is known for its readability and simplicity, making it a great choice for beginners and experienced programmers alike.</p>
+                    <h3>Installing Python</h3>
+                    <p>Download and install Python from the official website <a href="https://www.python.org/">python.org</a>. Follow the installation instructions for your operating system.</p>
+                    <h3>Writing Your First Python Program</h3>
+                    <p>Create a new file with a .py extension and write the following code to print "Hello, World!" to the console:</p>
+                    <pre><code>print("Hello, World!")</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Data Types and Variables</button>
+            <div class="collapsible-content" style="background-color: #f0f9ff;">
+                <div class="content">
+                    <h3>Numbers, Strings, Lists, Tuples, and Dictionaries</h3>
+                    <p>Python supports various data types including:</p>
+                    <ul>
+                        <li>Numbers: integers and floating-point numbers</li>
+                        <li>Strings: sequences of characters</li>
+                        <li>Lists: ordered collections of elements</li>
+                        <li>Tuples: ordered, immutable collections of elements</li>
+                        <li>Dictionaries: unordered collections of key-value pairs</li>
+                    </ul>
+                    <h3>Variable Naming Rules</h3>
+                    <p>Variables in Python can contain letters, numbers, and underscores, but cannot start with a number. They are case-sensitive and should be named meaningfully.</p>
+                    <h3>Type Conversion</h3>
+                    <p>Python supports implicit and explicit type conversion. Use built-in functions like <code>int()</code>, <code>float()</code>, and <code>str()</code> to convert between types.</p>
+                </div>
+            </div>
+
+            <button class="collapsible">Control Structures</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Conditional Statements (if, elif, else)</h3>
+                    <p>Conditional statements allow you to execute different blocks of code based on certain conditions:</p>
+                    <pre><code>if condition:
+    # code block
+elif another_condition:
+    # another code block
+else:
+    # default code block</code></pre>
+                    <h3>Loops (for, while)</h3>
+                    <p>Loops allow you to execute a block of code multiple times:</p>
+                    <pre><code># for loop
+for i in range(5):
+    print(i)
+
+# while loop
+count = 0
+while count < 5:
+    print(count)
+    count += 1</code></pre>
+                    <h3>Comprehensions</h3>
+                    <p>List comprehensions provide a concise way to create lists:</p>
+                    <pre><code>squares = [x**2 for x in range(10)]</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Functions and Modules</button>
+            <div class="collapsible-content" style="background-color: #f0fff0;">
+                <div class="content">
+                    <h3>Defining Functions</h3>
+                    <p>Functions are defined using the <code>def</code> keyword:</p>
+                    <pre><code>def greet(name):
+    return f"Hello, {name}!"</code></pre>
+                    <h3>Function Arguments</h3>
+                    <p>Functions can accept positional, keyword, and default arguments:</p>
+                    <pre><code>def add(a, b=0):
+    return a + b
+
+print(add(5, 3))  # Output: 8
+print(add(5))     # Output: 5</code></pre>
+                    <h3>Importing Modules</h3>
+                    <p>Modules are files containing Python code that can be imported into other files:</p>
+                    <pre><code>import math
+
+print(math.sqrt(16))  # Output: 4.0</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Object-Oriented Programming</button>
+            <div class="collapsible-content" style="background-color: #fff0f5;">
+                <div class="content">
+                    <h3>Classes and Objects</h3>
+                    <p>Classes define the blueprint for objects, and objects are instances of classes:</p>
+                    <pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        return f"Hello, my name is {self.name} and I am {self.age} years old."
+
+person = Person("Alice", 30)
+print(person.greet())  # Output: Hello, my name is Alice and I am 30 years old.</code></pre>
+                    <h3>Inheritance</h3>
+                    <p>Inheritance allows one class to inherit attributes and methods from another class:</p>
+                    <pre><code>class Student(Person):
+                        def __init__(self, name, age, student_id):
+                            super().__init__(name, age)
+                            self.student_id = student_id
+                    
+                    student = Student("Bob", 20, "S12345")
+                    print(student.greet())  # Output: Hello, my name is Bob and I am 20 years old.</code></pre>
+                                        <h3>Polymorphism</h3>
+                                        <p>Polymorphism allows different classes to be used interchangeably:</p>
+                                        <pre><code>class Dog:
+                        def speak(self):
+                            return "Woof!"
+                    
+                    class Cat:
+                        def speak(self):
+                            return "Meow!"
+                    
+                    def animal_sound(animal):
+                        print(animal.speak())
+                    
+                    dog = Dog()
+                    cat = Cat()
+                    animal_sound(dog)  # Output: Woof!
+                    animal_sound(cat)  # Output: Meow!</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">Working with Libraries</button>
+                                <div class="collapsible-content" style="background-color: #e0f7fa;">
+                                    <div class="content">
+                                        <h3>Common Python Libraries</h3>
+                                        <p>Python has a rich ecosystem of libraries for various tasks:</p>
+                                        <ul>
+                                            <li><code>NumPy</code>: numerical computing</li>
+                                            <li><code>Pandas</code>: data analysis</li>
+                                            <li><code>Matplotlib</code>: data visualization</li>
+                                        </ul>
+                                        <h3>Using pip to Install Libraries</h3>
+                                        <p>Use the <code>pip</code> command to install libraries:</p>
+                                        <pre><code>pip install numpy</code></pre>
+                                        <h3>Examples of Library Usage (e.g., NumPy, Pandas, Matplotlib)</h3>
+                                        <p>Examples of using popular libraries:</p>
+                                        <pre><code>import numpy as np
+                    import pandas as pd
+                    import matplotlib.pyplot as plt
+                    
+                    # NumPy example
+                    arr = np.array([1, 2, 3, 4, 5])
+                    print(arr)  # Output: [1 2 3 4 5]
+                    
+                    # Pandas example
+                    data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+                    df = pd.DataFrame(data)
+                    print(df)
+                    
+                    # Matplotlib example
+                    plt.plot([1, 2, 3], [4, 5, 1])
+                    plt.show()</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">File Handling</button>
+                                <div class="collapsible-content" style="background-color: #fff9c4;">
+                                    <div class="content">
+                                        <h3>Reading Files</h3>
+                                        <p>Use the <code>open</code> function to read files in Python:</p>
+                                        <pre><code>with open('example.txt', 'r') as file:
+                        content = file.read()
+                        print(content)</code></pre>
+                                        <h3>Writing Files</h3>
+                                        <p>Use the <code>open</code> function to write to files:</p>
+                                        <pre><code>with open('example.txt', 'w') as file:
+                        file.write('Hello, World!')</code></pre>
+                                        <h3>Appending to Files</h3>
+                                        <p>Use the <code>open</code> function to append to files:</p>
+                                        <pre><code>with open('example.txt', 'a') as file:
+                        file.write('\nHello again!')</code></pre>
+                                        <h3>Reading and Writing JSON</h3>
+                                        <p>Use the <code>json</code> module to work with JSON data:</p>
+                                        <pre><code>import json
+                    
+                    data = {'name': 'Alice', 'age': 25}
+                    with open('data.json', 'w') as file:
+                        json.dump(data, file)
+                    
+                    with open('data.json', 'r') as file:
+                        data = json.load(file)
+                        print(data)</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">Error Handling</button>
+                                <div class="collapsible-content" style="background-color: #ffebee;">
+                                    <div class="content">
+                                        <h3>Try-Except Blocks</h3>
+                                        <p>Use try-except blocks to handle exceptions:</p>
+                                        <pre><code>try:
+                        x = 1 / 0
+                    except ZeroDivisionError:
+                        print("Cannot divide by zero")</code></pre>
+                                        <h3>Finally Block</h3>
+                                        <p>Use the finally block to execute code regardless of whether an exception occurred:</p>
+                                        <pre><code>try:
+                        x = 1 / 0
+                    except ZeroDivisionError:
+                        print("Cannot divide by zero")
+                    finally:
+                        print("This runs no matter what")</code></pre>
+                                        <h3>Custom Exceptions</h3>
+                                        <p>Define custom exceptions by extending the Exception class:</p>
+                                        <pre><code>class CustomError(Exception):
+                        pass
+                    
+                    try:
+                        raise CustomError("This is a custom error")
+                    except CustomError as e:
+                        print(e)</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">Regular Expressions</button>
+                                <div class="collapsible-content" style="background-color: #e8f5e9;">
+                                    <div class="content">
+                                        <h3>Introduction to Regular Expressions</h3>
+                                        <p>Regular expressions (regex) are a powerful tool for matching patterns in text. Use the <code>re</code> module to work with regex in Python:</p>
+                                        <pre><code>import re
+                    
+                    pattern = r'\b[a-zA-Z]+\b'
+                    text = "Hello, World! 123"
+                    matches = re.findall(pattern, text)
+                    print(matches)  # Output: ['Hello', 'World']</code></pre>
+                                        <h3>Common Regex Patterns</h3>
+                                        <p>Some common regex patterns include:</p>
+                                        <ul>
+                                            <li><code>\d</code>: matches any digit</li>
+                                            <li><code>\w</code>: matches any word character</li>
+                                            <li><code>\s</code>: matches any whitespace character</li>
+                                            <li><code>[a-z]</code>: matches any lowercase letter</li>
+                                            <li><code>[A-Z]</code>: matches any uppercase letter</li>
+                                            <li><code>[0-9]</code>: matches any digit</li>
+                                            <li><code>^</code>: matches the start of a string</li>
+                                            <li><code>$</code>: matches the end of a string</li>
+                                        </ul>
+                                        <h3>Regex Functions</h3>
+                                        <p>Common regex functions include <code>re.search</code>, <code>re.match</code>, <code>re.findall</code>, and <code>re.sub</code>:</p>
+                                        <pre><code>import re
+                    
+                    pattern = r'\d+'
+                    text = "There are 123 apples and 456 oranges."
+                    
+                    # Search for the first match
+                    match = re.search(pattern, text)
+                    print(match.group())  # Output: 123
+                    
+                    # Match the entire string
+                    match = re.match(pattern, text)
+                    print(match)  # Output: None
+                    
+                    # Find all matches
+                    matches = re.findall(pattern, text)
+                    print(matches)  # Output: ['123', '456']
+                    
+                    # Substitute matches with a replacement
+                    new_text = re.sub(pattern, 'number', text)
+                    print(new_text)  # Output: There are number apples and number oranges.</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">Threading</button>
+                                <div class="collapsible-content" style="background-color: #e1f5fe;">
+                                    <div class="content">
+                                        <h3>Introduction to Threading</h3>
+                                        <p>Threading allows you to run multiple threads (smaller units of a process) concurrently. Use the <code>threading</code> module to work with threads in Python:</p>
+                                        <pre><code>import threading
+                    
+                    def print_numbers():
+                        for i in range(5):
+                            print(i)
+                    
+                    thread = threading.Thread(target=print_numbers)
+                    thread.start()
+                    thread.join()</code></pre>
+                                        <h3>Creating and Starting Threads</h3>
+                                        <p>Create and start threads using the <code>threading.Thread</code> class:</p>
+                                        <pre><code>import threading
+                    
+                    def worker():
+                        print("Worker thread")
+                    
+                    threads = []
+                    for i in range(5):
+                        thread = threading.Thread(target=worker)
+                        threads.append(thread)
+                        thread.start()
+                    
+                    for thread in threads:
+                        thread.join()</code></pre>
+                                        <h3>Thread Synchronization</h3>
+                                        <p>Use synchronization primitives like locks to coordinate access to shared resources:</p>
+                                        <pre><code>import threading
+                    
+                    lock = threading.Lock()
+                    counter = 0
+                    
+                    def increment_counter():
+                        global counter
+                        with lock:
+                            for _ in range(1000):
+                                counter += 1
+                    
+                    threads = []
+                    for _ in range(5):
+                        thread = threading.Thread(target=increment_counter)
+                        threads.append(thread)
+                        thread.start()
+                    
+                    for thread in threads:
+                        thread.join()
+                    
+                    print("Counter:", counter)</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">Web Scraping</button>
+                                <div class="collapsible-content" style="background-color: #fff3e0;">
+                                    <div class="content">
+                                        <h3>Introduction to Web Scraping</h3>
+                                        <p>Web scraping involves extracting data from websites. Use libraries like <code>requests</code> and <code>BeautifulSoup</code> for web scraping in Python:</p>
+                                        <pre><code>import requests
+                    from bs4 import BeautifulSoup
+                    
+                    url = 'https://example.com'
+                    response = requests.get(url)
+                    soup = BeautifulSoup(response.text, 'html.parser')
+                    
+                    for link in soup.find_all('a'):
+                        print(link.get('href'))</code></pre>
+                                        <h3>Making HTTP Requests</h3>
+                                        <p>Use the <code>requests</code> library to make HTTP requests:</p>
+                                        <pre><code>import requests
+                    
+                    url = 'https://example.com'
+                    response = requests.get(url)
+                    print(response.text)</code></pre>
+                                        <h3>Parsing HTML with BeautifulSoup</h3>
+                                        <p>Use the <code>BeautifulSoup</code> library to parse HTML:</p>
+                                        <pre><code>from bs4 import BeautifulSoup
+                    
+                    html = '&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, World!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;'
+                    soup = BeautifulSoup(html, 'html.parser')
+                    print(soup.h1.text)  # Output: Hello, World!</code></pre>
+                                        <h3>Scraping Data from Websites</h3>
+                                        <p>Scrape data from websites using <code>requests</code> and <code>BeautifulSoup</code>:</p>
+                                        <pre><code>import requests
+                    from bs4 import BeautifulSoup
+                    
+                    url = 'https://example.com'
+                    response = requests.get(url)
+                    soup = BeautifulSoup(response.text, 'html.parser')
+                    
+                    data = []
+                    table = soup.find('table')
+                    for row in table.find_all('tr'):
+                        columns = row.find_all('td')
+                        data.append([column.text for column in columns])
+                    
+                    print(data)</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">Advanced Topics</button>
+                                <div class="collapsible-content" style="background-color: #f0f4c3;">
+                                    <div class="content">
+                                        <h3>Decorators</h3>
+                                        <p>Decorators are a powerful feature in Python that allows you to modify the behavior of a function or class:</p>
+                                        <pre><code>def decorator_function(func):
+                        def wrapper():
+                            print("Something is happening before the function is called.")
+                            func()
+                            print("Something is happening after the function is called.")
+                        return wrapper
+                    
+                    @decorator_function
+                    def say_hello():
+                        print("Hello!")
+                    
+                    say_hello()</code></pre>
+                                        <h3>Generators</h3>
+                                        <p>Generators allow you to iterate over a sequence of values. They are created using functions and the <code>yield</code> statement:</p>
+                                        <pre><code>def my_generator():
+                        yield 1
+                        yield 2
+                        yield 3
+                    
+                    for value in my_generator():
+                        print(value)</code></pre>
+                                        <h3>Context Managers</h3>
+                                        <p>Context managers allow you to allocate and release resources precisely when you want to. They are typically used with the <code>with</code> statement:</p>
+                                        <pre><code>with open('file.txt', 'w') as f:
+                        f.write('Hello, world!')</code></pre>
+                                        <h3>Metaclasses</h3>
+                                        <p>Metaclasses are the 'classes of classes'. They define how classes behave:</p>
+                                        <pre><code>class Meta(type):
+                        def __new__(cls, name, bases, dct):
+                            print(f'Creating class {name}')
+                            return super().__new__(cls, name, bases, dct)
+                    
+                    class MyClass(metaclass=Meta):
+                        pass</code></pre>
+                                        <h3>Coroutines</h3>
+                                        <p>Coroutines are a more advanced concept than generators and can be used for cooperative multitasking:</p>
+                                        <pre><code>def my_coroutine():
+                        while True:
+                            value = (yield)
+                            print(value)
+                    
+                    coro = my_coroutine()
+                    next(coro)
+                    coro.send(10)</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">Working with Databases</button>
+                                <div class="collapsible-content" style="background-color: #ffccbc;">
+                                    <div class="content">
+                                        <h3>Introduction to Databases</h3>
+                                        <p>Databases are used to store and manage data. Use the <code>sqlite3</code> module for SQLite databases in Python:</p>
+                                        <pre><code>import sqlite3
+                    
+                    conn = sqlite3.connect('example.db')
+                    c = conn.cursor()
+                    
+                    # Create table
+                    c.execute('''CREATE TABLE IF NOT EXISTS users
+                                 (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''')
+                    
+                    # Insert a row of data
+                    c.execute("INSERT INTO users (name, age) VALUES ('Alice', 30)")
+                    
+                    # Save (commit) the changes
+                    conn.commit()
+                    
+                    # Query the database
+                    for row in c.execute('SELECT * FROM users'):
+                        print(row)
+                    
+                    # Close the connection
+                    conn.close()</code></pre>
+                                        <h3>Using SQLAlchemy</h3>
+                                        <p>SQLAlchemy is a powerful ORM (Object Relational Mapper) for working with databases:</p>
+                                        <pre><code>from sqlalchemy import create_engine, Column, Integer, String, Sequence
+                    from sqlalchemy.ext.declarative import declarative_base
+                    from sqlalchemy.orm import sessionmaker
+                    
+                    Base = declarative_base()
+                    
+                    class User(Base):
+                        __tablename__ = 'users'
+                        id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+                        name = Column(String(50))
+                        age = Column(Integer)
+                    
+                    engine = create_engine('sqlite:///example.db')
+                    Base.metadata.create_all(engine)
+                    
+                    Session = sessionmaker(bind=engine)
+                    session = Session()
+                    
+                    # Insert a user
+                    new_user = User(name='Bob', age=25)
+                    session.add(new_user)
+                    session.commit()
+                    
+                    # Query the database
+                    for user in session.query(User).all():
+                        print(user.name, user.age)</code></pre>
+                                        <h3>Working with PostgreSQL</h3>
+                                        <p>Use the <code>psycopg2</code> library to connect to a PostgreSQL database:</p>
+                                        <pre><code>import psycopg2
+                    
+                    conn = psycopg2.connect(
+                        dbname="testdb", user="testuser", password="password", host="localhost"
+                    )
+                    cur = conn.cursor()
+                    
+                    cur.execute('''CREATE TABLE IF NOT EXISTS users
+                                   (id SERIAL PRIMARY KEY, name VARCHAR(50), age INTEGER)''')
+                    cur.execute("INSERT INTO users (name, age) VALUES (%s, %s)", ('Alice', 30))
+                    conn.commit()
+                    
+                    cur.execute('SELECT * FROM users')
+                    rows = cur.fetchall()
+                    for row in rows:
+                        print(row)
+                    
+                    cur.close()
+                    conn.close()</code></pre>
+                                    </div>
+                                </div>
+                    
+                                <button class="collapsible">Network Programming</button>
+                                <div class="collapsible-content" style="background-color: #f3e5f5;">
+                                    <div class="content">
+                                        <h3>Introduction to Network Programming</h3>
+                                        <p>Network programming allows you to create applications that communicate over a network. Use the <code>socket</code> module for network programming in Python:</p>
+                                        <pre><code>import socket
+                    
+                    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    s.bind(('localhost', 8080))
+                    s.listen(5)
+                    
+                    while True:
+                        client, address = s.accept()
+                        print(f'Connection from {address}')
+                        client.send(b'Hello, World!')
+                        client.close()</code></pre>
+                                        <h3>Creating a Simple Server</h3>
+                                        <p>Create a simple server using the <code>socket</code> module:</p>
+                                        <pre><code>import socket
+                    
+                    def start_server():
+                        server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        server_socket.bind(('localhost', 8080))
+                        server_socket.listen(5)
+                        print("Server listening on port 8080")
+                    
+                        while True:
+                            client_socket, addr = server_socket.accept()
+                            print(f"Connection from {addr}")
+                            client_socket.send(b"Hello, World!")
+                            client_socket.close()
+                    
+                    start_server()</code></pre>
+                                        <h3>Creating a Simple Client</h3>
+                                        <p>Create a simple client to connect to the server:</p>
+                                        <pre><code>import socket
+                    
+                    def start_client():
+                        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        client_socket.connect(('localhost', 8080))
+                        message = client_socket.recv(1024)
+                        print(f"Received message: {message.decode('utf-8')}")
+                        client_socket.close()
+                    
+                    start_client()</code></pre>
+                                        <h3>Using HTTP with Requests</h3>
+                                        <p>Use the <code>requests</code> library to make HTTP requests:</p>
+                                        <pre><code>import requests
+                    
+                    response = requests.get
+                    <pre><code>import requests
+
+                        response = requests.get('https://api.github.com')
+                        print(response.json())</code></pre>
+                                        </div>
+                                    </div>
+                        
+                                    <button class="collapsible">Data Science</button>
+                                    <div class="collapsible-content" style="background-color: #e8eaf6;">
+                                        <div class="content">
+                                            <h3>Introduction to Data Science</h3>
+                                            <p>Data Science involves extracting knowledge from data. Use libraries like <code>Pandas</code>, <code>NumPy</code>, and <code>Scikit-learn</code> for data science tasks:</p>
+                                            <pre><code>import pandas as pd
+                        import numpy as np
+                        
+                        # Creating a DataFrame
+                        data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+                        df = pd.DataFrame(data)
+                        print(df)
+                        
+                        # Basic statistics
+                        print("Mean age:", df['Age'].mean())
+                        print("Standard deviation:", df['Age'].std())
+                        
+                        # Handling missing data
+                        df.loc[3] = ['David', np.nan]
+                        print(df)
+                        df['Age'] = df['Age'].fillna(df['Age'].mean())
+                        print(df)</code></pre>
+                                            <h3>Exploratory Data Analysis</h3>
+                                            <p>Use <code>pandas</code> for exploratory data analysis (EDA):</p>
+                                            <pre><code>import pandas as pd
+                        
+                        # Load dataset
+                        df = pd.read_csv('data.csv')
+                        
+                        # Display first few rows
+                        print(df.head())
+                        
+                        # Summary statistics
+                        print(df.describe())
+                        
+                        # Data visualization
+                        df['column_name'].hist()</code></pre>
+                                            <h3>Data Cleaning</h3>
+                                            <p>Data cleaning involves handling missing values, removing duplicates, and correcting errors:</p>
+                                            <pre><code>import pandas as pd
+                        import numpy as np
+                        
+                        # Load dataset
+                        df = pd.read_csv('data.csv')
+                        
+                        # Handling missing values
+                        df['column_name'].fillna(df['column_name'].mean(), inplace=True)
+                        
+                        # Removing duplicates
+                        df.drop_duplicates(inplace=True)
+                        
+                        # Correcting errors
+                        df['column_name'] = df['column_name'].str.lower()</code></pre>
+                                            <h3>Data Visualization</h3>
+                                            <p>Use libraries like <code>matplotlib</code> and <code>seaborn</code> for data visualization:</p>
+                                            <pre><code>import matplotlib.pyplot as plt
+                        import seaborn as sns
+                        
+                        # Load dataset
+                        df = pd.read_csv('data.csv')
+                        
+                        # Plotting a histogram
+                        plt.hist(df['column_name'])
+                        plt.show()
+                        
+                        # Plotting a scatter plot
+                        sns.scatterplot(data=df, x='column_x', y='column_y')
+                        plt.show()</code></pre>
+                                        </div>
+                                    </div>
+                        
+                                    <button class="collapsible">Machine Learning</button>
+                                    <div class="collapsible-content" style="background-color: #ffe0b2;">
+                                        <div class="content">
+                                            <h3>Introduction to Machine Learning</h3>
+                                            <p>Machine Learning involves training models to make predictions or decisions without being explicitly programmed. Use the <code>scikit-learn</code> library for machine learning in Python:</p>
+                                            <pre><code>from sklearn.datasets import load_iris
+                        from sklearn.model_selection import train_test_split
+                        from sklearn.ensemble import RandomForestClassifier
+                        from sklearn.metrics import accuracy_score
+                        
+                        # Load dataset
+                        iris = load_iris()
+                        X = iris.data
+                        y = iris.target
+                        
+                        # Split data into training and testing sets
+                        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+                        
+                        # Train a Random Forest classifier
+                        clf = RandomForestClassifier()
+                        clf.fit(X_train, y_train)
+                        
+                        # Make predictions
+                        y_pred = clf.predict(X_test)
+                        
+                        # Evaluate the model
+                        accuracy = accuracy_score(y_test, y_pred)
+                        print(f'Accuracy: {accuracy * 100:.2f}%')</code></pre>
+                                            <h3>Supervised Learning</h3>
+                                            <p>Supervised learning involves training a model on labeled data. Common algorithms include linear regression, decision trees, and support vector machines:</p>
+                                            <pre><code>from sklearn.linear_model import LinearRegression
+                        
+                        # Generate some data
+                        import numpy as np
+                        X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
+                        y = np.dot(X, np.array([1, 2])) + 3
+                        
+                        # Train the model
+                        model = LinearRegression().fit(X, y)
+                        print(model.intercept_)
+                        print(model.coef_)</code></pre>
+                                            <h3>Unsupervised Learning</h3>
+                                            <p>Unsupervised learning involves training a model on data without labels. Common algorithms include k-means clustering and principal component analysis:</p>
+                                            <pre><code>from sklearn.cluster import KMeans
+                        
+                        # Generate some data
+                        X = np.array([[1, 2], [1, 4], [1, 0], [4, 2], [4, 4], [4, 0]])
+                        
+                        # Apply k-means clustering
+                        kmeans = KMeans(n_clusters=2, random_state=0).fit(X)
+                        print(kmeans.labels_)
+                        print(kmeans.cluster_centers_)</code></pre>
+                                            <h3>Deep Learning with TensorFlow</h3>
+                                            <p>Deep Learning involves training neural networks on large datasets. Use the <code>TensorFlow</code> library for deep learning:</p>
+                                            <pre><code>import tensorflow as tf
+                        from tensorflow.keras import layers
+                        
+                        # Build a simple model
+                        model = tf.keras.Sequential([
+                            layers.Dense(64, activation='relu', input_shape=(784,)),
+                            layers.Dense(64, activation='relu'),
+                            layers.Dense(10, activation='softmax')
+                        ])
+                        
+                        # Compile the model
+                        model.compile(optimizer='adam',
+                                      loss='sparse_categorical_crossentropy',
+                                      metrics=['accuracy'])
+                        
+                        # Train the model
+                        # (Assuming X_train and y_train are your data)
+                        # model.fit(X_train, y_train, epochs=5)</code></pre>
+                                        </div>
+                                    </div>
+                        
+                                    <button class="collapsible">Network Programming</button>
+                                    <div class="collapsible-content" style="background-color: #f3e5f5;">
+                                        <div class="content">
+                                            <h3>Introduction to Network Programming</h3>
+                                            <p>Network programming allows you to create applications that communicate over a network. Use the <code>socket</code> module for network programming in Python:</p>
+                                            <pre><code>import socket
+                        
+                        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        s.bind(('localhost', 8080))
+                        s.listen(5)
+                        
+                        while True:
+                            client, address = s.accept()
+                            print(f'Connection from {address}')
+                            client.send(b'Hello, World!')
+                            client.close()</code></pre>
+                                            <h3>Creating a Simple Server</h3>
+                                            <p>Create a simple server using the <code>socket</code> module:</p>
+                                            <pre><code>import socket
+                        
+                        def start_server():
+                            server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                            server_socket.bind(('localhost', 8080))
+                            server_socket.listen(5)
+                            print("Server listening on port 8080")
+                        
+                            while True:
+                                client_socket, addr = server_socket.accept()
+                                print(f"Connection from {addr}")
+                                client_socket.send(b"Hello, World!")
+                                client_socket.close()
+                        
+                        start_server()</code></pre>
+                                            <h3>Creating a Simple Client</h3>
+                                            <p>Create a simple client to connect to the server:</p>
+                                            <pre><code>import socket
+                        
+                        def start_client():
+                            client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                            client_socket.connect(('localhost', 8080))
+                            message = client_socket.recv(1024)
+                            print(f"Received message: {message.decode('utf-8')}")
+                            client_socket.close()
+                        
+                        start_client()</code></pre>
+                                            <h3>Using HTTP with Requests</h3>
+                                            <p>Use the <code>requests</code> library to make HTTP requests:</p>
+                                            <pre><code>import requests
+                        
+                        response = requests.get('https://api.github.com')
+                        print(response.json())</code></pre>
+                                        </div>
+                                    </div>
+                        
+                                    <button class="collapsible">Advanced Topics</button>
+                                    <div class="collapsible-content" style="background-color: #f0f4c3;">
+                                        <div class="content">
+                                            <h3>Decorators</h3>
+                                            <p>Decorators are a powerful feature in Python that allows you to modify the behavior of a function or class:</p>
+                                            <pre><code>def decorator_function(func):
+                            def wrapper():
+                                print("Something is happening before the function is called.")
+                                func()
+                                print("Something is happening after the function is called.")
+                            return wrapper
+                        
+                        @decorator_function
+                        def say_hello():
+                            print("Hello!")
+                        
+                        say_hello()</code></pre>
+                                            <h3>Generators</h3>
+                                            <p>Generators allow you to iterate over a sequence of values. They are created using functions and the <code>yield</code> statement:</p>
+                                            <pre><code>def my_generator():
+                                                yield 1
+                                                yield 2
+                                                yield 3
+                                            
+                                            for value in my_generator():
+                                                print(value)</code></pre>
+                                                                <h3>Context Managers</h3>
+                                                                <p>Context managers allow you to allocate and release resources precisely when you want to. They are typically used with the <code>with</code> statement:</p>
+                                                                <pre><code>with open('file.txt', 'w') as f:
+                                                f.write('Hello, world!')</code></pre>
+                                                                <h3>Metaclasses</h3>
+                                                                <p>Metaclasses are the 'classes of classes'. They define how classes behave:</p>
+                                                                <pre><code>class Meta(type):
+                                                def __new__(cls, name, bases, dct):
+                                                    print(f'Creating class {name}')
+                                                    return super().__new__(cls, name, bases, dct)
+                                            
+                                            class MyClass(metaclass=Meta):
+                                                pass</code></pre>
+                                                                <h3>Coroutines</h3>
+                                                                <p>Coroutines are a more advanced concept than generators and can be used for cooperative multitasking:</p>
+                                                                <pre><code>def my_coroutine():
+                                                while True:
+                                                    value = (yield)
+                                                    print(value)
+                                            
+                                            coro = my_coroutine()
+                                            next(coro)
+                                            coro.send(10)</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Working with Databases</button>
+                                                        <div class="collapsible-content" style="background-color: #ffccbc;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Databases</h3>
+                                                                <p>Databases are used to store and manage data. Use the <code>sqlite3</code> module for SQLite databases in Python:</p>
+                                                                <pre><code>import sqlite3
+                                            
+                                            conn = sqlite3.connect('example.db')
+                                            c = conn.cursor()
+                                            
+                                            # Create table
+                                            c.execute('''CREATE TABLE IF NOT EXISTS users
+                                                         (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''')
+                                            
+                                            # Insert a row of data
+                                            c.execute("INSERT INTO users (name, age) VALUES ('Alice', 30)")
+                                            
+                                            # Save (commit) the changes
+                                            conn.commit()
+                                            
+                                            # Query the database
+                                            for row in c.execute('SELECT * FROM users'):
+                                                print(row)
+                                            
+                                            # Close the connection
+                                            conn.close()</code></pre>
+                                                                <h3>Using SQLAlchemy</h3>
+                                                                <p>SQLAlchemy is a powerful ORM (Object Relational Mapper) for working with databases:</p>
+                                                                <pre><code>from sqlalchemy import create_engine, Column, Integer, String, Sequence
+                                            from sqlalchemy.ext.declarative import declarative_base
+                                            from sqlalchemy.orm import sessionmaker
+                                            
+                                            Base = declarative_base()
+                                            
+                                            class User(Base):
+                                                __tablename__ = 'users'
+                                                id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+                                                name = Column(String(50))
+                                                age = Column(Integer)
+                                            
+                                            engine = create_engine('sqlite:///example.db')
+                                            Base.metadata.create_all(engine)
+                                            
+                                            Session = sessionmaker(bind=engine)
+                                            session = Session()
+                                            
+                                            # Insert a user
+                                            new_user = User(name='Bob', age=25)
+                                            session.add(new_user)
+                                            session.commit()
+                                            
+                                            # Query the database
+                                            for user in session.query(User).all():
+                                                print(user.name, user.age)</code></pre>
+                                                                <h3>Working with PostgreSQL</h3>
+                                                                <p>Use the <code>psycopg2</code> library to connect to a PostgreSQL database:</p>
+                                                                <pre><code>import psycopg2
+                                            
+                                            conn = psycopg2.connect(
+                                                dbname="testdb", user="testuser", password="password", host="localhost"
+                                            )
+                                            cur = conn.cursor()
+                                            
+                                            cur.execute('''CREATE TABLE IF NOT EXISTS users
+                                                           (id SERIAL PRIMARY KEY, name VARCHAR(50), age INTEGER)''')
+                                            cur.execute("INSERT INTO users (name, age) VALUES (%s, %s)", ('Alice', 30))
+                                            conn.commit()
+                                            
+                                            cur.execute('SELECT * FROM users')
+                                            rows = cur.fetchall()
+                                            for row in rows:
+                                                print(row)
+                                            
+                                            cur.close()
+                                            conn.close()</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Network Programming</button>
+                                                        <div class="collapsible-content" style="background-color: #f3e5f5;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Network Programming</h3>
+                                                                <p>Network programming allows you to create applications that communicate over a network. Use the <code>socket</code> module for network programming in Python:</p>
+                                                                <pre><code>import socket
+                                            
+                                            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                                            s.bind(('localhost', 8080))
+                                            s.listen(5)
+                                            
+                                            while True:
+                                                client, address = s.accept()
+                                                print(f'Connection from {address}')
+                                                client.send(b'Hello, World!')
+                                                client.close()</code></pre>
+                                                                <h3>Creating a Simple Server</h3>
+                                                                <p>Create a simple server using the <code>socket</code> module:</p>
+                                                                <pre><code>import socket
+                                            
+                                            def start_server():
+                                                server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                                                server_socket.bind(('localhost', 8080))
+                                                server_socket.listen(5)
+                                                print("Server listening on port 8080")
+                                            
+                                                while True:
+                                                    client_socket, addr = server_socket.accept()
+                                                    print(f"Connection from {addr}")
+                                                    client_socket.send(b"Hello, World!")
+                                                    client_socket.close()
+                                            
+                                            start_server()</code></pre>
+                                                                <h3>Creating a Simple Client</h3>
+                                                                <p>Create a simple client to connect to the server:</p>
+                                                                <pre><code>import socket
+                                            
+                                            def start_client():
+                                                client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                                                client_socket.connect(('localhost', 8080))
+                                                message = client_socket.recv(1024)
+                                                print(f"Received message: {message.decode('utf-8')}")
+                                                client_socket.close()
+                                            
+                                            start_client()</code></pre>
+                                                                <h3>Using HTTP with Requests</h3>
+                                                                <p>Use the <code>requests</code> library to make HTTP requests:</p>
+                                                                <pre><code>import requests
+                                            
+                                            response = requests.get('https://api.github.com')
+                                            print(response.json())</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Data Science</button>
+                                                        <div class="collapsible-content" style="background-color: #e8eaf6;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Data Science</h3>
+                                                                <p>Data Science involves extracting knowledge from data. Use libraries like <code>Pandas</code>, <code>NumPy</code>, and <code>Scikit-learn</code> for data science tasks:</p>
+                                                                <pre><code>import pandas as pd
+                                            import numpy as np
+                                            
+                                            # Creating a DataFrame
+                                            data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+                                            df = pd.DataFrame(data)
+                                            print(df)
+                                            
+                                            # Basic statistics
+                                            print("Mean age:", df['Age'].mean())
+                                            print("Standard deviation:", df['Age'].std())
+                                            
+                                            # Handling missing data
+                                            df.loc[3] = ['David', np.nan]
+                                            print(df)
+                                            df['Age'] = df['Age'].fillna(df['Age'].mean())
+                                            print(df)</code></pre>
+                                                                <h3>Exploratory Data Analysis</h3>
+                                                                <p>Use <code>pandas</code> for exploratory data analysis (EDA):</p>
+                                                                <pre><code>import pandas as pd
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('data.csv')
+                                            
+                                            # Display first few rows
+                                            print(df.head())
+                                            
+                                            # Summary statistics
+                                            print(df.describe())
+                                            
+                                            # Data visualization
+                                            df['column_name'].hist()</code></pre>
+                                                                <h3>Data Cleaning</h3>
+                                                                <p>Data cleaning involves handling missing values, removing duplicates, and correcting errors:</p>
+                                                                <pre><code>import pandas as pd
+                                            import numpy as np
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('data.csv')
+                                            
+                                            # Handling missing values
+                                            df['column_name'].fillna(df['column_name'].mean(), inplace=True)
+                                            
+                                            # Removing duplicates
+                                            df.drop_duplicates(inplace=True)
+                                            
+                                            # Correcting errors
+                                            df['column_name'] = df['column_name'].str.lower()</code></pre>
+                                                                <h3>Data Visualization</h3>
+                                                                <p>Use libraries like <code>matplotlib</code> and <code>seaborn</code> for data visualization:</p>
+                                                                <pre><code>import matplotlib.pyplot as plt
+                                            import seaborn as sns
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('data.csv')
+                                            
+                                            # Plotting a histogram
+                                            plt.hist(df['column_name'])
+                                            plt.show()
+                                            
+                                            # Plotting a scatter plot
+                                            sns.scatterplot(data=df, x='column_x', y='column_y')
+                                            plt.show()</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Machine Learning</button>
+                                                        <div class="collapsible-content" style="background-color: #ffe0b2;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Machine Learning</h3>
+                                                                <p>Machine Learning involves training models to make predictions or decisions without being explicitly programmed. Use the <code>scikit-learn</code> library for machine learning in Python:</p>
+                                                                <pre><code>from sklearn.datasets import load_iris
+                                            from sklearn.model_selection import train_test_split
+                                            from sklearn.ensemble import RandomForestClassifier
+                                            from sklearn.metrics import accuracy_score
+                                            
+                                            # Load dataset
+                                            iris = load_iris()
+                                            X = iris.data
+                                            y = iris.target
+                                            
+                                            # Split data into training and testing sets
+                                            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+                                            
+                                            # Train a Random Forest classifier
+                                            clf = RandomForestClassifier()
+                                            clf.fit(X_train, y_train)
+                                            
+                                            # Make predictions
+                                            y_pred = clf.predict(X_test)
+                                            
+                                            # Evaluate the model
+                                            accuracy = accuracy_score(y_test, y_pred)
+                                            print(f'Accuracy: {accuracy * 100:.2f}%')</code></pre>
+                                                                <h3>Supervised Learning</h3>
+                                                                <p>Supervised learning involves training a model on labeled data. Common algorithms include linear regression, decision trees, and support vector machines:</p>
+                                                                <pre><code>from sklearn.linear_model import LinearRegression
+                                            
+                                            # Generate some data
+                                            import numpy as np
+                                            X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
+                                            y = np.dot(X, np.array([1, 2])) + 3
+                                            
+                                            # Train the model
+                                            model = LinearRegression().fit(X, y)
+                                            print(model.intercept_)
+                                            print(model.coef_)</code></pre>
+                                                                <h3>Unsupervised Learning</h3>
+                                                                <p>Unsupervised learning involves training a model on data without labels. Common algorithms include k-means clustering and principal component analysis:</p>
+                                                                <pre><code>from sklearn.cluster import KMeans
+                                            
+                                            # Generate some data
+                                            X = np.array([[1, 2], [1, 4], [1, 0], [4, 2], [4, 4], [4, 0]])
+                                            
+                                            # Apply k-means clustering
+                                            kmeans = KMeans(n_clusters=2, random_state=0).fit(X)
+                                            print(kmeans.labels_)
+                                            print(kmeans.cluster_centers_)</code></pre>
+                                                                <h3>Deep Learning with TensorFlow</h3>
+                                                                <p>Deep Learning involves training neural networks on large datasets. Use the <code>TensorFlow</code> library for deep learning:</p>
+                                                                <pre><code>import tensorflow as tf
+                                            from tensorflow.keras import layers
+                                            
+                                            # Build a simple model
+                                            model = tf.keras.Sequential([
+                                                layers.Dense(64, activation='relu', input_shape=(784,)),
+                                                layers.Dense(64, activation='relu'),
+                                                layers.Dense(10, activation='softmax')
+                                            ])
+                                            
+                                            # Compile the model
+                                            model.compile(optimizer='adam',
+                                                          loss='sparse_categorical_crossentropy',
+                                                          metrics=['accuracy'])
+                                            
+                                            # Train the model
+                                            # (Assuming X_train and y_train are your data)
+                                            # model.fit(X_train, y_train, epochs=5)</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Data Visualization</button>
+                                                        <div class="collapsible-content" style="background-color: #ffecb3;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Data Visualization</h3>
+                                                                <p>Data visualization helps to understand data better by representing it graphically. Use libraries like <code>matplotlib</code> and <code>seaborn</code> for data visualization:</p>
+                                                                <pre><code>import matplotlib.pyplot as plt
+                                            import seaborn as sns
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('data.csv')
+                                            
+                                            # Plotting a histogram
+                                            plt.hist(df['column_name'])
+                                            plt.title('Histogram')
+                                            plt.xlabel('Values')
+                                            plt.ylabel('Frequency')
+                                            plt.show()
+                                            
+                                            # Plotting a scatter plot
+                                            sns.scatterplot(data=df, x='column_x', y='column_y')
+                                            plt.title('Scatter Plot')
+                                            plt.xlabel('X Values')
+                                            plt.ylabel('Y Values')
+                                            plt.show()</code></pre>
+                                                                <h3>Bar Plots and Line Charts</h3>
+                                                                <p>Use <code>matplotlib</code> and <code>seaborn</code> for bar plots and line charts:</p>
+                                                                <pre><code>import matplotlib.pyplot as plt
+                                            import seaborn as sns
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('data.csv')
+                                            
+                                            # Bar plot
+                                            sns.barplot(x='category', y='value', data=df)
+                                            plt.title('Bar Plot')
+                                            plt.xlabel('Category')
+                                            plt.ylabel('Value')
+                                            plt.show()
+                                            
+                                            # Line chart
+                                            plt.plot(df['date'], df['value'])
+                                            plt.title('Line Chart')
+                                            plt.xlabel('Date')
+                                            plt.ylabel('Value')
+                                            plt.show()</code></pre>
+                                                                <h3>Heatmaps and Pair Plots</h3>
+                                                                <p>Use <code>seaborn</code> for advanced visualizations like heatmaps and pair plots:</p>
+                                                                <pre><code>import seaborn as sns
+                                            import pandas as pd
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('data.csv')
+                                            
+                                            # Heatmap
+                                            sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+                                            plt.title('Heatmap')
+                                            plt.show()
+                                            
+                                            # Pair plot
+                                            sns.pairplot(df)
+                                            plt.title('Pair Plot')
+                                            plt.show()</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Web Development with Flask</button>
+                                                        <div class="collapsible-content" style="background-color: #e8f5e9;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Flask</h3>
+                                                                <p>Flask is a lightweight WSGI web application framework in Python. It is designed to make getting started quick and easy, with the ability to scale up to complex applications:</p>
+                                                                <pre><code>from flask import Flask
+                                            
+                                            app = Flask(__name__)
+                                            
+                                            @app.route('/')
+                                            def home():
+                                                return "Hello, Flask!"
+                                            
+                                            if __name__ == '__main__':
+                                                app.run(debug=True)</code></pre>
+                                                                <h3>Creating Routes</h3>
+                                                                <p>Define routes in Flask to map URLs to functions:</p>
+                                                                <pre><code>from flask import Flask
+                                            
+                                            app = Flask(__name__)
+                                            
+                                            @app.route('/')
+                                            def home():
+                                                return "Home Page"
+                                            
+                                            @app.route('/about')
+                                            def about():
+                                                return "About Page"
+                                            
+                                            if __name__ == '__main__':
+                                                app.run(debug=True)</code></pre>
+                                                                <h3>Rendering Templates</h3>
+                                                                <p>Use the Jinja2 templating engine to render HTML templates:</p>
+                                                                <pre><code>from flask import Flask, render_template
+                                            
+                                            app = Flask(__name__)
+                                            
+                                            @app.route('/')
+                                            def home():
+                                                return render_template('home.html')
+                                            
+                                            @app.route('/about')
+                                            def about():
+                                                return render_template('about.html')
+                                            
+                                            if __name__ == '__main__':
+                                                app.run(debug=True)</code></pre>
+                                                                <h3>Handling Forms</h3>
+                                                                <p>Handle form data in Flask applications:</p>
+                                                                <pre><code>from flask import Flask, render_template, request
+                                            
+                                            app = Flask(__name__)
+                                            
+                                            @app.route('/')
+                                            def home():
+                                                return render_template('home.html')
+                                            
+                                            @app.route('/submit', methods=['POST'])
+                                            def submit():
+                                                name = request.form['name']
+                                                return f"Hello, {name}!"
+                                            
+                                            if __name__ == '__main__':
+                                                app.run(debug=True)</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">APIs with Flask</button>
+                                                        <div class="collapsible-content" style="background-color: #f0f4c3;">
+                                                            <div class="content">
+                                                                <h3>Building APIs with Flask</h3>
+                                                                <p>Build APIs using Flask and the Flask-RESTful extension:</p>
+                                                                <pre><code>from flask import Flask, request
+                                            from flask_restful import Resource, Api
+                                            
+                                            app = Flask(__name__)
+                                            api = Api(app)
+                                            
+                                            class HelloWorld(Resource):
+                                                def get(self):
+                                                    return {'hello': 'world'}
+                                            
+                                            api.add_resource(HelloWorld, '/')
+                                            
+                                            if __name__ == '__main__':
+                                                app.run(debug=True)</code></pre>
+                                                                <h3>Creating API Endpoints</h3>
+                                                                <p>Define API endpoints in Flask-RESTful:</p>
+                                                                <pre><code>from flask import Flask, request
+                                            from flask_restful import Resource, Api
+                                            
+                                            app = Flask(__name__)
+                                            api = Api(app)
+                                            
+                                            class Item(Resource):
+                                                def get(self, name):
+                                                    return {'item': name}
+                                            
+                                            api.add_resource(Item, '/item/<string:name>')
+                                            
+                                            if __name__ == '__main__':
+                                                app.run(debug=True)</code></pre>
+                                                                <h3>Handling JSON Data</h3>
+                                                                <p>Handle JSON data in Flask:</p>
+                                                                <pre><code>from flask import Flask, request, jsonify
+                                            
+                                            app = Flask(__name__)
+                                            
+                                            @app.route('/data', methods=['POST'])
+                                            def data():
+                                                json_data = request.get_json()
+                                                return jsonify(json_data)
+                                            
+                                            if __name__ == '__main__':
+                                                app.run(debug=True)</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Django Framework</button>
+                                                        <div class="collapsible-content" style="background-color: #ffecb3;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Django</h3>
+                                                                <p>Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design:</p>
+                                                                <pre><code>pip install django
+                                            
+                                            django-admin startproject myproject
+                                            cd myproject
+                                            python manage.py runserver</code></pre>
+                                                                <h3>Creating Models</h3>
+                                                                <p>Define data models in Django:</p>
+                                                                <pre><code>from django.db import models
+                                            
+                                            class Person(models.Model):
+                                                name = models.CharField(max_length=100)
+                                                age = models.IntegerField()</code></pre>
+                                                                <h3>Creating Views</h3>
+                                                                <p>Define views in Django to handle requests and return responses:</p>
+                                                                <pre><code>from django.http import HttpResponse
+                                            
+                                            def home(request):
+                                                return HttpResponse("Hello, Django!")</code></pre>
+                                                                <h3>URL Routing</h3>
+                                                                <p>Define URL patterns in Django:</p>
+                                                                <pre><code>from django.urls import path
+                                            from . import views
+                                            
+                                            urlpatterns = [
+                                                path('', views.home, name='home'),
+                                            ]</code></pre>
+                                                                <h3>Using Templates</h3>
+                                                                <p>Use the Django templating engine to render HTML:</p>
+                                                                <pre><code>{% raw %}{% extends "base_generic.html" %}
+                                            
+                                            {% block content %}
+                                              <h1>{{ title }}</h1>
+                                              <p>{{ message }}</p>
+                                            {% endblock %}{% endraw %}</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Data Visualization with Plotly</button>
+                                                        <div class="collapsible-content" style="background-color: #e8f5e9;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Plotly</h3>
+                                                                <p>Plotly is a graphing library that makes interactive, publication-quality graphs online. It can be used in Python to create a wide variety of visualizations:</p>
+                                                                <pre><code>import plotly.express as px
+                                            
+                                            # Load dataset
+                                            df = px.data.iris()
+                                            
+                                            # Create a scatter plot
+                                            fig = px.scatter(df, x='sepal_width', y='sepal_length', color='species', title='Iris Dataset')
+                                            fig.show()</code></pre>
+                                                                <h3>Creating Bar Charts and Pie Charts</h3>
+                                                                <p>Use Plotly to create bar charts and pie charts:</p>
+                                                                <pre><code>import plotly.express as px
+                                            
+                                            # Bar chart
+                                            df = px.data.tips()
+                                            fig = px.bar(df, x='sex', y='total_bill', color='smoker', barmode='group', title='Total Bill by Sex and Smoker')
+                                            fig.show()
+                                            
+                                            # Pie chart
+                                            fig = px.pie(df, values='total_bill', names='day', title='Total Bill by Day')
+                                            fig.show()</code></pre>
+                                                                <h3>Advanced Visualizations</h3>
+                                                                <p>Create advanced visualizations like histograms and box plots:</p>
+                                                                <pre><code>import plotly.express as px
+                                            
+                                            # Histogram
+                                            fig = px.histogram(df, x='total_bill', nbins=20, title='Histogram of Total Bill')
+                                            fig.show()
+                                            
+                                            # Box plot
+                                            fig = px.box(df, x='day', y='total_bill', color='smoker', title='Box Plot of Total Bill by Day and Smoker')
+                                            fig.show()</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Natural Language Processing (NLP)</button>
+                                                        <div class="collapsible-content" style="background-color: #fff3e0;">
+                                                            <div class="content">
+                                                                <h3>Introduction to NLP</h3>
+                                                                <p>Natural Language Processing (NLP) involves the interaction between computers and human language. Use the <code>nltk</code> and <code>spaCy</code> libraries for NLP tasks:</p>
+                                                                <pre><code>import nltk
+                                            nltk.download('punkt')
+                                            
+                                            from nltk.tokenize import word_tokenize
+                                            
+                                            text = "Hello, world! This is a test."
+                                            tokens = word_tokenize(text)
+                                            print(tokens)</code></pre>
+                                                                <h3>Text Preprocessing</h3>
+                                                                <p>Preprocess text data for NLP tasks:</p>
+                                                                <pre><code>import nltk
+                                            nltk.download('stopwords')
+                                            from nltk.corpus import stopwords
+                                            from nltk.tokenize import word_tokenize
+                                            
+                                            text = "This is a sample sentence, showing off the stop words filtration."
+                                            stop_words = set(stopwords.words('english'))
+                                            
+                                            word_tokens = word_tokenize(text)
+                                            
+                                            filtered_sentence = [w for w in word_tokens if not w.lower() in stop_words]
+                                            
+                                            print(filtered_sentence)</code></pre>
+                                                                <h3>Named Entity Recognition (NER)</h3>
+                                                                <p>Use spaCy for Named Entity Recognition:</p>
+                                                                <pre><code>import spacy
+                                            
+                                            nlp = spacy.load("en_core_web_sm")
+                                            doc = nlp("Apple is looking at buying U.K. startup for $1 billion")
+                                            for ent in doc.ents:
+                                                print(ent.text, ent.label_)</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Time Series Analysis</button>
+                                                        <div class="collapsible-content" style="background-color: #e1f5fe;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Time Series Analysis</h3>
+                                                                <p>Time Series Analysis involves analyzing time series data to extract meaningful statistics and identify patterns. Use the <code>statsmodels</code> and <code>pandas</code> libraries for time series analysis:</p>
+                                                                <pre><code>import pandas as pd
+                                            import matplotlib.pyplot as plt
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('time_series.csv', index_col='date', parse_dates=True)
+                                            
+                                            # Plot time series
+                                            df['value'].plot(title='Time Series')
+                                            plt.xlabel('Date')
+                                            plt.ylabel('Value')
+                                            plt.show()</code></pre>
+                                                                <h3>Decomposition</h3>
+                                                                <p>Decompose time series data into trend, seasonal, and residual components:</p>
+                                                                <pre><code>import pandas as pd
+                                            from statsmodels.tsa.seasonal import seasonal_decompose
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('time_series.csv', index_col='date', parse_dates=True)
+                                            
+                                            # Decompose time series
+                                            result = seasonal_decompose(df['value'], model='additive')
+                                            result.plot()
+                                            plt.show()</code></pre>
+                                                                <h3>ARIMA Modeling</h3>
+                                                                <p>Use ARIMA models for time series forecasting:</p>
+                                                                <pre><code>import pandas as pd
+                                            from statsmodels.tsa.arima_model import ARIMA
+                                            import matplotlib.pyplot as plt
+                                            
+                                            # Load dataset
+                                            df = pd.read_csv('time_series.csv', index_col='date', parse_dates=True)
+                                            
+                                            # Fit ARIMA model
+                                            model = ARIMA(df['value'], order=(5, 1, 0))
+                                            model_fit = model.fit(disp=0)
+                                            print(model_fit.summary())
+                                            
+                                            # Plot forecasts
+                                            df['value'].plot()
+                                            model_fit.plot_predict(dynamic=False)
+                                            plt.show()</code></pre>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <button class="collapsible">Web Scraping with Selenium</button>
+                                                        <div class="collapsible-content" style="background-color: #e8f5e9;">
+                                                            <div class="content">
+                                                                <h3>Introduction to Selenium</h3>
+                                                                <p>Selenium is a powerful tool for controlling web browsers through programs and performing browser automation. It is functional for all browsers, works on all major OS:</p>
+                                                                <pre><code>from selenium import webdriver
+                                            
+                                            # Set up the driver
+                                            driver = webdriver.Chrome()
+                                            
+                                            # Open a website
+                                            driver.get("https://www.example.com")
+                                            
+                                            # Find an element
+                                            element = driver.find_element_by_name("q")
+                                            element.send_keys("Hello, world!")
+                                            element.submit()
+                                            
+                                            # Close the browser
+                                            driver.quit()</code></pre>
+                                                                <h3>Web Scraping with Selenium</h3>
+                                                                <p>Use Selenium to scrape data from websites:</p>
+                                                                <pre><code>from selenium import webdriver
+                                            from selenium.webdriver.common.by import By
+                                            
+                                            # Set up the driver
+                                            driver = webdriver.Chrome()
+                                            
+                                            # Open a website
+                                            driver.get("https://www.example.com")
+                                            
+                                            # Find elements
+                                            titles = driver.find_elements(By.CLASS_NAME, "title")
+                                            for title in titles:
+                                                print(title.text)
+                                            
+                                            # Close the browser
+                                            driver.quit()</code></pre>
+                                                                <h3>Handling Dynamic Content</h3>
+                                                                <p>Handle dynamic content and wait for elements to load:</p>
+                                                                <pre><code>from selenium import webdriver
+                                            from selenium.webdriver.common.by import By
+                                            from selenium.webdriver.support.ui import WebDriverWait
+                                            from selenium.webdriver.support import expected_conditions as EC
+                                            
+                                            # Set up the driver
+                                            driver = webdriver.Chrome()
+                                            
+                                            # Open a website
+                                            driver.get("https://www.example.com")
+                                            
+                                            # Wait for an element to load
+                                            element = WebDriverWait(driver, 10).until(
+                                                EC.presence_of_element_located((By.ID, "myDynamicElement"))
+                                            )
+                                            print(element.text)
+                                            
+                                            # Close the browser
+                                            driver.quit()</code></pre>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </main>
+                                                <script>
+                                                    const collapsibles = document.querySelectorAll('.collapsible');
+                                                    collapsibles.forEach(collapsible => {
+                                                        collapsible.addEventListener('click', function() {
+                                                            this.classList.toggle('active');
+                                                            const content = this.nextElementSibling;
+                                                            if (content.style.display === 'block') {
+                                                                content.style.display = 'none';
+                                                            } else {
+                                                                content.style.display = 'block';
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+                                            </body>
+                                            </html>

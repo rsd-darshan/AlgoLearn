@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Course</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #cbcdcf;
+            color: rgb(1, 1, 1);
+            padding: 1em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #4848d8;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 1em;
+        }
+        pre {
+            background-color: #ffffff;
+            border: 1px solid #040404;
+            padding: 1em;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section-title {
+            cursor: pointer;
+            color: #0a0a0a;
+            font-weight: bold;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            margin-bottom: 0.5em;
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            background-color: #282525;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .section-title:hover {
+            background-color: #e1e1e1;
+        }
+        .content {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            margin-bottom: 1em;
+        }
+        .collapsible {
+            background-color: #f1f1f1;
+            border: none;
+            color: #0612ef;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: #000000;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212";
+        }
+        .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: rgb(19, 18, 18);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C Programming Course</h1>
+        <nav>
+            <a href="course.html">Back to Courses</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Course Overview</h2>
+        <p>This course covers various topics in C Programming, including basic syntax, data types, control structures, functions, pointers, arrays, and more. Each section provides detailed explanations and examples to help you understand and apply C programming concepts.</p>
+        <div id="sections">
+            <button class="collapsible">Introduction to C</button>
+            <div class="collapsible-content" style="background-color: #f9f9f9;">
+                <div class="content">
+                    <h3>Introduction</h3>
+                    <p>C is a general-purpose programming language that is extremely popular, simple, and flexible to use. It is a structured programming language that is machine-independent and extensively used in various applications.</p>
+                    <pre><code>// Example: Hello World in C
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+</code></pre>
+                    <h3>History of C</h3>
+                    <p>C was developed in the early 1970s by Dennis Ritchie at Bell Labs. It was designed to be compiled using a relatively straightforward compiler, to provide low-level access to memory, to provide language constructs that map efficiently to machine instructions, and to require minimal run-time support.</p>
+                    <h3>Features of C</h3>
+                    <ul>
+                        <li>Simple</li>
+                        <li>Portable</li>
+                        <li>Mid-level programming language</li>
+                        <li>Structured programming language</li>
+                        <li>Extensible</li>
+                        <li>Rich library</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Data Types and Variables</button>
+            <div class="collapsible-content" style="background-color: #f0f9ff;">
+                <div class="content">
+                    <h3>Data Types</h3>
+                    <p>Data types in C specify the type of data that a variable can hold. There are several types of data types in C:</p>
+                    <ul>
+                        <li><strong>Basic Data Types:</strong> int, char, float, double</li>
+                        <li><strong>Derived Data Types:</strong> array, pointer, structure, union</li>
+                        <li><strong>Enumeration Data Type:</strong> enum</li>
+                        <li><strong>Void Data Type:</strong> void</li>
+                    </ul>
+                    <pre><code>// Example: Using Data Types
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10;
+    float b = 5.5;
+    char c = 'A';
+    printf("Integer: %d\n", a);
+    printf("Float: %f\n", b);
+    printf("Character: %c\n", c);
+    return 0;
+}
+</code></pre>
+                    <h3>Variables</h3>
+                    <p>Variables are containers for storing data values. A variable is created by declaring its type and name:</p>
+                    <pre><code>// Example: Declaring Variables
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10;
+    float b = 20.5;
+    char c = 'Z';
+    printf("a = %d, b = %f, c = %c\n", a, b, c);
+    return 0;
+}
+</code></pre>
+                    <h3>Constants</h3>
+                    <p>Constants are like variables, except that their values cannot be changed during program execution. Constants can be defined using the <code>#define</code> preprocessor directive or the <code>const</code> keyword.</p>
+                    <pre><code>// Example: Using Constants
+#include &lt;stdio.h&gt;
+
+#define PI 3.14
+
+int main() {
+    const int a = 10;
+    printf("Value of PI: %f\n", PI);
+    printf("Value of a: %d\n", a);
+    return 0;
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Operators</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Arithmetic Operators</h3>
+                    <p>Arithmetic operators are used to perform mathematical operations such as addition, subtraction, multiplication, and division.</p>
+                    <pre><code>// Example: Arithmetic Operators
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10, b = 20;
+    printf("a + b = %d\n", a + b);
+    printf("a - b = %d\n", a - b);
+    printf("a * b = %d\n", a * b);
+    printf("a / b = %d\n", a / b);
+    printf("a %% b = %d\n", a % b);
+    return 0;
+}
+</code></pre>
+                    <h3>Relational Operators</h3>
+                    <p>Relational operators are used to compare two values. They return true or false depending on the condition.</p>
+                    <pre><code>// Example: Relational Operators
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10, b = 20;
+    printf("a == b: %d\n", a == b);
+    printf("a != b: %d\n", a != b);
+    printf("a &gt; b: %d\n", a &gt; b);
+    printf("a &lt; b: %d\n", a &lt; b);
+    printf("a &gt;= b: %d\n", a &gt;= b);
+    printf("a &lt;= b: %d\n", a &lt;= b);
+    return 0;
+}
+</code></pre>
+                   
+<h3>Logical Operators</h3>
+<p>Logical operators are used to combine two or more conditions. Common logical operators include AND (&&), OR (||), and NOT (!).</p>
+<pre><code>// Example: Logical Operators
+#include &lt;stdio.h&gt;
+
+int main() {
+int a = 10, b = 20;
+int c = 0;
+if (a && b) {
+printf("a AND b are true\n");
+}
+if (a || c) {
+printf("a OR c is true\n");
+}
+if (!c) {
+printf("NOT c is true\n");
+}
+return 0;
+}
+</code></pre>
+<h3>Bitwise Operators</h3>
+<p>Bitwise operators perform bit-level operations on data. Common bitwise operators include AND (&), OR (|), XOR (^), NOT (~), left shift (<<), and right shift (>>).</p>
+<pre><code>// Example: Bitwise Operators
+#include &lt;stdio.h&gt;
+
+int main() {
+int a = 5; // 0101 in binary
+int b = 9; // 1001 in binary
+printf("a & b = %d\n", a & b);  // 0001 = 1
+printf("a | b = %d\n", a | b);  // 1101 = 13
+printf("a ^ b = %d\n", a ^ b);  // 1100 = 12
+printf("~a = %d\n", ~a);  // 1010 = -6
+printf("a << 1 = %d\n", a << 1);  // 1010 = 10
+printf("a >> 1 = %d\n", a >> 1);  // 0010 = 2
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Control Structures</button>
+<div class="collapsible-content" style="background-color: #f0fff0;">
+<div class="content">
+<h3>Conditional Statements</h3>
+<p>Conditional statements allow you to execute specific code based on whether a condition is true or false. Common conditional statements include if, if-else, and switch.</p>
+<pre><code>// Example: if-else Statement
+#include &lt;stdio.h&gt;
+
+int main() {
+int a = 10;
+if (a > 5) {
+printf("a is greater than 5\n");
+} else {
+printf("a is not greater than 5\n");
+}
+return 0;
+}
+</code></pre>
+<pre><code>// Example: switch Statement
+#include &lt;stdio.h&gt;
+
+int main() {
+int day = 4;
+switch (day) {
+case 1:
+printf("Monday\n");
+break;
+case 2:
+printf("Tuesday\n");
+break;
+case 3:
+printf("Wednesday\n");
+break;
+case 4:
+printf("Thursday\n");
+break;
+case 5:
+printf("Friday\n");
+break;
+case 6:
+printf("Saturday\n");
+break;
+case 7:
+printf("Sunday\n");
+break;
+default:
+printf("Invalid day\n");
+}
+return 0;
+}
+</code></pre>
+<h3>Looping Statements</h3>
+<p>Looping statements allow you to execute a block of code multiple times. Common looping statements include for, while, and do-while loops.</p>
+<pre><code>// Example: for Loop
+#include &lt;stdio.h&gt;
+
+int main() {
+for (int i = 0; i < 5; i++) {
+printf("i = %d\n", i);
+}
+return 0;
+}
+</code></pre>
+<pre><code>// Example: while Loop
+#include &lt;stdio.h&gt;
+
+int main() {
+int i = 0;
+while (i < 5) {
+printf("i = %d\n", i);
+i++;
+}
+return 0;
+}
+</code></pre>
+<pre><code>// Example: do-while Loop
+#include &lt;stdio.h&gt;
+
+int main() {
+int i = 0;
+do {
+printf("i = %d\n", i);
+i++;
+} while (i < 5);
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Functions</button>
+<div class="collapsible-content" style="background-color: #fff4e5;">
+<div class="content">
+<h3>Defining Functions</h3>
+<p>Functions are blocks of code that perform specific tasks and can be reused. Functions help to modularize and organize code. A function is defined using the <code>return_type function_name(parameters)</code> syntax.</p>
+<pre><code>// Example: Function Definition and Call
+#include &lt;stdio.h&gt;
+
+void printHello() {
+printf("Hello, World!\n");
+}
+
+int main() {
+printHello();
+return 0;
+}
+</code></pre>
+<h3>Function Parameters</h3>
+<p>Functions can take parameters (arguments) and return values. Parameters allow you to pass data to functions.</p>
+<pre><code>// Example: Function with Parameters
+#include &lt;stdio.h&gt;
+
+int add(int a, int b) {
+return a + b;
+}
+
+int main() {
+int result = add(5, 3);
+printf("Result: %d\n", result);
+return 0;
+}
+</code></pre>
+<h3>Recursive Functions</h3>
+<p>A recursive function is a function that calls itself. Recursion is a powerful tool for solving complex problems by breaking them down into simpler subproblems.</p>
+<pre><code>// Example: Recursive Function
+#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+if (n == 0) {
+return 1;
+} else {
+return n * factorial(n - 1);
+}
+}
+
+int main() {
+int num = 5;
+printf("Factorial of %d: %d\n", num, factorial(num));
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Arrays</button>
+<div class="collapsible-content" style="background-color: #f0f9ff;">
+<div class="content">
+<h3>Introduction to Arrays</h3>
+<p>An array is a collection of variables that are accessed with an index number. All the variables in an array must be of the same type.</p>
+<pre><code>// Example: Array in C
+#include &lt;stdio.h&gt;
+
+int main() {
+int arr[5] = {1, 2, 3, 4, 5};
+for (int i = 0; i < 5; i++) {
+printf("%d\n", arr[i]);
+}
+return 0;
+}
+</code></pre>
+<h3>Multi-dimensional Arrays</h3>
+<p>Multi-dimensional arrays are arrays of arrays. The most common type is the two-dimensional array, which is used to represent matrices.</p>
+<pre><code>// Example: Multi-dimensional Array in C
+#include &lt;stdio.h&gt;
+
+int main() {
+int arr[3][3] = {
+{1, 2, 3},
+{4, 5, 6},
+{7, 8, 9}
+};
+for (int i = 0; i < 3; i++) {
+for (int j = 0; j < 3; j++) {
+printf("%d ", arr[i][j]);
+}
+printf("\n");
+}
+return 0;
+}
+</code></pre>
+<h3>Array Functions</h3>
+<p>Functions can accept arrays as parameters and return arrays. This allows for more modular and reusable code.</p>
+<pre><code>// Example: Function with Array Parameter
+#include &lt;stdio.h&gt;
+
+void printArray(int arr[], int size) {
+for (int i = 0; i < size; i++) {
+printf("%d ", arr[i]);
+}
+printf("\n");
+}
+
+int main() {
+int arr[] = {1, 2, 3, 4, 5};
+int size = sizeof(arr) / sizeof(arr[0]);
+printArray(arr, size);
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Pointers</button>
+<div class="collapsible-content" style="background-color: #fff4e5;">
+<div class="content">
+<h3>Introduction to Pointers</h3>
+<p>A pointer is a variable that stores the memory address of another variable. Pointers are powerful tools for managing memory and creating complex data structures.</p>
+<pre><code>// Example: Pointer in C
+#include &lt;stdio.h&gt;
+
+int main() {
+int a = 10;
+int *ptr = &a;
+printf("Value of a: %d\n", a);
+printf("Address of a: %p\n", ptr);
+printf("Value at address of a: %d\n", *ptr);
+return 0;
+}
+</code></pre>
+<h3>Pointer Arithmetic</h3>
+<p>Pointers can be used in arithmetic operations to navigate through arrays and other data structures.</p>
+<pre><code>// Example: Pointer Arithmetic
+#include &lt;stdio.h&gt;
+
+int main() {
+int arr[] = {10, 20, 30, 40, 50};
+int *ptr = arr;
+for (int i = 0; i < 5; i++) {
+printf("Value at ptr + %d: %d\n", i, *(ptr + i));
+}
+return 0;
+}
+</code></pre>
+<h3>Pointer to Pointer</h3>
+<p>A pointer to a pointer is a form of multiple indirection, or a chain of pointers. When a pointer holds the address of another pointer, it is called a pointer to a pointer.</p>
+<pre><code>// Example: Pointer to Pointer
+#include &lt;stdio.h&gt;
+
+int main() {
+int a = 10;
+int *ptr = &a;
+int **pptr = &ptr;
+printf("Value of a: %d\n", a);
+printf("Value at *ptr: %d\n", *ptr);
+printf("Value at **pptr: %d\n", **pptr);
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Structures and Unions</button>
+<div class="collapsible-content" style="background-color: #f0f9ff;">
+<div class="content">
+<h3>Structures</h3>
+<p>A structure is a user-defined data type in C that allows to combine data items of different kinds. Structures are used to represent a record.</p>
+<pre><code>// Example: Structure in C
+#include &lt;stdio.h&gt;
+
+struct Person {
+char name[50];
+int age;
+float salary;
+};
+
+int main() {
+struct Person p1;
+printf("Enter name: ");
+scanf("%s", p1.name);
+printf("Enter age: ");
+scanf("%d", &p1.age);
+printf("Enter salary: ");
+scanf("%f", &p1.salary);
+printf("Name: %s\n", p1.name);
+printf("Age: %d\n", p1.age);
+printf("Salary: %.2f\n", p1.salary);
+return 0;
+}
+</code></pre>
+<h3>Unions</h3>
+<p>A union is a special data type that allows to store different data types in the same memory location. Unions provide an efficient way of using the same memory location for multiple purposes.</p>
+<pre><code>// Example: Union in C
+#include &lt;stdio.h&gt;
+
+union Data {
+int i;
+float f;
+char str[20];
+};
+
+int main() {
+union Data data;
+data.i = 10;
+printf("data.i: %d\n", data.i);
+data.f = 220.5;
+printf("data.f: %f\n", data.f);
+strcpy(data.str, "C Programming");
+printf("data.str: %s\n", data.str);
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">File I/O</button>
+<div class="collapsible-content" style="background-color: #fff4e5;">
+<div class="content">
+<h3>File Handling</h3>
+<p>File handling in C enables you to perform various operations on files, such as creating, opening, reading, writing, and closing them. The standard library provides several functions for file handling, such as fopen(), fclose(), fread(), fwrite(), and fprintf().</p>
+<pre><code>// Example: Writing to a File
+#include &lt;stdio.h&gt;
+
+int main() {
+FILE *fptr;
+fptr = fopen("file.txt", "w");
+if (fptr == NULL) {
+printf("Error opening file!\n");
+return 1;
+}
+fprintf(fptr, "Hello, World!\n");
+fclose(fptr);
+return 0;
+}
+</code></pre>
+<pre><code>// Example: Reading from a File
+#include &lt;stdio.h&gt;
+
+int main() {
+FILE *fptr;
+char c;
+fptr = fopen("file.txt", "r");
+if (fptr == NULL) {
+printf("Error opening file!\n");
+return 1;
+}
+while ((c = fgetc(fptr)) != EOF) {
+printf("%c", c);
+}
+fclose(fptr);
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Memory Management</button>
+<div class="collapsible-content" style="background-color: #f0f9ff;">
+<div class="content">
+<h3>Dynamic Memory Allocation</h3>
+<p>Dynamic memory allocation in C is performed using functions such as malloc(), calloc(), realloc(), and free(). These functions are used to allocate and deallocate memory at runtime.</p>
+<pre><code>// Example: malloc() and free()
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+int *ptr;
+int n = 5;
+ptr = (int*)malloc(n * sizeof(int));
+if (ptr == NULL) {
+printf("Memory allocation failed\n");
+return 1;
+}
+for (int i = 0; i < n; i++) {
+ptr[i] = i + 1;
+}
+for (int i = 0; i < n; i++) {
+printf("%d ", ptr[i]);
+}
+free(ptr);
+return 0;
+}
+</code></pre>
+<pre><code>// Example: calloc() and free()
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+int *ptr;
+int n = 5;
+ptr = (int*)calloc(n, sizeof(int));
+if (ptr == NULL) {
+printf("Memory allocation failed\n");
+return 1;
+}
+for (int i = 0; i < n; i++) {
+ptr[i] = i + 1;
+}
+for (int i = 0; i < n; i++) {
+printf("%d ", ptr[i]);
+}
+free(ptr);
+return 0;
+}
+</code></pre>
+<pre><code>// Example: realloc()
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+int *ptr;
+int n = 5;
+ptr = (int*)malloc(n * sizeof(int));
+if (ptr == NULL) {
+printf("Memory allocation failed\n");
+return 1;
+}
+for (int i = 0; i < n; i++) {
+ptr[i] = i + 1;
+}
+ptr = (int*)realloc(ptr, 10 * sizeof(int));
+if (ptr == NULL) {
+printf("Memory allocation failed\n");
+return 1;
+}
+for (int i = 5; i < 10; i++) {
+ptr[i] = i + 1;
+}
+for (int i = 0; i < 10; i++) {
+printf("%d ", ptr[i]);
+}
+free(ptr);
+return 0;
+}
+<h3>Logical Operators</h3>
+<p>Logical operators are used to combine two or more conditions. Common logical operators include AND (&&), OR (||), and NOT (!).</p>
+<pre><code>// Example: Logical Operators
+#include &lt;stdio.h&gt;
+
+int main() {
+int a = 10, b = 20;
+int c = 0;
+if (a && b) {
+printf("a AND b are true\n");
+}
+if (a || c) {
+printf("a OR c is true\n");
+}
+if (!c) {
+printf("NOT c is true\n");
+}
+return 0;
+}
+</code></pre>
+<h3>Bitwise Operators</h3>
+<p>Bitwise operators perform bit-level operations on data. Common bitwise operators include AND (&), OR (|), XOR (^), NOT (~), left shift (<<), and right shift (>>).</p>
+<pre><code>// Example: Bitwise Operators
+#include &lt;stdio.h&gt;
+
+int main() {
+int a = 5; // 0101 in binary
+int b = 9; // 1001 in binary
+printf("a & b = %d\n", a & b);  // 0001 = 1
+printf("a | b = %d\n", a | b);  // 1101 = 13
+printf("a ^ b = %d\n", a ^ b);  // 1100 = 12
+printf("~a = %d\n", ~a);  // 1010 = -6
+printf("a << 1 = %d\n", a << 1);  // 1010 = 10
+printf("a >> 1 = %d\n", a >> 1);  // 0010 = 2
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Control Structures</button>
+<div class="collapsible-content" style="background-color: #f0fff0;">
+<div class="content">
+<h3>Conditional Statements</h3>
+<p>Conditional statements allow you to execute specific code based on whether a condition is true or false. Common conditional statements include if, if-else, and switch.</p>
+<pre><code>// Example: if-else Statement
+#include &lt;stdio.h&gt;
+
+int main() {
+int a = 10;
+if (a > 5) {
+printf("a is greater than 5\n");
+} else {
+printf("a is not greater than 5\n");
+}
+return 0;
+}
+</code></pre>
+<pre><code>// Example: switch Statement
+#include &lt;stdio.h&gt;
+
+int main() {
+int day = 4;
+switch (day) {
+case 1:
+printf("Monday\n");
+break;
+case 2:
+printf("Tuesday\n");
+break;
+case 3:
+printf("Wednesday\n");
+break;
+case 4:
+printf("Thursday\n");
+break;
+case 5:
+printf("Friday\n");
+break;
+case 6:
+printf("Saturday\n");
+break;
+case 7:
+printf("Sunday\n");
+break;
+default:
+printf("Invalid day\n");
+}
+return 0;
+}
+</code></pre>
+<h3>Looping Statements</h3>
+<p>Looping statements allow you to execute a block of code multiple times. Common looping statements include for, while, and do-while loops.</p>
+<pre><code>// Example: for Loop
+#include &lt;stdio.h&gt;
+
+int main() {
+for (int i = 0; i < 5; i++) {
+printf("i = %d\n", i);
+}
+return 0;
+}
+</code></pre>
+<pre><code>// Example: while Loop
+#include &lt;stdio.h&gt;
+
+int main() {
+int i = 0;
+while (i < 5) {
+printf("i = %d\n", i);
+i++;
+}
+return 0;
+}
+</code></pre>
+<pre><code>// Example: do-while Loop
+#include &lt;stdio.h&gt;
+
+int main() {
+int i = 0;
+do {
+printf("i = %d\n", i);
+i++;
+} while (i < 5);
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Functions</button>
+<div class="collapsible-content" style="background-color: #fff4e5;">
+<div class="content">
+<h3>Defining Functions</h3>
+<p>Functions are blocks of code that perform specific tasks and can be reused. Functions help to modularize and organize code. A function is defined using the <code>return_type function_name(parameters)</code> syntax.</p>
+<pre><code>// Example: Function Definition and Call
+#include &lt;stdio.h&gt;
+
+void printHello() {
+printf("Hello, World!\n");
+}
+
+int main() {
+printHello();
+return 0;
+}
+</code></pre>
+<h3>Function Parameters</h3>
+<p>Functions can take parameters (arguments) and return values. Parameters allow you to pass data to functions.</p>
+<pre><code>// Example: Function with Parameters
+#include &lt;stdio.h&gt;
+
+int add(int a, int b) {
+return a + b;
+}
+
+int main() {
+int result = add(5, 3);
+printf("Result: %d\n", result);
+return 0;
+}
+</code></pre>
+<h3>Recursive Functions</h3>
+<p>A recursive function is a function that calls itself. Recursion is a powerful tool for solving complex problems by breaking them down into simpler subproblems.</p>
+<pre><code>// Example: Recursive Function
+#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+if (n == 0) {
+return 1;
+} else {
+return n * factorial(n - 1);
+}
+}
+
+int main() {
+int num = 5;
+printf("Factorial of %d: %d\n", num, factorial(num));
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Arrays</button>
+<div class="collapsible-content" style="background-color: #f0f9ff;">
+<div class="content">
+<h3>Introduction to Arrays</h3>
+<p>An array is a collection of variables that are accessed with an index number. All the variables in an array must be of the same type.</p>
+<pre><code>// Example: Array in C
+#include &lt;stdio.h&gt;
+
+int main() {
+int arr[5] = {1, 2, 3, 4, 5};
+for (int i = 0; i < 5; i++) {
+printf("%d\n", arr[i]);
+}
+return 0;
+}
+</code></pre>
+<h3>Multi-dimensional Arrays</h3>
+<p>Multi-dimensional arrays are arrays of arrays. The most common type is the two-dimensional array, which is used to represent matrices.</p>
+<pre><code>// Example: Multi-dimensional Array in C
+#include &lt;stdio.h&gt;
+
+int main() {
+int arr[3][3] = {
+{1, 2, 3},
+{4, 5, 6},
+{7, 8, 9}
+};
+for (int i = 0; i < 3; i++) {
+for (int j = 0; j < 3; j++) {
+printf("%d ", arr[i][j]);
+}
+printf("\n");
+}
+return 0;
+}
+</code></pre>
+<h3>Array Functions</h3>
+<p>Functions can accept arrays as parameters and return arrays. This allows for more modular and reusable code.</p>
+<pre><code>// Example: Function with Array Parameter
+#include &lt;stdio.h&gt;
+
+void printArray(int arr[], int size) {
+for (int i = 0; i < size; i++) {
+printf("%d ", arr[i]);
+}
+printf("\n");
+}
+
+int main() {
+int arr[] = {1, 2, 3, 4, 5};
+int size = sizeof(arr) / sizeof(arr[0]);
+printArray(arr, size);
+return 0;
+}
+</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Pointers</button>
+<div class="collapsible-content" style="background-color: #fff4e5;">
+<div class="content">
+<h3>Introduction to Pointers</h3>
+<p>A pointer is a variable that stores the memory address of another variable. Pointers are powerful tools for managing memory and creating complex data structures.</p>
+pre><code>// Example: Pointer in C
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        int a = 10;
+        int *ptr = &a;
+        printf("Value of a: %d\n", a);
+        printf("Address of a: %p\n", ptr);
+        printf("Value at address of a: %d\n", *ptr);
+        return 0;
+    }
+    </code></pre>
+                        <h3>Pointer Arithmetic</h3>
+                        <p>Pointers can be used in arithmetic operations to navigate through arrays and other data structures.</p>
+                        <pre><code>// Example: Pointer Arithmetic
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        int arr[] = {10, 20, 30, 40, 50};
+        int *ptr = arr;
+        for (int i = 0; i < 5; i++) {
+            printf("Value at ptr + %d: %d\n", i, *(ptr + i));
+        }
+        return 0;
+    }
+    </code></pre>
+                        <h3>Pointer to Pointer</h3>
+                        <p>A pointer to a pointer is a form of multiple indirection, or a chain of pointers. When a pointer holds the address of another pointer, it is called a pointer to a pointer.</p>
+                        <pre><code>// Example: Pointer to Pointer
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        int a = 10;
+        int *ptr = &a;
+        int **pptr = &ptr;
+        printf("Value of a: %d\n", a);
+        printf("Value at *ptr: %d\n", *ptr);
+        printf("Value at **pptr: %d\n", **pptr);
+        return 0;
+    }
+    </code></pre>
+                        <h3>Functions Returning Pointers</h3>
+                        <p>Functions can return pointers. This is useful when a function needs to return a memory address of a variable or dynamically allocated memory.</p>
+                        <pre><code>// Example: Function Returning Pointer
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
+    
+    int* getPointer() {
+        int *ptr = (int*)malloc(sizeof(int));
+        *ptr = 100;
+        return ptr;
+    }
+    
+    int main() {
+        int *ptr = getPointer();
+        printf("Value at ptr: %d\n", *ptr);
+        free(ptr);
+        return 0;
+    }
+    </code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Structures and Unions</button>
+                <div class="collapsible-content" style="background-color: #f0f9ff;">
+                    <div class="content">
+                        <h3>Structures</h3>
+                        <p>A structure is a user-defined data type in C that allows to combine data items of different kinds. Structures are used to represent a record.</p>
+                        <pre><code>// Example: Structure in C
+    #include &lt;stdio.h&gt;
+    
+    struct Person {
+        char name[50];
+        int age;
+        float salary;
+    };
+    
+    int main() {
+        struct Person p1;
+        printf("Enter name: ");
+        scanf("%s", p1.name);
+        printf("Enter age: ");
+        scanf("%d", &p1.age);
+        printf("Enter salary: ");
+        scanf("%f", &p1.salary);
+        printf("Name: %s\n", p1.name);
+        printf("Age: %d\n", p1.age);
+        printf("Salary: %.2f\n", p1.salary);
+        return 0;
+    }
+    </code></pre>
+                        <h3>Unions</h3>
+                        <p>A union is a special data type that allows to store different data types in the same memory location. Unions provide an efficient way of using the same memory location for multiple purposes.</p>
+                        <pre><code>// Example: Union in C
+    #include &lt;stdio.h&gt;
+    
+    union Data {
+        int i;
+        float f;
+        char str[20];
+    };
+    
+    int main() {
+        union Data data;
+        data.i = 10;
+        printf("data.i: %d\n", data.i);
+        data.f = 220.5;
+        printf("data.f: %f\n", data.f);
+        strcpy(data.str, "C Programming");
+        printf("data.str: %s\n", data.str);
+        return 0;
+    }
+    </code></pre>
+                        <h3>Difference between Structure and Union</h3>
+                        <p>The main difference between a structure and a union is in memory allocation. In a structure, each member has its own storage location, whereas in a union, all members share the same memory location.</p>
+                        <ul>
+                            <li><strong>Structure:</strong> Each member has its own memory location. The total memory required is the sum of the memory required by each member.</li>
+                            <li><strong>Union:</strong> All members share the same memory location. The total memory required is the memory required by the largest member.</li>
+                        </ul>
+                        <pre><code>// Example: Difference between Structure and Union
+    #include &lt;stdio.h&gt;
+    
+    struct Person {
+        char name[50];
+        int age;
+        float salary;
+    };
+    
+    union Data {
+        int i;
+        float f;
+        char str[20];
+    };
+    
+    int main() {
+        struct Person p;
+        union Data d;
+        printf("Size of structure: %ld\n", sizeof(p));
+        printf("Size of union: %ld\n", sizeof(d));
+        return 0;
+    }
+    </code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">File I/O</button>
+                <div class="collapsible-content" style="background-color: #fff4e5;">
+                    <div class="content">
+                        <h3>File Handling</h3>
+                        <p>File handling in C enables you to perform various operations on files, such as creating, opening, reading, writing, and closing them. The standard library provides several functions for file handling, such as fopen(), fclose(), fread(), fwrite(), and fprintf().</p>
+                        <pre><code>// Example: Writing to a File
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        FILE *fptr;
+        fptr = fopen("file.txt", "w");
+        if (fptr == NULL) {
+            printf("Error opening file!\n");
+            return 1;
+        }
+        fprintf(fptr, "Hello, World!\n");
+        fclose(fptr);
+        return 0;
+    }
+    </code></pre>
+                        <pre><code>// Example: Reading from a File
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        FILE *fptr;
+        char c;
+        fptr = fopen("file.txt", "r");
+        if (fptr == NULL) {
+            printf("Error opening file!\n");
+            return 1;
+        }
+        while ((c = fgetc(fptr)) != EOF) {
+            printf("%c", c);
+        }
+        fclose(fptr);
+        return 0;
+    }
+    </code></pre>
+                        <h3>Binary File I/O</h3>
+                        <p>Binary files store data in binary format, which is not readable by humans but is more efficient for storing complex data types. Functions such as fread() and fwrite() are used for binary file I/O.</p>
+                        <pre><code>// Example: Writing to a Binary File
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        FILE *fptr;
+        int num = 12345;
+        fptr = fopen("file.bin", "wb");
+        if (fptr == NULL) {
+            printf("Error opening file!\n");
+            return 1;
+        }
+        fwrite(&num, sizeof(int), 1, fptr);
+        fclose(fptr);
+        return 0;
+    }
+    </code></pre>
+                        <pre><code>// Example: Reading from a Binary File
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        FILE *fptr;
+        int num;
+        fptr = fopen("file.bin", "rb");
+        if (fptr == NULL) {
+            printf("Error opening file!\n");
+            return 1;
+        }
+        fread(&num, sizeof(int), 1, fptr);
+        printf("Number: %d\n", num);
+        fclose(fptr);
+        return 0;
+    }
+    </code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Memory Management</button>
+                <div class="collapsible-content" style="background-color: #f0f9ff;">
+                    <div class="content">
+                        <h3>Dynamic Memory Allocation</h3>
+                        <p>Dynamic memory allocation in C is performed using functions such as malloc(), calloc(), realloc(), and free(). These functions are used to allocate and deallocate memory at runtime.</p>
+                        <pre><code>// Example: malloc() and free()
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
+    
+    int main() {
+        int *ptr;
+        int n = 5;
+        ptr = (int*)malloc(n * sizeof(int));
+        if (ptr == NULL) {
+            printf("Memory allocation failed\n");
+            return 1;
+        }
+        for (int i = 0; i < n; i++) {
+            ptr[i] = i + 1;
+        }
+        for (int i = 0; i < n; i++) {
+            printf("%d ", ptr[i]);
+        }
+        free(ptr);
+        return 0;
+    }
+    </code></pre>
+                        <pre><code>// Example: calloc() and free()
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
+    
+    int main() {
+        int *ptr;
+        int n = 5;
+        ptr = (int*)calloc(n, sizeof(int));
+        if (ptr == NULL) {
+            printf("Memory allocation failed\n");
+            return 1;
+        }
+        for (int i = 0; i < n; i++) {
+            ptr[i] = i + 1;
+        }
+        for (int i = 0; i < n; i++) {
+            printf("%d ", ptr[i]);
+        }
+        free(ptr);
+        return 0;
+    }
+    </code></pre>
+                        <pre><code>// Example: realloc()
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
+    
+    int main() {
+        int *ptr;
+        int n = 5;
+        ptr = (int*)malloc(n * sizeof(int));
+        if (ptr == NULL) {
+            printf("Memory allocation failed\n");
+            return 1;
+        }
+        for (int i = 0; i < n; i++) {
+            ptr[i] = i + 1;
+        }
+        ptr = (int*)realloc(ptr, 10 * sizeof(int));
+        if (ptr == NULL) {
+            printf("Memory allocation failed\n");
+            return 1;
+        }
+        for (int i = 5; i < 10; i++) {
+            ptr[i] = i + 1;
+        }
+        for (int i = 0; i < 10; i++) {
+            printf("%d ", ptr[i]);
+        }
+        free(ptr);
+        return 0;
+    }
+    </code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Preprocessor Directives</button>
+                <div class="collapsible-content" style="background-color: #fff4e5;">
+                    <div class="content">
+                        <h3>Introduction to Preprocessor Directives</h3>
+                        <p>Preprocessor directives are lines included in the code of programs preceded by a hash sign (#). These lines are not program statements but directives for the preprocessor. Common preprocessor directives include #define, #include, #ifdef, #ifndef, and #endif.</p>
+                        <pre><code>// Example: #define Directive
+    #include &lt;stdio.h&gt;
+    
+    #define PI 3.14
+    
+    int main() {
+        printf("Value of PI: %f\n", PI);
+        return 0;
+    }
+    </code></pre>
+                        <pre><code>// Example: #include Directive
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
+    
+    int main() {
+        printf("Hello, World!\n");
+        return 0;
+    }
+    </code></pre>
+                        <h3>Conditional Compilation</h3>
+                        <p>Conditional compilation allows you to compile certain parts of your program depending on conditions you specify using preprocessor directives.</p>
+                        <pre><code>// Example: Conditional Compilation
+    #include &lt;stdio.h&gt;
+    
+    #define DEBUG
+    
+    int main() {
+    #ifdef DEBUG
+        printf("Debug mode is enabled\n");
+    #endif
+        printf("Hello, World!\n");
+        return 0;
+    }
+    </code></pre>
+                        <h3>Macros</h3>
+                        <p>Macros are fragments of code that are given a name. Whenever the name is used, it is replaced by the contents of the macro. Macros can take arguments and be used to create inline functions.</p>
+                        <pre><code>// Example: Macro with Arguments
+    #include &lt;stdio.h&gt;
+    
+    #define SQUARE(x) ((x) * (x))
+    
+    int main() {
+        int num = 5;
+        printf("Square of %d: %d\n", num, SQUARE(num));
+        return 0;
+    }
+    </code></pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script>
+            const collapsibles = document.querySelectorAll('.collapsible');
+            collapsibles.forEach(collapsible => {
+                collapsible.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                    } else {
+                        content.style.display = 'block';
+                    }
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

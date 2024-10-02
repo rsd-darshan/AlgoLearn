@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About AlgoLearn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Header Styling */
+        header {
+            position: relative;
+            background-color: #007ACC;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-toggle {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            width: 40px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+        }
+
+        /* Styling for mobile menu */
+        @media (max-width: 768px) {
+            header nav {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: -100%; /* Initially hidden off-screen */
+                height: 100%;
+                width: 250px;
+                background-color: #007accdb;
+                padding-top: 60px;
+                transition: left 0.3s ease-in-out;
+                z-index: 1000;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+                opacity: 0; /* Initially hidden */
+                transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+            }
+
+            header nav a {
+                padding: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: rgba(228, 220, 220, 0.785);
+                text-decoration: none;
+                font-size: 18px;
+                text-align: left;
+                transition: background-color 0.3s, transform 0.3s;
+                transform: translateX(-20px); /* Initial slide-in effect */
+                opacity: 0; /* Initially hidden */
+            }
+
+            header nav a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                transform: translateX(0); /* Hover animation */
+            }
+
+            .nav-open {
+                left: 0;
+                opacity: 1; /* Reveal menu */
+            }
+
+            .nav-open a {
+                transform: translateX(0); /* Slide-in effect */
+                opacity: 1; /* Show links */
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        /* Overlay Styling */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none; /* Initially hidden */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out; /* Smooth transition */
+        }
+
+        .overlay.show {
+            display: block; /* Show overlay */
+            opacity: 1;
+        }
+
+        /* Custom theme toggle switch */
+        .theme-switch {
+            position: absolute;
+            top: 40px;
+            left : 10px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .theme-checkbox {
+            display: none;
+        }
+
+        .theme-label {
+            width: 50px;
+            height: 25px;
+            background-color: #ccc;
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .theme-ball {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2.5px;
+            left: 2.5px;
+            transition: left 0.3s ease-in-out; /* Smooth transition */
+        }
+
+        .theme-checkbox:checked + .theme-label .theme-ball {
+            left: 27.5px;
+        }
+
+        .theme-checkbox:checked + .theme-label {
+            background-color: #007ACC;
+        }
+
+        /* Styling for dark theme */
+        body.dark-theme {
+            background-color: #333;
+            color: #ddd;
+        }
+
+        body.dark-theme .theme-label {
+            background-color: #555;
+        }
+
+        body.dark-theme .theme-ball {
+            background-color: #fff;
+        }
+
+        /* Main Content Styling */
+        .content {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Slide-in effect */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
+        }
+
+        .content.show {
+            opacity: 1;
+            transform: translateY(0); /* Show content */
+        }
+
+        .content h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0; /* Initially hidden */
+            transform: scale(0.9); /* Scale-in effect */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
+        }
+
+        .image.show {
+            opacity: 1;
+            transform: scale(1); /* Show image */
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            transition: transform 0.3s;
+        }
+
+        .image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* User Count Styling */
+        .user-count {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #080505;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: background-color 0.3s, transform 0.3s;
+            transform: scale(1); /* Initial scale */
+        }
+
+        .user-count.bounce {
+            transform: scale(1.1); /* Bounce effect */
+        }
+
+        body.dark-theme .user-count {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-toggle" onclick="toggleNav()">☰</div>
+        <nav id="nav-menu">
+            <a href="index.html">About</a>
+            <a href="Course.html">Courses</a>
+            <a href="Tutors.html">Tutors</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+        <div class="theme-switch">
+            <input type="checkbox" id="toggle-theme" class="theme-checkbox" onclick="toggleTheme()">
+            <label for="toggle-theme" class="theme-label">
+                <span class="theme-ball"></span>
+            </label>
+        </div>
+    </header>
+    <div class="overlay" id="overlay" onclick="toggleNav()"></div> <!-- Overlay for menu -->
+    <main>
+        <div class="content">
+            <h1>AlgoLearn</h1>
+            <p>Welcome to AlgoLearn! Learn computer science with clear, concise lessons covering algorithms, data structures, and more including Programming Languages like Python, Java, etc.</p>
+        </div>
+        <div class="image">
+            <img src="About.png" alt="AlgoLearn Interactive Learning">
+        </div>
+    </main>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.removeItem('theme');
+            }
+        }
+
+        function toggleNav() {
+            const navMenu = document.getElementById('nav-menu');
+            const overlay = document.getElementById('overlay');
+            navMenu.classList.toggle('nav-open');
+            overlay.classList.toggle('show');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('toggle-theme').checked = true;
+            }
+            animateUserCount(500);
+
+            // Show content with animation
+            setTimeout(() => {
+                document.querySelector('.content').classList.add('show');
+                document.querySelector('.image').classList.add('show');
+            }, 200);
+        });
+
+        function animateUserCount(target) {
+            let count = 0;
+            const userCountElement = document.getElementById('userCount');
+            const increment = 10;
+            const intervalTime = 50; // Faster animation
+            const interval = setInterval(() => {
+                if (count < target) {
+                    count += increment;
+                    userCountElement.textContent = count + " + Users";
+                    userCountElement.classList.add('bounce'); // Add bounce effect
+                    setTimeout(() => userCountElement.classList.remove('bounce'), 300); // Remove bounce effect
+                    if (count >= target) {
+                        clearInterval(interval);
+                        userCountElement.textContent = target + " + Users";
+                        startHourlyIncrement(target);
+                    }
+                }
+            }, intervalTime);
+        }
+
+        function startHourlyIncrement(count) {
+            const userCountElement = document.getElementById('userCount');
+            setInterval(() => {
+                count += 100;
+                userCountElement.textContent = count + " + Users";
+                userCountElement.classList.add('bounce'); // Add bounce effect
+                setTimeout(() => userCountElement.classList.remove('bounce'), 300); // Remove bounce effect
+            }, 3600000); // 3600000 milliseconds = 1 hour
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Course</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #cbcdcf;
+            color: rgb(1, 1, 1);
+            padding: 1em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #4848d8;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 1em;
+        }
+        pre {
+            background-color: #ffffff;
+            border: 1px solid #040404;
+            padding: 1em;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section-title {
+            cursor: pointer;
+            color: #0a0a0a;
+            font-weight: bold;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            margin-bottom: 0.5em;
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            background-color: #282525;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .section-title:hover {
+            background-color: #e1e1e1;
+        }
+        .content {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            margin-bottom: 1em;
+        }
+        .collapsible {
+            background-color: #f1f1f1;
+            border: none;
+            color: #0612ef;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: #000000;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212";
+        }
+        .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: rgb(19, 18, 18);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Math Course</h1>
+        <nav>
+            <a href="course.html">Back to Courses</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Course Overview</h2>
+        <p>This course covers various topics in mathematics, including algebra, geometry, calculus, and more. Each section provides detailed explanations and examples to help you understand and apply mathematical concepts.</p>
+        <div id="sections">
+            <button class="collapsible">Algebra</button>
+            <div class="collapsible-content" style="background-color: #f9f9f9;">
+                <div class="content">
+                    <h3>Basic Concepts</h3>
+                    <p>Algebra is the branch of mathematics dealing with symbols and the rules for manipulating those symbols.</p>
+                    <pre><code>// Example: Solving a simple equation
+let x = 5;
+let y = 3 * x + 2;
+console.log(y);  // Output: 17</code></pre>
+                    <h3>Linear Equations</h3>
+                    <p>A linear equation is an equation between two variables that gives a straight line when plotted on a graph.</p>
+                    <pre><code>// Example: y = mx + b
+let m = 2;
+let b = 1;
+let x = 3;
+let y = m * x + b;
+console.log(y);  // Output: 7</code></pre>
+                    <h3>Quadratic Equations</h3>
+                    <p>A quadratic equation is a second-order polynomial equation in a single variable x.</p>
+                    <pre><code>// Example: Solving a quadratic equation
+let a = 1;
+let b = -3;
+let c = 2;
+let discriminant = b * b - 4 * a * c;
+let root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+let root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+console.log(root1, root2);  // Output: 2 1</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Geometry</button>
+            <div class="collapsible-content" style="background-color: #f0f9ff;">
+                <div class="content">
+                    <h3>Basic Shapes</h3>
+                    <p>Geometry is the branch of mathematics concerned with the properties and relations of points, lines, surfaces, solids, and higher dimensional analogs.</p>
+                    <pre><code>// Example: Calculating the area of a rectangle
+let length = 5;
+let width = 3;
+let area = length * width;
+console.log(area);  // Output: 15</code></pre>
+                    <h3>Triangles</h3>
+                    <p>A triangle is a polygon with three edges and three vertices. It is one of the basic shapes in geometry.</p>
+                    <pre><code>// Example: Calculating the area of a triangle
+let base = 4;
+let height = 3;
+let area = 0.5 * base * height;
+console.log(area);  // Output: 6</code></pre>
+                    <h3>Circles</h3>
+                    <p>A circle is a simple closed shape. It is the set of all points in a plane that are at a given distance from a given point, the centre.</p>
+                    <pre><code>// Example: Calculating the circumference and area of a circle
+let radius = 3;
+let circumference = 2 * Math.PI * radius;
+let area = Math.PI * radius * radius;
+console.log(circumference, area);  // Output: 18.84955592153876 28.274333882308138</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Calculus</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Limits</h3>
+                    <p>Calculus is the branch of mathematics that studies continuous change. Limits are a fundamental concept in calculus.</p>
+                    <pre><code>// Example: Calculating a limit
+function limit(f, a, delta) {
+    return (f(a + delta) - f(a)) / delta;
+}
+
+function f(x) {
+    return x * x;
+}
+
+let a = 2;
+let delta = 0.0001;
+let lim = limit(f, a, delta);
+console.log(lim);  // Output: 4.000100000007833</code></pre>
+                    <h3>Derivatives</h3>
+                    <p>A derivative represents an instantaneous rate of change. It is a fundamental tool of calculus.</p>
+                    <pre><code>// Example: Calculating the derivative of f(x) = x^2
+function derivative(f, x, delta) {
+    return (f(x + delta) - f(x)) / delta;
+}
+
+function f(x) {
+    return x * x;
+}
+
+let x = 2;
+let delta = 0.0001;
+let deriv = derivative(f, x, delta);
+console.log(deriv);  // Output: 4.000100000007833</code></pre>
+                    <h3>Integrals</h3>
+                    <p>An integral is the reverse process of differentiation. It is used to find areas, volumes, central points, and many useful things.</p>
+                    <pre><code>// Example: Calculating the integral of f(x) = x^2
+function integral(f, a, b, n) {
+    let sum = 0;
+    let delta = (b - a) / n;
+    for (let i = 0; i < n; i++) {
+        let x = a + i * delta;
+        sum += f(x) * delta;
+    }
+    return sum;
+}
+
+function f(x) {
+    return x * x;
+}
+
+let a = 0;
+let b = 2;
+let n = 1000;
+let integ = integral(f, a, b, n);
+console.log(integ);  // Output: 2.666666666666667</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Trigonometry</button>
+            <div class="collapsible-content" style="background-color: #f0fff0;">
+                <div class="content">
+                    <h3>Basic Functions</h3>
+                    <p>Trigonometry is a branch of mathematics that studies relationships involving lengths and angles of triangles.</p>
+                    <pre><code>// Example: Calculating sine, cosine, and tangent
+let angle = Math.PI / 4;
+let sin = Math.sin(angle);
+let cos = Math.cos(angle);
+let tan = Math.tan(angle);
+console.log(sin, cos, tan);  // Output: 0.7071067811865475 0.7071067811865475 1</code></pre>
+                    <h3>Trigonometric Identities</h3>
+                    <p>Trigonometric identities are equations that involve trigonometric functions and are true for every value of the occurring variables.</p>
+                    <pre><code>// Example: Verifying a trigonometric identity
+let angle = Math.PI / 4;
+let sin2 = Math.sin(angle) * Math.sin(angle);
+let cos2 = Math.cos(angle) * Math.cos(angle);
+console.log(sin2 + cos2);  // Output: 1 (since sin^2(angle) + cos^2(angle) = 1)</code></pre>
+                    <h3>Inverse Trigonometric Functions</h3>
+                    <p>Inverse trigonometric functions are the inverse functions of the trigonometric functions.</p>
+                    <pre><code>// Example: Calculating inverse trigonometric functions
+let value = 0.707;
+let asin = Math.asin(value);
+let acos = Math.acos(value);
+let atan = Math.atan(value);
+console.log(asin, acos, atan);  // Output: 0.7853981633974483 0.7853981633974483 0.6154797086703873</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Statistics</button>
+            <div class="collapsible-content" style="background-color: #e1f5fe;">
+                <div class="content">
+                    <h3>Descriptive Statistics</h3>
+                    <p>Statistics is the study of the collection, analysis, interpretation, presentation, and organization of data. Descriptive statistics summarize and describe the features of a dataset.</p>
+                    <pre><code>// Example: Calculating mean, median, and mode
+let data = [1, 2, 2, 3, 4];
+let mean = data.reduce((a, b) => a + b) / data.length;
+let median = data.sort((a, b) => a - b)[Math.floor(data.length / 2)];
+let mode = data.sort((a, b) =>
+    data.filter(v => v === a).length - data.filter(v => v === b).length
+).pop();
+console.log(mean, median, mode);  // Output: 2.4 2 2</code></pre>
+                    <h3>Probability</h3>
+                    <p>Probability is a branch of mathematics that deals with calculating the likelihood of a given event's occurrence.</p>
+                    <pre><code>// Example: Calculating probability
+let favorableOutcomes = 1;
+let totalOutcomes = 6;
+let probability = favorableOutcomes / totalOutcomes;
+console.log(probability);  // Output: 0.16666666666666666</code></pre>
+                    <h3>Standard Deviation</h3>
+                    <p>Standard deviation is a measure of the amount of variation or dispersion of a set of values.</p>
+                    <pre><code>// Example: Calculating standard deviation
+let data = [1, 2, 3, 4, 5];
+let mean = data.reduce((a, b) => a + b) / data.length;
+let variance = data.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / data.length;
+let stdDev = Math.sqrt(variance);
+console.log(stdDev);  // Output: 1.4142135623730951</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Linear Algebra</button>
+            <div class="collapsible-content" style="background-color: #ffebee;">
+                <div class="content">
+                    <h3>Vectors</h3>
+                    <p>Linear algebra is the branch of mathematics concerning linear equations, linear functions, and their representations through matrices and vector spaces.</p>
+                    <pre><code>// Example: Vector addition
+let v1 = [1, 2, 3];
+let v2 = [4, 5, 6];
+let v3 = v1.map((val, index) => val + v2[index]);
+console.log(v3);  // Output: [5, 7, 9]</code></pre>
+                    <h3>Matrices</h3>
+                    <p>A matrix is a rectangular array of numbers or other mathematical objects for which operations such as addition and multiplication are defined.</p>
+                    <pre><code>// Example: Matrix multiplication
+let A = [
+    [1, 2],
+    [3, 4]
+];
+let B = [
+    [5, 6],
+    [7, 8]
+];
+let C = A.map((row, i) =>
+    row.map((_, j) =>
+        row.reduce((sum, _, n) => sum + A[i][n] * B[n][j], 0)
+    )
+);
+console.log(C);  // Output: [[19, 22], [43, 50]]</code></pre>
+                    <h3>Eigenvalues and Eigenvectors</h3>
+                    <p>In linear algebra, an eigenvector of a linear transformation is a nonzero vector that changes by only a scalar factor when that linear transformation is applied to it.</p>
+                    <pre><code>// Example: Finding eigenvalues and eigenvectors (simplified example)
+let A = [
+    [4, 1],
+    [2, 3]
+];
+let eig = numeric.eig(A);
+console.log(eig);  // Output: { lambda: { x: [Array], y: [Array] }, E: [Array] }</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Discrete Mathematics</button>
+            <div class="collapsible-content" style="background-color: #f0f4c3;">
+                <div class="content">
+                    <h3>Logic</h3>
+                    <p>Discrete mathematics is the study of mathematical structures that are fundamentally discrete rather than continuous.</p>
+                    <pre><code>// Example: Logical operations
+let p = true;
+let q = false;
+console.log(p && q);  // Output: false
+console.log(p || q);  // Output: true
+console.log(!p);      // Output: false</code></pre>
+                    <h3>Set Theory</h3>
+                    <p>Set theory is a branch of mathematical logic that studies sets, which are collections of objects.</p>
+                    <pre><code>// Example: Set operations
+let A = new Set([1, 2, 3]);
+let B = new Set([3, 4, 5]);
+let union = new Set([...A, ...B]);
+let intersection = new Set([...A].filter(x => B.has(x)));
+let difference = new Set([...A].filter(x => !B.has(x)));
+console.log(union);          // Output: Set { 1, 2, 3, 4, 5 }
+console.log(intersection);   // Output: Set { 3 }
+console.log(difference);     // Output: Set { 1, 2 }</code></pre>
+                    <h3>Graph Theory</h3>
+                    <p>Graph theory is the study of graphs, which are mathematical structures used to model pairwise relations between objects.</p>
+                    <pre><code>// Example: Representing a graph using adjacency list
+let graph = {
+    A: ["B", "C"],
+    B: ["A", "D", "E"],
+    C: ["A", "F"],
+    D: ["B"],
+    E: ["B", "F"],
+    F: ["C", "E"]
+};
+console.log(graph);  // Output: { A: [ 'B', 'C' ], B: [ 'A', 'D', 'E' ], C: [ 'A', 'F' ], D: [ 'B' ], E: [ 'B', 'F' ], F: [ 'C', 'E' ] }</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Number Theory</button>
+            <div class="collapsible-content" style="background-color: #ffe0b2;">
+                <div class="content">
+                    <h3>Prime Numbers</h3>
+                    <p>Number theory is a branch of mathematics devoted to the study of the integers and more generally to objects built out of them.</p>
+                    <pre><code>// Example: Checking if a number is prime
+                        function isPrime(num) {
+                            for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
+                                if (num % i === 0) return false;
+                            }
+                            return num > 1;
+                        }
+                        
+                        console.log(isPrime(11));  // Output: true
+                        console.log(isPrime(15));  // Output: false</code></pre>
+                                            <h3>Greatest Common Divisor (GCD)</h3>
+                                            <p>The greatest common divisor of two integers is the largest positive integer that divides each of the integers without a remainder.</p>
+                                            <pre><code>// Example: Calculating GCD using Euclidean algorithm
+                        function gcd(a, b) {
+                            while (b !== 0) {
+                                let temp = b;
+                                b = a % b;
+                                a = temp;
+                            }
+                            return a;
+                        }
+                        
+                        console.log(gcd(48, 18));  // Output: 6</code></pre>
+                                            <h3>Modular Arithmetic</h3>
+                                            <p>Modular arithmetic is a system of arithmetic for integers, where numbers "wrap around" after reaching a certain value—the modulus.</p>
+                                            <pre><code>// Example: Modular addition
+                        let a = 14;
+                        let b = 5;
+                        let modulus = 12;
+                        let result = (a + b) % modulus;
+                        console.log(result);  // Output: 7</code></pre>
+                                        </div>
+                                    </div>
+                        
+                                    <button class="collapsible">Probability and Statistics</button>
+                                    <div class="collapsible-content" style="background-color: #f0f4c3;">
+                                        <div class="content">
+                                            <h3>Basic Probability</h3>
+                                            <p>Probability is a measure quantifying the likelihood that events will occur.</p>
+                                            <pre><code>// Example: Basic probability calculation
+                        let favorable = 1;
+                        let total = 6;
+                        let probability = favorable / total;
+                        console.log(probability);  // Output: 0.16666666666666666</code></pre>
+                                            <h3>Combinations and Permutations</h3>
+                                            <p>Combinations and permutations are ways to count how objects can be arranged or selected.</p>
+                                            <pre><code>// Example: Calculating permutations
+                        function factorial(n) {
+                            return n ? n * factorial(n - 1) : 1;
+                        }
+                        
+                        function permutations(n, r) {
+                            return factorial(n) / factorial(n - r);
+                        }
+                        
+                        console.log(permutations(5, 3));  // Output: 60
+                        
+                        // Example: Calculating combinations
+                        function combinations(n, r) {
+                            return factorial(n) / (factorial(r) * factorial(n - r));
+                        }
+                        
+                        console.log(combinations(5, 3));  // Output: 10</code></pre>
+                                            <h3>Probability Distributions</h3>
+                                            <p>A probability distribution describes how the values of a random variable are distributed.</p>
+                                            <pre><code>// Example: Binomial distribution
+                        function binomial(n, k, p) {
+                            function factorial(n) {
+                                return n ? n * factorial(n - 1) : 1;
+                            }
+                            return (factorial(n) / (factorial(k) * factorial(n - k))) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+                        }
+                        
+                        console.log(binomial(10, 3, 0.5));  // Output: 0.1171875</code></pre>
+                                        </div>
+                                    </div>
+                        
+                                    <button class="collapsible">Set Theory</button>
+                                    <div class="collapsible-content" style="background-color: #f3e5f5;">
+                                        <div class="content">
+                                            <h3>Basic Concepts</h3>
+                                            <p>Set theory is a branch of mathematical logic that studies sets, which are collections of objects.</p>
+                                            <pre><code>// Example: Basic set operations
+                        let A = new Set([1, 2, 3]);
+                        let B = new Set([3, 4, 5]);
+                        let union = new Set([...A, ...B]);
+                        let intersection = new Set([...A].filter(x => B.has(x)));
+                        let difference = new Set([...A].filter(x => !B.has(x)));
+                        console.log(union);  // Output: Set { 1, 2, 3, 4, 5 }
+                        console.log(intersection);  // Output: Set { 3 }
+                        console.log(difference);  // Output: Set { 1, 2 }</code></pre>
+                                            <h3>Venn Diagrams</h3>
+                                            <p>Venn diagrams are used to show all possible logical relations between a finite collection of different sets.</p>
+                                            <pre><code>// Example: Creating a Venn diagram (conceptual example)
+                        // Since we can't draw diagrams with plain JavaScript, imagine three overlapping circles representing sets A, B, and C
+                        // Use online tools or drawing software to create visual Venn diagrams</code></pre>
+                                            <h3>Cardinality</h3>
+                                            <p>The cardinality of a set is a measure of the "number of elements" in the set.</p>
+                                            <pre><code>// Example: Calculating the cardinality of sets
+                        let A = new Set([1, 2, 3]);
+                        let B = new Set([3, 4, 5]);
+                        console.log(A.size);  // Output: 3
+                        console.log(B.size);  // Output: 3
+                        console.log(union.size);  // Output: 5</code></pre>
+                                        </div>
+                                    </div>
+                        
+                                    <button class="collapsible">Group Theory</button>
+                                    <div class="collapsible-content" style="background-color: #e8f5e9;">
+                                        <div class="content">
+                                            <h3>Basic Concepts</h3>
+                                            <p>Group theory studies the algebraic structures known as groups, which are sets equipped with an operation that combines any two elements to form a third element.</p>
+                                            <pre><code>// Example: Group properties
+                        // A group (G, *) must satisfy four conditions: closure, associativity, identity, and invertibility
+                        function isGroup(G, operation) {
+                            // Check closure
+                            for (let a of G) {
+                                for (let b of G) {
+                                    if (!G.includes(operation(a, b))) return false;
+                                }
+                            }
+                            // Check associativity
+                            for (let a of G) {
+                                for (let b of G) {
+                                    for (let c of G) {
+                                        if (operation(a, operation(b, c)) !== operation(operation(a, b), c)) return false;
+                                    }
+                                }
+                            }
+                            // Check identity
+                            let identity = G.find(e => G.every(a => operation(a, e) === a && operation(e, a) === a));
+                            if (identity === undefined) return false;
+                            // Check invertibility
+                            for (let a of G) {
+                                if (!G.find(b => operation(a, b) === identity && operation(b, a) === identity)) return false;
+                            }
+                            return true;
+                        }
+                        
+                        let G = [0, 1, 2];
+                        let operation = (a, b) => (a + b) % 3;
+                        console.log(isGroup(G, operation));  // Output: true</code></pre>
+                                            <h3>Subgroups</h3>
+                                            <p>A subgroup is a subset of a group that is itself a group with the same operation.</p>
+                                            <pre><code>// Example: Checking for subgroups
+                        function isSubgroup(H, G, operation) {
+                            return isGroup(H, operation) && H.every(e => G.includes(e));
+                        }
+                        
+                        let H = [0, 1];
+                        console.log(isSubgroup(H, G, operation));  // Output: false</code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Differential Equations</button>
+                <div class="collapsible-content" style="background-color: #e0f7fa;">
+                    <div class="content">
+                        <h3>Introduction to Differential Equations</h3>
+                        <p>Differential equations are equations that involve an unknown function and its derivatives. They describe various exponential growths and decays, oscillations, and many other natural phenomena.</p>
+                        <pre><code>// Example: Solving a simple differential equation
+    // dy/dx = y
+    function solveDifferentialEquation(y0, x0, x, h) {
+        let y = y0;
+        while (x0 < x) {
+            y += h * y;
+            x0 += h;
+        }
+        return y;
+    }
+    
+    let y0 = 1;
+    let x0 = 0;
+    let x = 1;
+    let h = 0.01;
+    console.log(solveDifferentialEquation(y0, x0, x, h));  // Output: Approximation of e^1</code></pre>
+                        <h3>Separable Equations</h3>
+                        <p>A separable differential equation is one that can be separated into a product of functions of each variable.</p>
+                        <pre><code>// Example: Solving a separable differential equation
+    // dy/dx = g(x) * h(y)
+    function solveSeparableEquation(g, h, y0, x0, x, h) {
+        let y = y0;
+        while (x0 < x) {
+            y += h * g(x0) * h(y);
+            x0 += h;
+        }
+        return y;
+    }
+    
+    let g = (x) => x;
+    let h = (y) => y;
+    console.log(solveSeparableEquation(g, h, y0, x0, x, h));  // Output: Approximation of e^(x^2/2)</code></pre>
+                        <h3>Linear Differential Equations</h3>
+                        <p>Linear differential equations are of the form dy/dx + P(x)y = Q(x).</p>
+                        <pre><code>// Example: Solving a linear differential equation
+    // dy/dx + P(x)y = Q(x)
+    function solveLinearEquation(P, Q, y0, x0, x, h) {
+        let y = y0;
+        while (x0 < x) {
+            y += h * (Q(x0) - P(x0) * y);
+            x0 += h;
+        }
+        return y;
+    }
+    
+    let P = (x) => -2;
+    let Q = (x) => 3;
+    console.log(solveLinearEquation(P, Q, y0, x0, x, h));  // Output: Approximation of the solution</code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Complex Numbers</button>
+                <div class="collapsible-content" style="background-color: #f9f9f9;">
+                    <div class="content">
+                        <h3>Introduction to Complex Numbers</h3>
+                        <p>Complex numbers extend the concept of one-dimensional real numbers to the two-dimensional complex numbers by adding an imaginary unit.</p>
+                        <pre><code>// Example: Basic operations with complex numbers
+    let a = math.complex(2, 3);
+    let b = math.complex(1, -4);
+    
+    // Addition
+    let add = math.add(a, b);
+    console.log(add.toString());  // Output: "3 - 1i"
+    
+    // Multiplication
+    let multiply = math.multiply(a, b);
+    console.log(multiply.toString());  // Output: "14 + 5i"</code></pre>
+                        <h3>Polar Form</h3>
+                        <p>Complex numbers can also be represented in polar form, which is useful for multiplication and division.</p>
+                        <pre><code>// Example: Converting to polar form
+    let c = math.complex(3, 4);
+    let polar = c.toPolar();
+    console.log(polar);  // Output: { r: 5, phi: 0.9272952180016122 }</code></pre>
+                        <h3>Roots of Complex Numbers</h3>
+                        <p>The n-th roots of a complex number can be found using De Moivre's theorem.</p>
+                        <pre><code>// Example: Finding the roots of a complex number
+    let d = math.complex(1, 0);
+    let roots = math.nthRoots(d, 3);
+    roots.forEach(root => {
+        console.log(root.toString());
+    });  // Output: "1", "-0.5 + 0.8660254037844386i", "-0.5 - 0.8660254037844386i"</code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Discrete Mathematics</button>
+                <div class="collapsible-content" style="background-color: #f0fff0;">
+                    <div class="content">
+                        <h3>Graph Theory</h3>
+                        <p>Graph theory studies the properties of graphs, which are mathematical structures used to model pairwise relations between objects.</p>
+                        <pre><code>// Example: Representing a graph using adjacency list
+    let graph = {
+        A: ["B", "C"],
+        B: ["A", "D", "E"],
+        C: ["A", "F"],
+        D: ["B"],
+        E: ["B", "F"],
+        F: ["C", "E"]
+    };
+    console.log(graph);  // Output: { A: [ 'B', 'C' ], B: [ 'A', 'D', 'E' ], C: [ 'A', 'F' ], D: [ 'B' ], E: [ 'B', 'F' ], F: [ 'C', 'E' ] }</code></pre>
+                        <h3>Combinatorics</h3>
+                        <p>Combinatorics is the study of counting, arrangement, and combination of objects.</p>
+                        <pre><code>// Example: Counting combinations
+    function factorial(n) {
+        return n ? n * factorial(n - 1) : 1;
+    }
+    
+    function combinations(n, r) {
+        return factorial(n) / (factorial(r) * factorial(n - r));
+    }
+    
+    console.log(combinations(5, 3));  // Output: 10</code></pre>
+                        <h3>Logic and Proofs</h3>
+                        <p>Logic is the study of reasoning. Proofs are logical arguments that establish the truth of mathematical statements.</p>
+                        <pre><code>// Example: Basic logical operations
+    let p = true;
+    let q = false;
+    console.log(p && q);  // Output: false
+    console.log(p || q);  // Output: true
+    console.log(!p);      // Output: false</code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Numerical Methods</button>
+                <div class="collapsible-content" style="background-color: #e1f5fe;">
+                    <div class="content">
+                        <h3>Root Finding</h3>
+                        <p>Numerical methods are techniques to approximate mathematical procedures. Root finding algorithms are used to find zeros of functions.</p>
+                        <pre><code>// Example: Using the bisection method
+    function bisection(f, a, b, tol) {
+        let c;
+        while ((b - a) / 2 > tol) {
+            c = (a + b) / 2;
+            if (f(c) === 0) return c;
+            else if (f(c) * f(a) < 0) b = c;
+            else a = c;
+        }
+        return c;
+    }
+    
+    let f = (x) => x * x - 2;
+    console.log(bisection(f, 0, 2, 0.0001));  // Output: Approximation of sqrt(2)</code></pre>
+                        <h3>Numerical Integration</h3>
+                        <p>Numerical integration algorithms approximate the integral of a function.</p>
+                        <pre><code>// Example: Using the trapezoidal rule
+    function trapezoidal(f, a, b, n) {
+        let h = (b - a) / n;
+        let sum = (f(a) + f(b)) / 2;
+        for (let i = 1; i < n; i++) {
+            sum += f(a + i * h);
+        }
+        return sum * h;
+    }
+    
+    let f = (x) => x * x;
+    console.log(trapezoidal(f, 0, 1, 100));  // Output: Approximation of integral of x^2 from 0 to 1</code></pre>
+                        <h3>Ordinary Differential Equations (ODEs)</h3>
+                        <p>Numerical methods for ODEs approximate the solutions of differential equations.</p>
+                        <pre><code>// Example: Using Euler's method
+    function euler(f, y0, x0, x, h) {
+        let y = y0;
+        while (x0 < x) {
+            y += h * f(x0, y);
+            x0 += h;
+        }
+        return y;
+    }
+    
+    let f = (x, y) => x + y;
+    console.log(euler(f, 1, 0, 1, 0.01));  // Output: Approximation of the solution at x = 1</code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Probability and Statistics</button>
+                <div class="collapsible-content" style="background-color: #f0f4c3;">
+                    <div class="content">
+                        <h3>Basic Probability</h3>
+                        <p>Probability is a measure quantifying the likelihood that events will occur. It ranges between 0 and 1.</p>
+                        <pre><code>// Example: Basic probability calculation
+    let favorable = 1;
+    let total = 6;
+    let probability = favorable / total;
+    console.log(probability);  // Output: 0.16666666666666666</code></pre>
+                        <h3>Combinations and Permutations</h3>
+                        <p>Combinations and permutations are ways to count how objects can be arranged or selected.</p>
+                        <pre><code>// Example: Calculating permutations
+    function factorial(n) {
+        return n ? n * factorial(n - 1) : 1;
+    }
+    
+    function permutations(n, r) {
+        return factorial(n) / factorial(n - r);
+    }
+    
+    console.log(permutations(5, 3));  // Output: 60
+    
+    // Example: Calculating combinations
+    function combinations(n, r) {
+        return factorial(n) / (factorial(r) * factorial(n - r));
+    }
+    
+    console.log(combinations(5, 3));  // Output: 10</code></pre>
+                        <h3>Probability Distributions</h3>
+                        <p>A probability distribution describes how the values of a random variable are distributed.</p>
+                        <pre><code>// Example: Binomial distribution
+    function binomial(n, k, p) {
+        function factorial(n) {
+            return n ? n * factorial(n - 1) : 1;
+        }
+        return (factorial(n) / (factorial(k) * factorial(n - k))) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+    }
+    
+    console.log(binomial(10, 3, 0.5));  // Output: 0.1171875</code></pre>
+                        <h3>Standard Deviation</h3>
+                        <p>Standard deviation is a measure of the amount of variation or dispersion of a set of values.</p>
+                        <pre><code>// Example: Calculating standard deviation
+    let data = [1, 2, 3, 4, 5];
+    let mean = data.reduce((a, b) => a + b) / data.length;
+    let variance = data.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / data.length;
+    let stdDev = Math.sqrt(variance);
+    console.log(stdDev);  // Output: 1.4142135623730951</code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Abstract Algebra</button>
+                <div class="collapsible-content" style="background-color: #ffebee;">
+                    <div class="content">
+                        <h3>Groups</h3>
+                        <p>In mathematics, a group is a set equipped with a binary operation that satisfies certain axioms.</p>
+                        <pre><code>// Example: Group properties
+    // A group (G, *) must satisfy four conditions: closure, associativity, identity, and invertibility
+    function isGroup(G, operation) {
+        // Check closure
+        for (let a of G) {
+            for (let b of G) {
+                if (!G.includes(operation(a, b))) return false;
+            }
+        }
+        // Check associativity
+        for (let a of G) {
+            for (let b of G) {
+                for (let c of G) {
+                    if (operation(a, operation(b, c)) !== operation(operation(a, b), c)) return false;
+                }
+            }
+        }
+        // Check identity
+        let identity = G.find(e => G.every(a => operation(a, e) === a && operation(e, a) === a));
+        if (identity === undefined) return false;
+        // Check invertibility
+        for (let a of G) {
+            if (!G.find(b => operation(a, b) === identity && operation(b, a) === identity)) return false;
+        }
+        return true;
+    }
+    
+    let G = [0, 1, 2];
+    let operation = (a, b) => (a + b) % 3;
+    console.log(isGroup(G, operation));  // Output: true</code></pre>
+                        <h3>Rings</h3>
+                        <p>A ring is an algebraic structure consisting of a set equipped with two binary operations satisfying properties analogous to those of addition and multiplication.</p>
+                        <pre><code>// Example: Ring properties
+    // A ring (R, +, *) must satisfy the ring axioms
+    function isRing(R, add, multiply) {
+        // Check if (R, +) is an abelian group
+        if (!isGroup(R, add)) return false;
+        // Check if * is associative
+        for (let a of R) {
+            for (let b of R) {
+                for (let c of R) {
+                    if (multiply(a, multiply(b, c)) !== multiply(multiply(a, b), c)) return false;
+                }
+            }
+        }
+        // Check distributive laws
+        for (let a of R) {
+            for (let b of R) {
+                for (let c of R) {
+                    if (multiply(a, add(b, c)) !== add(multiply(a, b), multiply(a, c))) return false;
+                    if (multiply(add(a, b), c) !== add(multiply(a, c), multiply(b, c))) return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    let R = [0, 1, 2];
+    let add = (a, b) => (a + b) % 3;
+    let multiply = (a, b) => (a * b) % 3;
+    console.log(isRing(R, add, multiply));  // Output: true</code></pre>
+                        <h3>Fields</h3>
+                        <p>A field is an algebraic structure in which addition, subtraction, multiplication, and division are defined and satisfy certain properties.</p>
+                        <pre><code>// Example: Field properties
+    // A field (F, +, *) must satisfy the field axioms
+    function isField(F, add, multiply) {
+        // Check if (F, +) is an abelian group
+        if (!isGroup(F, add)) return false;
+        // Check if (F \ {0}, *) is an abelian group
+        let FNonZero = F.filter(x => x !== 0);
+        if (!isGroup(FNonZero, multiply)) return false;
+        // Check distributive laws
+        for (let a of F) {
+            for (let b of F) {
+                for (let c of F) {
+                    if (multiply(a, add(b, c)) !== add(multiply(a, b), multiply(a, c))) return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    let F = [0, 1, 2];
+    console.log(isField(F, add, multiply));  // Output: true</code></pre>
+                    </div>
+                </div>
+    
+                <button class="collapsible">Number Theory</button>
+                <div class="collapsible-content" style="background-color: #ffe0b2;">
+                    <div class="content">
+                        <h3>Prime Numbers</h3>
+                        <p>Prime numbers are natural numbers greater than 1 that have no positive divisors other than 1 and themselves.</p>
+                        <pre><code>// Example: Checking if a number is prime
+    function isPrime(num) {
+        for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
+            if (num % i === 0) return false;
+        }
+        return num > 1;
+    }
+    
+    console.log(isPrime(11));  // Output: true
+    console.log(isPrime(15));  // Output: false</code></pre>
+                        <h3>Greatest Common Divisor (GCD)</h3>
+                        <p>The greatest common divisor of two integers is the largest positive integer that divides each of the integers without a remainder.</p>
+                        <pre><code>// Example: Calculating GCD using Euclidean algorithm
+    function gcd(a, b) {
+        while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+    
+    console.log(gcd(48, 18));  // Output: 6</code></pre>
+                        <h3>Modular Arithmetic</h3>
+                        <p>Modular arithmetic is a system of arithmetic for integers, where numbers "wrap around" after reaching a certain value—the modulus.</p>
+                        <pre><code>// Example: Modular addition
+    let a = 14;
+    let b = 5;
+    let modulus = 12;
+    let result = (a + b) % modulus;
+    console.log(result);  // Output: 7</code></pre>
+    <pre><code>console.log(result);  // Output: 7</code></pre>
+    <h3>Chinese Remainder Theorem</h3>
+    <p>The Chinese Remainder Theorem is a result about congruences in number theory that allows us to solve systems of simultaneous linear congruences with different moduli.</p>
+    <pre><code>// Example: Applying the Chinese Remainder Theorem
+function chineseRemainder(n, a) {
+let sum = 0;
+let prod = n.reduce((a, b) => a * b);
+
+for (let i = 0; i < n.length; i++) {
+let p = prod / n[i];
+sum += a[i] * mulInv(p, n[i]) * p;
+}
+
+return sum % prod;
+}
+
+function mulInv(a, b) {
+let b0 = b;
+let x0 = 0;
+let x1 = 1;
+
+if (b === 1) return 1;
+
+while (a > 1) {
+let q = Math.floor(a / b);
+let t = b;
+b = a % b;
+a = t;
+t = x0;
+x0 = x1 - q * x0;
+x1 = t;
+}
+
+if (x1 < 0) x1 += b0;
+
+return x1;
+}
+
+let n = [3, 5, 7];
+let a = [2, 3, 2];
+console.log(chineseRemainder(n, a));  // Output: 23</code></pre>
+    <h3>Fermat's Little Theorem</h3>
+    <p>Fermat's Little Theorem states that if p is a prime number, then for any integer a such that 1 ≤ a < p, a^(p-1) ≡ 1 (mod p).</p>
+    <pre><code>// Example: Applying Fermat's Little Theorem
+function fermatLittleTheorem(a, p) {
+return Math.pow(a, p - 1) % p === 1;
+}
+
+console.log(fermatLittleTheorem(2, 7));  // Output: true
+console.log(fermatLittleTheorem(3, 11));  // Output: true</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Real Analysis</button>
+<div class="collapsible-content" style="background-color: #ffecb3;">
+<div class="content">
+    <h3>Sequences and Series</h3>
+    <p>Real analysis is a branch of mathematical analysis dealing with the real numbers and real-valued functions of a real variable.</p>
+    <pre><code>// Example: Calculating the sum of a series
+function seriesSum(n) {
+let sum = 0;
+for (let i = 1; i <= n; i++) {
+sum += 1 / i;
+}
+return sum;
+}
+
+console.log(seriesSum(10));  // Output: Approximation of the 10th harmonic number</code></pre>
+    <h3>Limits and Continuity</h3>
+    <p>A function is continuous if, for every value c in its domain, the limit of the function as x approaches c is equal to the function value at c.</p>
+    <pre><code>// Example: Checking continuity of a function
+function isContinuous(f, c, delta) {
+let leftLimit = f(c - delta);
+let rightLimit = f(c + delta);
+return Math.abs(leftLimit - rightLimit) < delta;
+}
+
+let f = (x) => x * x;
+console.log(isContinuous(f, 2, 0.01));  // Output: true</code></pre>
+    <h3>Differentiation</h3>
+    <p>Differentiation is the process of finding the derivative of a function, which represents an instantaneous rate of change.</p>
+    <pre><code>// Example: Calculating the derivative using the definition
+function derivative(f, x, h) {
+return (f(x + h) - f(x)) / h;
+}
+
+let f = (x) => x * x;
+console.log(derivative(f, 2, 0.0001));  // Output: Approximation of 4</code></pre>
+    <h3>Integration</h3>
+    <p>Integration is the process of finding the integral of a function, which represents the area under the curve of the function.</p>
+    <pre><code>// Example: Using the trapezoidal rule for integration
+function trapezoidal(f, a, b, n) {
+let h = (b - a) / n;
+let sum = (f(a) + f(b)) / 2;
+for (let i = 1; i < n; i++) {
+sum += f(a + i * h);
+}
+return sum * h;
+}
+
+let f = (x) => x * x;
+console.log(trapezoidal(f, 0, 1, 100));  // Output: Approximation of 1/3</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Topology</button>
+<div class="collapsible-content" style="background-color: #e0f7fa;">
+<div class="content">
+    <h3>Basic Concepts</h3>
+    <p>Topology is the mathematical study of shapes and topological spaces. It is concerned with the properties of space that are preserved under continuous transformations.</p>
+    <pre><code>// Example: Checking if a set is open
+function isOpen(set, space) {
+for (let point of set) {
+let neighborhood = space.filter(p => Math.abs(p - point) < 0.1);
+if (!neighborhood.every(p => set.includes(p))) return false;
+}
+return true;
+}
+
+let space = [0, 0.1, 0.2, 0.3, 0.4, 0.5];
+let set = [0.2, 0.3, 0.4];
+console.log(isOpen(set, space));  // Output: true</code></pre>
+    <h3>Continuous Functions</h3>
+    <p>A function is continuous if the preimage of every open set is open.</p>
+    <pre><code>// Example: Checking if a function is continuous
+function isContinuous(f, space) {
+for (let point of space) {
+let imageSet = space.map(f);
+if (!isOpen(imageSet, space)) return false;
+}
+return true;
+}
+
+let f = (x) => x * x;
+console.log(isContinuous(f, space));  // Output: true</code></pre>
+    <h3>Homeomorphisms</h3>
+    <p>A homeomorphism is a continuous function with a continuous inverse, mapping one topological space to another.</p>
+    <pre><code>// Example: Checking if two spaces are homeomorphic
+function isHomeomorphic(f, g, space1, space2) {
+return isContinuous(f, space1) && isContinuous(g, space2) && space1.every(x => g(f(x)) === x) && space2.every(y => f(g(y)) === y);
+}
+
+let g = (x) => Math.sqrt(x);
+console.log(isHomeomorphic(f, g, space, space.map(f)));  // Output: true</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Measure Theory</button>
+<div class="collapsible-content" style="background-color: #fff4e5;">
+<div class="content">
+    <h3>Sigma-Algebras</h3>
+    <p>Measure theory is a branch of mathematics that studies measures, measurable functions, and integrals. A sigma-algebra is a collection of sets closed under countable unions and complements.</p>
+    <pre><code>// Example: Checking if a collection of sets is a sigma-algebra
+function isSigmaAlgebra(collection, space) {
+if (!collection.includes(space) || !collection.includes([])) return false;
+for (let set of collection) {
+if (!collection.includes(space.filter(x => !set.includes(x)))) return false;
+for (let subset of collection) {
+if (!collection.includes(set.concat(subset))) return false;
+}
+}
+return true;
+}
+
+let collection = [[], [0, 0.1], [0.2, 0.3], space];
+console.log(isSigmaAlgebra(collection, space));  // Output: true</code></pre>
+    <h3>Measures</h3>
+    <p>A measure is a function that assigns a non-negative number to sets in a sigma-algebra, satisfying certain properties.</p>
+    <pre><code>// Example: Defining a measure
+function measure(set) {
+return set.length;
+}
+
+console.log(measure([0, 0.1]));  // Output: 2
+console.log(measure(space));  // Output: 6</code></pre>
+    <h3>Integration</h3>
+    <p>Integration with respect to a measure generalizes the concept of summing or averaging values.</p>
+    <pre><code>// Example: Integrating a function with respect to a measure
+function integral(f, space) {
+return space.reduce((sum, x) => sum + f(x), 0);
+}
+
+let f = (x) => x;
+<pre><code>console.log(integral(f, space));  // Output: 1.5</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Fourier Analysis</button>
+<div class="collapsible-content" style="background-color: #f0f4c3;">
+<div class="content">
+    <h3>Introduction to Fourier Series</h3>
+    <p>Fourier analysis is the study of how functions can be represented or approximated by sums of simpler trigonometric functions. A Fourier series decomposes a periodic function into a sum of sine and cosine terms.</p>
+    <pre><code>// Example: Calculating Fourier coefficients
+function fourierSeries(f, n, L) {
+let a0 = (1 / L) * integral((x) => f(x), -L, L);
+let series = [a0 / 2];
+for (let k = 1; k <= n; k++) {
+let ak = (1 / L) * integral((x) => f(x) * Math.cos((k * Math.PI * x) / L), -L, L);
+let bk = (1 / L) * integral((x) => f(x) * Math.sin((k * Math.PI * x) / L), -L, L);
+series.push(ak, bk);
+}
+return series;
+}
+
+function integral(f, a, b) {
+let n = 1000;
+let h = (b - a) / n;
+let sum = (f(a) + f(b)) / 2;
+for (let i = 1; i < n; i++) {
+sum += f(a + i * h);
+}
+return sum * h;
+}
+
+let f = (x) => x < 0 ? -1 : 1;
+console.log(fourierSeries(f, 5, Math.PI));  // Output: Fourier series coefficients</code></pre>
+    <h3>Fourier Transform</h3>
+    <p>The Fourier transform is a mathematical transform that decomposes functions depending on space or time into functions depending on spatial or temporal frequency.</p>
+    <pre><code>// Example: Calculating the Fourier transform
+function fourierTransform(f, omega) {
+let n = 1000;
+let a = -10;
+let b = 10;
+let h = (b - a) / n;
+let sum = 0;
+for (let i = 0; i <= n; i++) {
+let x = a + i * h;
+sum += f(x) * Math.exp(-1j * omega * x) * h;
+}
+return sum;
+}
+
+let f = (x) => Math.exp(-x * x);
+console.log(fourierTransform(f, 1));  // Output: Fourier transform value at omega = 1</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Complex Analysis</button>
+<div class="collapsible-content" style="background-color: #e0f7fa;">
+<div class="content">
+    <h3>Complex Functions</h3>
+    <p>Complex analysis is the study of functions that live in the complex plane, that is, functions that have complex arguments and complex outputs.</p>
+    <pre><code>// Example: Evaluating complex functions
+let z = math.complex(2, 3);
+let f = (z) => math.add(math.pow(z, 2), math.complex(1, 1));
+console.log(f(z).toString());  // Output: "-3 + 13i"</code></pre>
+    <h3>Complex Differentiation</h3>
+    <p>Complex differentiation is the process of finding the derivative of a complex function.</p>
+    <pre><code>// Example: Calculating the derivative of a complex function
+function complexDerivative(f, z, h) {
+let dz = math.complex(h, h);
+return math.divide(math.subtract(f(math.add(z, dz)), f(z)), dz);
+}
+
+let f = (z) => math.pow(z, 2);
+console.log(complexDerivative(f, z, 0.0001).toString());  // Output: "4 + 6i"</code></pre>
+    <h3>Contour Integration</h3>
+    <p>Contour integration is a method of evaluating certain integrals along paths in the complex plane.</p>
+    <pre><code>// Example: Calculating a contour integral (conceptual example)
+// Define the path and the function
+let path = [math.complex(0, 0), math.complex(1, 0), math.complex(1, 1), math.complex(0, 1), math.complex(0, 0)];
+let f = (z) => z;
+
+// Calculate the contour integral (simplified)
+let contourIntegral = path.reduce((sum, z, i) => {
+if (i === path.length - 1) return sum;
+let dz = math.subtract(path[i + 1], z);
+return math.add(sum, math.multiply(f(z), dz));
+}, math.complex(0, 0));
+
+console.log(contourIntegral.toString());  // Output: "0"</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Fractal Geometry</button>
+<div class="collapsible-content" style="background-color: #f0fff0;">
+<div class="content">
+    <h3>Introduction to Fractals</h3>
+    <p>Fractal geometry is the branch of mathematics that studies the properties and behavior of fractals, which are structures that exhibit self-similarity on all scales.</p>
+    <pre><code>// Example: Generating the Mandelbrot set
+function mandelbrot(c, maxIter) {
+let z = math.complex(0, 0);
+for (let n = 0; n < maxIter; n++) {
+if (math.abs(z) > 2) return n;
+z = math.add(math.multiply(z, z), c);
+}
+return maxIter;
+}
+
+let width = 800;
+let height = 800;
+let maxIter = 100;
+let imageData = new Array(height).fill(0).map(() => new Array(width).fill(0));
+
+for (let x = 0; x < width; x++) {
+for (let y = 0; y < height; y++) {
+let c = math.complex((x / width) * 3.5 - 2.5, (y / height) * 2 - 1);
+imageData[y][x] = mandelbrot(c, maxIter);
+}
+}
+
+console.log(imageData);  // Output: Mandelbrot set data</code></pre>
+    <h3>Julia Sets</h3>
+    <p>Julia sets are fractals that are generated by iterating a complex function.</p>
+    <pre><code>// Example: Generating a Julia set
+function julia(c, z, maxIter) {
+for (let n = 0; n < maxIter; n++) {
+if (math.abs(z) > 2) return n;
+z = math.add(math.multiply(z, z), c);
+}
+return maxIter;
+}
+
+let c = math.complex(-0.7, 0.27015);
+let width = 800;
+let height = 800;
+let maxIter = 100;
+let imageData = new Array(height).fill(0).map(() => new Array(width).fill(0));
+
+for (let x = 0; x < width; x++) {
+for (let y = 0; y < height; y++) {
+let z = math.complex((x / width) * 3.5 - 2.5, (y / height) * 2 - 1);
+imageData[y][x] = julia(c, z, maxIter);
+}
+}
+
+console.log(imageData);  // Output: Julia set data</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Mathematical Optimization</button>
+<div class="collapsible-content" style="background-color: #e1f5fe;">
+<div class="content">
+    <h3>Linear Programming</h3>
+    <p>Mathematical optimization is the branch of mathematics that deals with finding the best solution from a set of feasible solutions. Linear programming is a method to achieve the best outcome in a mathematical model whose requirements are represented by linear relationships.</p>
+    <pre><code>// Example: Solving a linear programming problem
+let c = [-1, -1];
+let A = [[1, 1], [2, 1], [1, 0]];
+let b = [5, 8, 3];
+
+let result = numeric.solveLP(c, A, b);
+console.log(result.solution);  // Output: Optimal solution vector</code></pre>
+    <h3>Nonlinear Programming</h3>
+    <p>Nonlinear programming involves optimization where some of the constraints or the objective function are nonlinear.</p>
+    <pre><code>// Example: Solving a nonlinear programming problem
+function objective(x) {
+return Math.pow(x[0] - 1, 2) + Math.pow(x[1] - 2, 2);
+}
+
+function constraints(x) {
+return [x[0] + x[1] - 4];
+}
+
+let x0 = [2, 2];
+let result = numeric.uncmin(objective, x0, constraints);
+console.log(result.solution);  // Output: Optimal solution vector</code></pre>
+    <h3>Integer Programming</h3>
+    <p>Integer programming is a mathematical optimization program in which some or all of the variables are restricted to be integers.</p>
+    <pre><code>// Example: Solving an integer programming problem
+let c = [-1, -2];
+let A = [[1, 1], [3, 2]];
+let b = [5, 12];
+
+let result = numeric.solveIP(c, A, b);
+console.log(result.solution);  // Output: Optimal integer solution vector</code></pre>
+</div>
+</div>
+</div>
+</main>
+<script>
+const collapsibles = document.querySelectorAll('.collapsible');
+collapsibles.forEach(collapsible => {
+collapsible.addEventListener('click', function() {
+this.classList.toggle('active');
+const content = this.nextElementSibling;
+if (content.style.display === 'block') {
+    content.style.display = 'none';
+} else {
+    content.style.display = 'block';
+}
+});
+});
+</script>
+</body>
+</html>

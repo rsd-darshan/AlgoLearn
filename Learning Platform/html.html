@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Course</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #cbcdcf;
+            color: rgb(1, 1, 1);
+            padding: 1em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #4848d8;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 1em;
+        }
+        pre {
+            background-color: #ffffff;
+            border: 1px solid #040404;
+            padding: 1em;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section-title {
+            cursor: pointer;
+            color: #0a0a0a;
+            font-weight: bold;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            margin-bottom: 0.5em;
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            background-color: #282525;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .section-title:hover {
+            background-color: #e1e1e1;
+        }
+        .content {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            margin-bottom: 1em;
+        }
+        .collapsible {
+            background-color: #f1f1f1;
+            border: none;
+            color: #0612ef;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: #000000;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212";
+        }
+        .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: rgb(19, 18, 18);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML & CSS Course</h1>
+        <nav>
+            <a href="course.html">Back to Courses</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Course Overview</h2>
+        <p>This course covers various topics in HTML and CSS, including basics, layout techniques, responsive design, and more. Each section provides detailed explanations and examples to help you understand and apply HTML and CSS concepts.</p>
+        <div id="sections">
+            <button class="collapsible">Introduction to HTML</button>
+            <div class="collapsible-content" style="background-color: #f9f9f9;">
+                <div class="content">
+                    <h3>What is HTML?</h3>
+                    <p>HTML, or HyperText Markup Language, is the standard markup language used to create web pages. A markup language is a computer language that uses tags to define elements within a document.</p>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;This is a Heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h3>HTML Elements, Tags, and Attributes</h3>
+                    <p>HTML elements are the building blocks of HTML pages. They are represented by tags. HTML tags label pieces of content such as "heading", "paragraph", "table", and so on.</p>
+                    <ul>
+                        <li><code>&lt;h1&gt; to &lt;h6&gt;</code> - Headings</li>
+                        <li><code>&lt;p&gt;</code> - Paragraph</li>
+                        <li><code>&lt;a&gt;</code> - Anchor (link)</li>
+                        <li><code>&lt;img&gt;</code> - Image</li>
+                        <li><code>&lt;div&gt;</code> - Division</li>
+                        <li><code>&lt;span&gt;</code> - Span</li>
+                        <li><code>&lt;ul&gt;</code> - Unordered List</li>
+                        <li><code>&lt;ol&gt;</code> - Ordered List</li>
+                        <li><code>&lt;li&gt;</code> - List Item</li>
+                        <li><code>&lt;table&gt;</code> - Table</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Introduction to CSS</button>
+            <div class="collapsible-content" style="background-color: #f0f9ff;">
+                <div class="content">
+                    <h3>What is CSS?</h3>
+                    <p>CSS, or Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. CSS describes how HTML elements are to be displayed on screen, paper, or in other media.</p>
+                    <pre><code>body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+}
+</code></pre>
+                    <h3>Basic CSS Selectors</h3>
+                    <p>CSS selectors are used to "find" (or select) the HTML elements you want to style. We can divide CSS selectors into five categories:</p>
+                    <ul>
+                        <li>Simple selectors (select elements based on name, id, class)</li>
+                        <li>Combinator selectors (select elements based on a specific relationship between them)</li>
+                        <li>Pseudo-class selectors (select elements based on a certain state)</li>
+                        <li>Pseudo-elements selectors (select and style a part of an element)</li>
+                        <li>Attribute selectors (select elements based on an attribute or attribute value)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Advanced HTML</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Forms</h3>
+                    <p>HTML forms are used to collect user input. The form element is used to create an HTML form for user input. Form elements include input fields, radio buttons, checkboxes, and more.</p>
+                    <pre><code>&lt;form action="/submit-form" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+</code></pre>
+                    <h3>Tables</h3>
+                    <p>HTML tables allow web developers to arrange data into rows and columns. The table element is used to create a table. A table is divided into rows with the tr tag, and each row is divided into data cells with the td tag.</p>
+                    <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+                    <h3>Multimedia</h3>
+                    <p>HTML5 provides new elements for including multimedia content such as audio and video.</p>
+                    <pre><code>&lt;video width="320" height="240" controls&gt;
+                        &lt;source src="movie.mp4" type="video/mp4"&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+&lt;source src="audio.mp3" type="audio/mpeg"&gt;
+Your browser does not support the audio element.
+&lt;/audio&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Advanced CSS</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>CSS Positioning</h3>
+                    <p>CSS positioning properties allow you to position an element relative to its parent element, its containing element, or the viewport. The position property can take several values:</p>
+                    <ul>
+                        <li><strong>static</strong>: default value. Elements are positioned according to the normal flow of the document.</li>
+                        <li><strong>relative</strong>: elements are positioned relative to their normal position.</li>
+                        <li><strong>absolute</strong>: elements are positioned relative to their nearest positioned ancestor.</li>
+                        <li><strong>fixed</strong>: elements are positioned relative to the browser window.</li>
+                        <li><strong>sticky</strong>: elements are positioned based on the user's scroll position.</li>
+                    </ul>
+                    <pre><code>.relative {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.absolute {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+}
+</code></pre>
+                    <h3>CSS Flexbox</h3>
+                    <p>CSS flexbox layout allows you to design a flexible responsive layout structure without using float or positioning. The flexbox layout module is designed to lay out elements in one dimension either as a row or a column.</p>
+                    <pre><code>.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.item {
+    flex: 1;
+    padding: 10px;
+}
+</code></pre>
+                    <h4>Flexbox Properties</h4>
+                    <ul>
+                        <li><code>display: flex;</code> - Defines a flex container</li>
+                        <li><code>flex-direction</code> - Defines the direction of the flex container's main axis (row or column)</li>
+                        <li><code>justify-content</code> - Aligns items along the main axis</li>
+                        <li><code>align-items</code> - Aligns items along the cross axis</li>
+                        <li><code>flex-wrap</code> - Specifies whether the flex items should wrap or not</li>
+                    </ul>
+                    <h3>CSS Grid Layout</h3>
+                    <p>CSS Grid Layout is a two-dimensional layout system for the web. It allows you to layout items into rows and columns, making it easier to design web pages without having to use floats and positioning.</p>
+                    <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.item {
+    background-color: lightblue;
+    padding: 20px;
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Responsive Web Design</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Media Queries</h3>
+                    <p>Media queries are a key part of responsive web design, allowing you to apply styles based on the characteristics of the device being used to view the content.</p>
+                    <pre><code>@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    body {
+        background-color: lightgreen;
+    }
+}
+</code></pre>
+                    <h3>Flexible Images</h3>
+                    <p>Images in a responsive web design should be flexible to fit their containing elements.</p>
+                    <pre><code>img {
+    max-width: 100%;
+    height: auto;
+}
+</code></pre>
+                    <h3>Viewport</h3>
+                    <p>The viewport meta tag ensures that your website is properly scaled on all devices.</p>
+                    <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">CSS Animations and Transitions</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>CSS Transitions</h3>
+                    <p>CSS transitions allow you to change property values smoothly (over a given duration).</p>
+                    <pre><code>div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: width 2s;
+}
+
+div:hover {
+    width: 300px;
+}
+</code></pre>
+                    <h3>CSS Animations</h3>
+                    <p>CSS animations allow you to animate transitions from one CSS style configuration to another.</p>
+                    <pre><code>@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">CSS Preprocessors</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to CSS Preprocessors</h3>
+                    <p>CSS preprocessors like SASS and LESS allow you to write more maintainable and modular CSS.</p>
+                    <h3>SASS Basics</h3>
+                    <pre><code>$primary-color: #333;
+
+body {
+    color: $primary-color;
+}
+
+.container {
+    @extend .clearfix;
+    border: 1px solid $primary-color;
+}
+</code></pre>
+                    <h3>LESS Basics</h3>
+                    <pre><code>@primary-color: #333;
+
+body {
+    color: @primary-color;
+}
+
+.container {
+    .clearfix();
+    border: 1px solid @primary-color;
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">CSS Frameworks</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>Introduction to CSS Frameworks</h3>
+                    <p>CSS frameworks like Bootstrap and Foundation provide pre-designed components and styles to speed up your development process.</p>
+                    <h3>Bootstrap Basics</h3>
+                    <pre><code>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"&gt;
+
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col"&gt;Column 1&lt;/div&gt;
+        &lt;div class="col"&gt;Column 2&lt;/div&gt;
+        &lt;div class="col"&gt;Column 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    <h3>Foundation Basics</h3>
+                    <pre><code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation.min.css"&gt;
+
+&lt;div class="grid-container"&gt;
+    &lt;div class="grid-x grid-margin-x"&gt;
+        &lt;div class="cell small-4"&gt;Column 1&lt;/div&gt;
+        &lt;div class="cell small-4"&gt;Column 2&lt;/div&gt;
+        &lt;div class="cell small-4"&gt;Column 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">CSS Variables</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to CSS Variables</h3>
+                    <p>CSS variables, also known as custom properties, allow you to store values that you want to reuse throughout your CSS.</p>
+                    <pre><code>:root {
+    --primary-color: #333;
+    --secondary-color: #555;
+}
+
+body {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Advanced HTML5 Features</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>HTML5 Semantic Elements</h3>
+                    <p>HTML5 introduces new semantic elements to define different parts of a web page:</p>
+                    <ul>
+                        <li><code>&lt;header&gt;</code> - Defines a header for a document or section</li>
+                        <li><code>&lt;nav&gt;</code> - Defines navigation links</li>
+                        <li><code>&lt;section&gt;</code> - Defines a section in a document</li>
+                        <li><code>&lt;article&gt;</code> - Defines an independent, self-contained content</li>
+                        <li><code>&lt;aside&gt;</code> - Defines content aside from the content it is placed in</li>
+                        <li><code>&lt;footer&gt;</code> - Defines a footer for a document or section</li>
+                    </ul>
+                    <pre><code>&lt;header&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;This is a section.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;This is an article.&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;aside&gt;
+    &lt;p&gt;This is an aside.&lt;/p&gt;
+&lt;/aside&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;Footer content here&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+
+                    <h3>HTML5 Forms and Input Types</h3>
+                    <p>HTML5 introduces new form elements and input types to enhance form usability:</p>
+                    <ul>
+                        <li><code>&lt;input type="email"&gt;</code> - Used for email input</li>
+                        <li><code>&lt;input type="url"&gt;</code> - Used for URL input</li>
+                        <li><code>&lt;input type="number"&gt;</code> - Used for number input</li>
+                        <li><code>&lt;input type="range"&gt;</code> - Used for range input</li>
+                        <li><code>&lt;input type="date"&gt;</code> - Used for date input</li>
+                        <li><code>&lt;input type="color"&gt;</code> - Used for color input</li>
+                    </ul>
+                    <pre><code>&lt;form&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+
+    &lt;label for="url"&gt;Website:&lt;/label&gt;
+    &lt;input type="url" id="url" name="url"&gt;
+
+    &lt;label for="quantity"&gt;Quantity:&lt;/label&gt;
+    &lt;input type="number" id="quantity" name="quantity" min="1" max="5"&gt;
+
+    &lt;label for="birthday"&gt;Birthday:&lt;/label&gt;
+    &lt;input type="date" id="birthday" name="birthday"&gt;
+
+    &lt;label for="color"&gt;Favorite Color:&lt;/label&gt;
+    &lt;input type="color" id="color" name="color"&gt;
+
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+</code></pre>
+
+                    <h3>HTML5 Audio and Video</h3>
+                    <p>HTML5 provides new elements to include multimedia content such as audio and video directly in the document:</p>
+                    <pre><code>&lt;video width="320" height="240" controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+</code></pre>
+
+                    <h3>HTML5 Canvas</h3>
+                    <p>The HTML5 <code>&lt;canvas&gt;</code> element is used to draw graphics via scripting (usually JavaScript).</p>
+                    <pre><code>&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0, 0);
+ctx.lineTo(200, 100);
+ctx.stroke();
+&lt;/script&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">JavaScript and DOM Manipulation</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>Introduction to JavaScript</h3>
+                    <p>JavaScript is a programming language that allows you to implement complex features on web pages.</p>
+                    <pre><code>&lt;script&gt;
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello JavaScript!";
+}
+&lt;/script&gt;
+
+&lt;button onclick="myFunction()"&gt;Click me&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+</code></pre>
+
+                    <h3>DOM Manipulation</h3>
+                    <p>The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content.</p>
+                    <pre><code>&lt;script&gt;
+document.getElementById("myDiv").style.color = "blue";
+&lt;/script&gt;
+
+&lt;div id="myDiv"&gt;This is a div element.&lt;/div&gt;
+</code></pre>
+
+                    <h3>Event Handling</h3>
+                    <p>JavaScript allows you to handle events such as clicks, mouse movements, key presses, etc.</p>
+                    <pre><code>&lt;script&gt;
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+});
+&lt;/script&gt;
+
+&lt;button id="myButton"&gt;Click me&lt;/button&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Web Storage API</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Local Storage</h3>
+                    <p>The localStorage object allows you to save key/value pairs in a web browser with no expiration date.</p>
+                    <pre><code>&lt;script&gt;
+localStorage.setItem("name", "John Doe");
+document.getElementById("demo").innerHTML = localStorage.getItem("name");
+&lt;/script&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+</code></pre>
+
+                    <h3>Session Storage</h3>
+                    <p>The sessionStorage object is similar to localStorage, except that it stores the data for only one session.</p>
+                    <pre><code>&lt;script&gt;
+sessionStorage.setItem("name", "John Doe");
+document.getElementById("demo").innerHTML = sessionStorage.getItem("name");
+&lt;/script&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">HTML5 Geolocation API</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>Introduction to Geolocation</h3>
+                    <p>The HTML5 Geolocation API is used to get the geographical position of a user.</p>
+                    <pre><code>&lt;button onclick="getLocation()"&gt;Try It&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "&lt;br&gt;Longitude: " + position.coords.longitude;
+}
+&lt;/script&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">HTML5 Web Workers</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to Web Workers</h3>
+                    <p>Web Workers allow you to run scripts in background threads, which can improve the performance of your web application.</p>
+                    <pre><code>&lt;button onclick="startWorker()"&gt;Start Worker&lt;/button&gt;
+&lt;button onclick="stopWorker()"&gt;Stop Worker&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var worker;
+
+function startWorker() {
+    if (typeof(Worker) !== "undefined") {
+        if (typeof(worker) == "undefined") {
+            worker = new Worker("worker.js");
+        }
+        worker.onmessage = function(event) {
+            document.getElementById("demo").innerHTML = event.data;
+        };
+    } else {
+        document.getElementById("demo").innerHTML = "Sorry, your browser does not support Web Workers...";
+    }
+}
+
+function stopWorker() {
+    worker.terminate();
+    worker = undefined;
+}
+&lt;/script&gt;
+</code></pre>
+                    <p>Contents of <code>worker.js</code>:</p>
+                    <pre><code>var i = 0;
+
+function timedCount() {
+    i = i + 1;
+    postMessage(i);
+    setTimeout("timedCount()", 500);
+}
+
+timedCount();
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">HTML5 Web Sockets</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>Introduction to Web Sockets</h3>
+                    <p>Web Sockets provide a full-duplex communication channel over a single TCP connection, enabling real-time data transfer between the server and the client.</p>
+                    <pre><code>&lt;script&gt;
+var ws = new WebSocket("ws://example.com/socketserver");
+
+ws.onopen = function() {
+    ws.send("Hello, Server!");
+};
+
+ws.onmessage = function(event) {
+    var msg = event.data;
+    alert("Message received: " + msg);
+};
+
+ws.onclose = function() {
+    alert("Connection closed");
+};
+&lt;/script&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">HTML5 Drag and Drop</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to Drag and Drop</h3>
+                    <p>The HTML5 Drag and Drop API allows you to implement drag and drop functionality in your web applications.</p>
+                    <pre><code>&lt;style&gt;
+#drag1 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    margin: 10px;
+    cursor: pointer;
+}
+#div1 {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+&lt;/style&gt;
+
+&lt;div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div id="drag1" draggable="true" ondragstart="drag(event)"&gt;Drag me&lt;/div&gt;
+
+&lt;script&gt;
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+&lt;/script&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">HTML5 IndexedDB</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>Introduction to IndexedDB</h3>
+                    <p>IndexedDB is a low-level API for client-side storage of significant amounts of structured data, including files/blobs.</p>
+                    <pre><code>&lt;script&gt;
+var request = indexedDB.open("MyTestDatabase", 1);
+
+request.onerror = function(event) {
+    console.log("Database error: " + event.target.errorCode);
+};
+
+request.onsuccess = function(event) {
+    console.log("Database opened successfully");
+};
+
+request.onupgradeneeded = function(event) {
+    var db = event.target.result;
+    var objectStore = db.createObjectStore("customers", { keyPath: "id" });
+
+    objectStore.transaction.oncomplete = function(event) {
+        var customerObjectStore = db.transaction("customers", "readwrite").objectStore("customers");
+        customerObjectStore.add({ id: 1, name: "John Doe", email: "john.doe@example.com" });
+    };
+};
+&lt;/script&gt;
+</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">HTML5 History API</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to History API</h3>
+                    <p>The History API provides methods and properties for manipulating the browser session history.</p>
+                    <pre><code>&lt;button onclick="goBack()"&gt;Go Back&lt;/button&gt;
+&lt;button onclick="goForward()"&gt;Go Forward&lt;/button&gt;
+
+&lt;script&gt;
+function goBack() {
+    window.history.back();
+}
+
+function goForward() {
+    window.history.forward();
+}
+&lt;/script&gt;
+</code></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const collapsibles = document.querySelectorAll('.collapsible');
+        collapsibles.forEach(collapsible => {
+            collapsible.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

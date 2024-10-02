@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Course</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #cbcdcf;
+            color: rgb(1, 1, 1);
+            padding: 1em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #4848d8;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 1em;
+        }
+        pre {
+            background-color: #ffffff;
+            border: 1px solid #040404;
+            padding: 1em;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section-title {
+            cursor: pointer;
+            color: #0a0a0a;
+            font-weight: bold;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            margin-bottom: 0.5em;
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            background-color: #282525;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .section-title:hover {
+            background-color: #e1e1e1;
+        }
+        .content {
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            margin-bottom: 1em;
+        }
+        .collapsible {
+            background-color: #f1f1f1;
+            border: none;
+            color: #0612ef;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: #000000;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212";
+        }
+        .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: rgb(19, 18, 18);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Course</h1>
+        <nav>
+            <a href="course.html">Back to Courses</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Course Overview</h2>
+        <p>JavaScript is a versatile programming language that is essential for web development. It allows you to create dynamic and interactive web pages.</p>
+        <div id="sections">
+            <button class="collapsible">Introduction to JavaScript</button>
+            <div class="collapsible-content" style="background-color: #f9f9f9;">
+                <div class="content">
+                    <h3>What is JavaScript?</h3>
+                    <p>JavaScript is a programming language commonly used in web development. It was originally developed by Netscape as a means to add dynamic and interactive elements to websites.</p>
+                    <h3>Setting Up Your Environment</h3>
+                    <p>To start writing JavaScript, all you need is a text editor and a web browser. You can write JavaScript directly in your HTML file using the <code>&lt;script&gt;</code> tag.</p>
+                    <h3>Writing Your First JavaScript Program</h3>
+                    <p>Create a new HTML file and add the following code to write "Hello, World!" to the console:</p>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        console.log('Hello, World!');
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Variables and Data Types</button>
+            <div class="collapsible-content" style="background-color: #f0f9ff;">
+                <div class="content">
+                    <h3>Declaring Variables</h3>
+                    <p>Variables in JavaScript can be declared using <code>var</code>, <code>let</code>, or <code>const</code>. The <code>let</code> and <code>const</code> keywords were introduced in ES6 and provide block-scoping:</p>
+                    <pre><code>// Using var
+var name = 'John';
+console.log(name);
+
+// Using let
+let age = 25;
+console.log(age);
+
+// Using const
+const pi = 3.14;
+console.log(pi);</code></pre>
+                    <h3>Data Types</h3>
+                    <p>JavaScript supports various data types including:</p>
+                    <ul>
+                        <li>Number: for numeric values</li>
+                        <li>String: for text</li>
+                        <li>Boolean: for true/false values</li>
+                        <li>Object: for collections of data</li>
+                        <li>Array: for ordered lists of data</li>
+                        <li>Undefined: for variables that have not been assigned a value</li>
+                        <li>Null: for variables that have been explicitly set to no value</li>
+                    </ul>
+                    <pre><code>// Number
+let number = 5;
+
+// String
+let text = "Hello";
+
+// Boolean
+let isValid = true;
+
+// Object
+let person = {
+    name: "John",
+    age: 30
+};
+
+// Array
+let numbers = [1, 2, 3, 4, 5];
+
+// Undefined
+let x;
+
+// Null
+let y = null;</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Operators</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Arithmetic Operators</h3>
+                    <p>JavaScript supports arithmetic operators like addition, subtraction, multiplication, division, and modulus:</p>
+                    <pre><code>let a = 10;
+let b = 5;
+
+console.log(a + b);  // 15
+console.log(a - b);  // 5
+console.log(a * b);  // 50
+console.log(a / b);  // 2
+console.log(a % b);  // 0</code></pre>
+                    <h3>Comparison Operators</h3>
+                    <p>Comparison operators are used to compare values:</p>
+                    <pre><code>let a = 10;
+let b = 5;
+
+console.log(a == b);  // false
+console.log(a != b);  // true
+console.log(a > b);   // true
+console.log(a < b);   // false
+console.log(a >= b);  // true
+console.log(a <= b);  // false</code></pre>
+                    <h3>Logical Operators</h3>
+                    <p>Logical operators are used to combine conditional statements:</p>
+                    <pre><code>let a = true;
+let b = false;
+
+console.log(a && b);  // false
+console.log(a || b);  // true
+console.log(!a);      // false</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Control Structures</button>
+            <div class="collapsible-content" style="background-color: #f0fff0;">
+                <div class="content">
+                    <h3>Conditional Statements</h3>
+                    <p>Use <code>if</code>, <code>else if</code>, and <code>else</code> to execute code based on conditions:</p>
+                    <pre><code>let age = 20;
+
+if (age < 18) {
+    console.log("You are a minor.");
+} else if (age < 65) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a senior.");
+}</code></pre>
+<h3>Switch Statement</h3>
+<p>The <code>switch</code> statement is used to perform different actions based on different conditions:</p>
+<pre><code>let fruit = "apple";
+
+switch(fruit) {
+case "banana":
+console.log("This is a banana.");
+break;
+case "apple":
+console.log("This is an apple.");
+break;
+case "orange":
+console.log("This is an orange.");
+break;
+default:
+console.log("Unknown fruit.");
+}</code></pre>
+<h3>Loops</h3>
+<p>JavaScript supports various types of loops for repeating blocks of code:</p>
+<ul>
+    <li><code>for</code> loop</li>
+    <li><code>while</code> loop</li>
+    <li><code>do...while</code> loop</li>
+    <li><code>for...in</code> loop</li>
+    <li><code>for...of</code> loop</li>
+</ul>
+<pre><code>// for loop
+for (let i = 0; i < 5; i++) {
+console.log(i);
+}
+
+// while loop
+let i = 0;
+while (i < 5) {
+console.log(i);
+i++;
+}
+
+// do...while loop
+let j = 0;
+do {
+console.log(j);
+j++;
+} while (j < 5);
+
+// for...in loop
+let person = {name: "John", age: 30};
+for (let key in person) {
+console.log(key + ": " + person[key]);
+}
+
+// for...of loop
+let numbers = [1, 2, 3, 4, 5];
+for (let number of numbers) {
+console.log(number);
+}</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Functions</button>
+<div class="collapsible-content" style="background-color: #fff0f5;">
+<div class="content">
+<h3>Defining Functions</h3>
+<p>Functions are defined using the <code>function</code> keyword. They can take parameters and return values:</p>
+<pre><code>function greet(name) {
+return "Hello, " + name + "!";
+}
+
+console.log(greet("John"));  // Hello, John!</code></pre>
+<h3>Function Expressions</h3>
+<p>Functions can also be defined as expressions:</p>
+<pre><code>const greet = function(name) {
+return "Hello, " + name + "!";
+};
+
+console.log(greet("Jane"));  // Hello, Jane!</code></pre>
+<h3>Arrow Functions</h3>
+<p>Arrow functions provide a shorter syntax for writing functions:</p>
+<pre><code>const greet = (name) => "Hello, " + name + "!";
+
+console.log(greet("Jack"));  // Hello, Jack!</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Objects</button>
+<div class="collapsible-content" style="background-color: #e0f7fa;">
+<div class="content">
+<h3>Creating Objects</h3>
+<p>Objects are collections of key-value pairs. They can be created using object literals:</p>
+<pre><code>let person = {
+name: "John",
+age: 30,
+greet: function() {
+return "Hello, " + this.name + "!";
+}
+};
+
+console.log(person.name);  // John
+console.log(person.greet());  // Hello, John!</code></pre>
+<h3>Constructor Functions</h3>
+<p>Constructor functions are used to create multiple objects with similar properties:</p>
+<pre><code>function Person(name, age) {
+this.name = name;
+this.age = age;
+this.greet = function() {
+return "Hello, " + this.name + "!";
+};
+}
+
+let john = new Person("John", 30);
+let jane = new Person("Jane", 25);
+
+console.log(john.greet());  // Hello, John!
+console.log(jane.greet());  // Hello, Jane!</code></pre>
+<h3>Prototypes</h3>
+<p>Prototypes allow you to add properties and methods to objects:</p>
+<pre><code>function Person(name, age) {
+this.name = name;
+this.age = age;
+}
+
+Person.prototype.greet = function() {
+return "Hello, " + this.name + "!";
+};
+
+let john = new Person("John", 30);
+console.log(john.greet());  // Hello, John!</code></pre>
+</div>
+</div>
+
+<button class="collapsible">DOM Manipulation</button>
+<div class="collapsible-content" style="background-color: #e8f5e9;">
+<div class="content">
+<h3>Selecting Elements</h3>
+<p>Use methods like <code>getElementById</code>, <code>getElementsByClassName</code>, and <code>querySelector</code> to select HTML elements:</p>
+<pre><code>// Select by ID
+let header = document.getElementById("header");
+
+// Select by class name
+let items = document.getElementsByClassName("item");
+
+// Select by CSS selector
+let firstItem = document.querySelector(".item");</code></pre>
+<h3>Changing Element Content</h3>
+<p>Change the content of HTML elements using properties like <code>innerText</code> and <code>innerHTML</code>:</p>
+<pre><code>// Change innerText
+header.innerText = "New Header Text";
+
+// Change innerHTML
+firstItem.innerHTML = "<strong>New Item Content</strong>";</code></pre>
+<h3>Adding and Removing Elements</h3>
+<p>Add and remove elements from the DOM using methods like <code>appendChild</code> and <code>removeChild</code>:</p>
+<pre><code>// Create a new element
+let newItem = document.createElement("div");
+newItem.className = "item";
+newItem.innerText = "New Item";
+
+// Add the new element to the DOM
+document.body.appendChild(newItem);
+
+// Remove an element from the DOM
+document.body.removeChild(newItem);</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Event Handling</button>
+<div class="collapsible-content" style="background-color: #fff3e0;">
+<div class="content">
+<h3>Adding Event Listeners</h3>
+<p>Add event listeners to HTML elements to handle events like clicks, mouse movements, and key presses:</p>
+<pre><code>// Select an element
+let button = document.querySelector("button");
+
+// Add a click event listener
+button.addEventListener("click", function() {
+alert("Button clicked!");
+});</code></pre>
+<h3>Common Events</h3>
+<p>Some common events include:</p>
+<ul>
+    <li><code>click</code>: when an element is clicked</li>
+    <li><code>mouseover</code>: when the mouse is over an element</li>
+    <li><code>mouseout</code>: when the mouse leaves an element</li>
+    <li><code>keydown</code>: when a key is pressed</li>
+    <li><code>keyup</code>: when a key is released</li>
+</ul>
+<pre><code>// Mouseover event
+button.addEventListener("mouseover", function() {
+button.style.backgroundColor = "yellow";
+});
+
+// Mouseout event
+button.addEventListener("mouseout", function() {
+button.style.backgroundColor = "";
+});
+
+// Keydown event
+document.addEventListener("keydown", function(event) {
+console.log("Key pressed: " + event.key);
+});
+
+// Keyup event
+document.addEventListener("keyup", function(event) {
+console.log("Key released: " + event.key);
+});</code></pre>
+</div>
+</div>
+
+<button class="collapsible">ES6 Features</button>
+<div class="collapsible-content" style="background-color: #e1f5fe;">
+<div class="content">
+<h3>Let and Const</h3>
+<p>The <code>let</code> and <code>const</code> keywords provide block-scoping, which helps prevent bugs caused by variable hoisting:</p>
+<pre><code>let x = 10;
+if (true) {
+let x = 20;  // This x is different from the outer x
+console.log(x);  // 20
+}
+console.log(x);  // 10
+
+const y = 30;
+console.log(y);  // 30
+
+// y = 40;  // Error: Assignment to constant variable</code></pre>
+<h3>Arrow Functions</h3>
+<p>Arrow functions provide a concise way to write functions:</p>
+<pre><code>const add = (a, b) => a + b;
+console.log(add(2, 3));  // 5</code></pre>
+<h3>Template Literals</h3>
+<p>Template literals allow you to embed expressions inside string literals, using backticks (<code>`</code>) instead of single or double quotes:</p>
+<pre><code>let name = "John";
+let message = `Hello, ${name}!`;
+console.log(message);  // Hello, John!</code></pre>
+<h3>Destructuring</h3>
+<p>Destructuring allows you to extract values from arrays or properties from objects into distinct variables:</p>
+<pre><code>// Array destructuring
+let [a, b] = [1, 2];
+console.log(a);  // 1
+console.log(b);  // 2
+
+// Object destructuring
+let person = {name: "John", age: 30};
+let {name, age} = person;
+console.log(name);  // John
+console.log(age);  // 30</code></pre>
+<h3>Classes</h3>
+<p>Classes provide a more convenient and clearer syntax to create objects and deal with inheritance:</p>
+<pre><code>class Person {
+constructor(name, age) {
+this.name = name;
+this.age = age;
+}
+
+greet() {
+return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+}
+}
+
+let john = new Person("John", 30);
+console.log(john.greet());  // Hello, my name is John and I am 30 years old.</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Asynchronous JavaScript</button>
+<div class="collapsible-content" style="background-color: #ffccbc;">
+<div class="content">
+<h3>Callbacks</h3>
+<p>Callbacks are functions passed as arguments to other functions to be executed after an operation is completed:</p>
+<pre><code>function fetchData(callback) {
+setTimeout(() => {
+callback("Data received");
+}, 2000);
+}
+
+fetchData(data => {
+console.log(data);  // Data received
+});</code></pre>
+<h3>Promises</h3>
+<p>Promises provide a more elegant way to handle asynchronous operations:</p>
+<pre><code>let promise = new Promise((resolve, reject) => {
+let success = true;
+if (success) {
+resolve("Operation successful");
+} else {
+reject("Operation failed");
+}
+});
+
+promise.then(result => {
+console.log(result);  // Operation successful
+}).catch(error => {
+console.log(error);
+});</code></pre>
+<h3>Async/Await</h3>
+<p>The <code>async</code> and <code>await</code> keywords provide a way to write asynchronous code that looks synchronous:</p>
+<pre><code>async function fetchData() {
+let promise = new Promise((resolve, reject) => {
+setTimeout(() => resolve("Data received"), 2000);
+});
+
+let result = await promise;
+console.log(result);  // Data received
+}
+
+fetchData();</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Modules</button>
+<div class="collapsible-content" style="background-color: #ffe0b2;">
+<div class="content">
+    <h3>Importing and Exporting Modules</h3>
+    <p>Modules in JavaScript allow you to break your code into separate files. Use the <code>export</code> and <code>import</code> keywords to work with modules:</p>
+    <pre><code>// math.js
+export function add(a, b) {
+return a + b;
+}
+
+export function subtract(a, b) {
+return a - b;
+}
+
+// main.js
+import { add, subtract } from './math.js';
+
+console.log(add(2, 3));  // 5
+console.log(subtract(5, 2));  // 3</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Error Handling</button>
+<div class="collapsible-content" style="background-color: #ffebee;">
+<div class="content">
+    <h3>Try...Catch</h3>
+    <p>Use <code>try...catch</code> blocks to handle errors in JavaScript:</p>
+    <pre><code>try {
+let result = riskyOperation();
+console.log(result);
+} catch (error) {
+console.error("An error occurred:", error);
+}</code></pre>
+    <h3>Throwing Errors</h3>
+    <p>You can throw your own errors using the <code>throw</code> statement:</p>
+    <pre><code>function riskyOperation() {
+if (Math.random() > 0.5) {
+throw new Error("Something went wrong!");
+}
+return "Success!";
+}
+
+try {
+let result = riskyOperation();
+console.log(result);
+} catch (error) {
+console.error("An error occurred:", error);
+}</code></pre>
+    <h3>Finally Block</h3>
+    <p>The <code>finally</code> block contains code that will be executed regardless of whether an error occurred:</p>
+    <pre><code>try {
+let result = riskyOperation();
+console.log(result);
+} catch (error) {
+console.error("An error occurred:", error);
+} finally {
+console.log("This will always run");
+}</code></pre>
+</div>
+</div>
+
+<button class="collapsible">AJAX and Fetch API</button>
+<div class="collapsible-content" style="background-color: #e0f7fa;">
+<div class="content">
+    <h3>Introduction to AJAX</h3>
+    <p>AJAX (Asynchronous JavaScript and XML) allows you to send and receive data asynchronously without reloading the web page. You can use the <code>XMLHttpRequest</code> object to make AJAX requests:</p>
+    <pre><code>let xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.example.com/data", true);
+xhr.onload = function() {
+if (xhr.status === 200) {
+console.log(xhr.responseText);
+} else {
+console.error("Request failed");
+}
+};
+xhr.send();</code></pre>
+    <h3>Using the Fetch API</h3>
+    <p>The Fetch API provides a modern interface for making HTTP requests:</p>
+    <pre><code>fetch("https://api.example.com/data")
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error("Request failed", error));</code></pre>
+    <h3>Making POST Requests</h3>
+    <p>Use the Fetch API to make POST requests:</p>
+    <pre><code>fetch("https://api.example.com/data", {
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({ name: "John", age: 30 })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error("Request failed", error));</code></pre>
+</div>
+</div>
+
+<button class="collapsible">JSON</button>
+<div class="collapsible-content" style="background-color: #e8f5e9;">
+<div class="content">
+    <h3>Introduction to JSON</h3>
+    <p>JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate:</p>
+    <pre><code>let jsonString = '{"name": "John", "age": 30}';
+let jsonObject = JSON.parse(jsonString);
+console.log(jsonObject.name);  // John
+
+let newJsonString = JSON.stringify(jsonObject);
+console.log(newJsonString);  // {"name":"John","age":30}</code></pre>
+    <h3>Parsing JSON</h3>
+    <p>Use <code>JSON.parse()</code> to convert a JSON string into a JavaScript object:</p>
+    <pre><code>let jsonString = '{"name": "John", "age": 30}';
+let jsonObject = JSON.parse(jsonString);
+console.log(jsonObject.name);  // John</code></pre>
+    <h3>Stringifying JSON</h3>
+    <p>Use <code>JSON.stringify()</code> to convert a JavaScript object into a JSON string:</p>
+    <pre><code>let jsonObject = { name: "John", age: 30 };
+let jsonString = JSON.stringify(jsonObject);
+console.log(jsonString);  // {"name":"John","age":30}</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Local Storage and Session Storage</button>
+<div class="collapsible-content" style="background-color: #fff4e5;">
+<div class="content">
+    <h3>Using Local Storage</h3>
+    <p>Local Storage allows you to store data in the browser that persists even after the browser is closed. Use the <code>localStorage</code> object to interact with local storage:</p>
+    <pre><code>// Set item in local storage
+localStorage.setItem("name", "John");
+
+// Get item from local storage
+let name = localStorage.getItem("name");
+console.log(name);  // John
+
+// Remove item from local storage
+localStorage.removeItem("name");
+
+// Clear all items from local storage
+localStorage.clear();</code></pre>
+    <h3>Using Session Storage</h3>
+    <p>Session Storage allows you to store data in the browser that persists until the browser or tab is closed. Use the <code>sessionStorage</code> object to interact with session storage:</p>
+    <pre><code>// Set item in session storage
+sessionStorage.setItem("name", "John");
+
+// Get item from session storage
+let name = sessionStorage.getItem("name");
+console.log(name);  // John
+
+// Remove item from session storage
+sessionStorage.removeItem("name");
+
+// Clear all items from session storage
+sessionStorage.clear();</code></pre>
+</div>
+</div>
+
+<button class="collapsible">Canvas API</button>
+<div class="collapsible-content" style="background-color: #f0fff0;">
+<div class="content">
+    <h3>Introduction to Canvas</h3>
+    <p>The Canvas API provides a means for drawing graphics via JavaScript and the HTML <code>&lt;canvas&gt;</code> element:</p>
+    <pre><code>&lt;canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+
+// Draw a rectangle
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(20, 20, 150, 100);
+&lt;/script&gt;</code></pre>
+    <h3>Drawing Shapes</h3>
+    <p>Use the Canvas API to draw shapes like rectangles, circles, and lines:</p>
+    <pre><code>&lt;canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+
+// Draw a rectangle
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(20, 20, 150, 100);
+
+// Draw a circle
+ctx.beginPath();
+ctx.arc(200, 200, 40, 0, 2 * Math.PI);
+ctx.stroke();
+
+// Draw a line
+ctx.moveTo(300, 300);
+ctx.lineTo(400, 400);
+ctx.stroke();
+&lt;/script&gt;</code></pre>
+    <h3>Animating on Canvas</h3>
+    <p>Create animations using the Canvas API:</p>
+    <pre><code>&lt;canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+
+let x = 0;
+let y = 0;
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(x, y, 50, 50);
+    x += 1;
+    y += 1;
+    requestAnimationFrame(draw);
+}
+
+draw();
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">WebSockets</button>
+            <div class="collapsible-content" style="background-color: #e8f5e9;">
+                <div class="content">
+                    <h3>Introduction to WebSockets</h3>
+                    <p>WebSockets provide a way to open a persistent connection between the client and server and allow for real-time communication:</p>
+                    <pre><code>// Create a new WebSocket connection
+let socket = new WebSocket("ws://example.com/socket");
+
+// Event listener for when the connection is opened
+socket.onopen = function(event) {
+    console.log("WebSocket is open now.");
+};
+
+// Event listener for when a message is received
+socket.onmessage = function(event) {
+    console.log("Received message: " + event.data);
+};
+
+// Event listener for when the connection is closed
+socket.onclose = function(event) {
+    console.log("WebSocket is closed now.");
+};
+
+// Event listener for when an error occurs
+socket.onerror = function(error) {
+    console.log("WebSocket error: " + error.message);
+};
+
+// Send a message to the server
+socket.send("Hello, server!");</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Service Workers</button>
+            <div class="collapsible-content" style="background-color: #f0f4c3;">
+                <div class="content">
+                    <h3>Introduction to Service Workers</h3>
+                    <p>Service Workers are scripts that run in the background, separate from the web page, and provide features like offline caching and push notifications:</p>
+                    <pre><code>// Register a service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+    .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+    }).catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+    });
+}</code></pre>
+                    <h3>Service Worker Lifecycle</h3>
+                    <p>The Service Worker lifecycle consists of installation, activation, and fetching:</p>
+                    <pre><code>// service-worker.js
+
+// Install event
+self.addEventListener('install', function(event) {
+    console.log('Service Worker installing.');
+});
+
+// Activate event
+self.addEventListener('activate', function(event) {
+    console.log('Service Worker activating.');
+});
+
+// Fetch event
+self.addEventListener('fetch', function(event) {
+    console.log('Fetching:', event.request.url);
+});</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Progressive Web Apps (PWA)</button>
+            <div class="collapsible-content" style="background-color: #ffe0b2;">
+                <div class="content">
+                    <h3>Introduction to PWAs</h3>
+                    <p>Progressive Web Apps are web applications that use modern web capabilities to deliver an app-like experience to users. They are reliable, fast, and engaging:</p>
+                    <pre><code>// Example manifest.json
+
+{
+  "name": "My PWA",
+  "short_name": "PWA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}</code></pre>
+                    <h3>Creating a PWA</h3>
+                    <p>To create a PWA, you need a manifest file and a service worker:</p>
+                    <pre><code>// Register service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+    .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+    }).catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+    });
+}</code></pre>
+                    <h3>Offline Caching</h3>
+                    <p>Use the Service Worker to cache assets for offline use:</p>
+                    <pre><code>// service-worker.js
+
+self.addEventListener('install', function(event) {
+    event.waitUntil(
+        caches.open('my-cache').then(function(cache) {
+            return cache.addAll([
+                '/',
+                '/index.html',
+                '/styles.css',
+                '/script.js'
+            ]);
+        })
+    );
+});
+
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+            return response || fetch(event.request);
+        })
+    );
+});</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Node.js</button>
+            <div class="collapsible-content" style="background-color: #fff4e5;">
+                <div class="content">
+                    <h3>Introduction to Node.js</h3>
+                    <p>Node.js is a runtime environment that allows you to run JavaScript on the server-side:</p>
+                    <pre><code>// Install Node.js from https://nodejs.org/
+
+// Create a new file app.js
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World\n');
+});
+
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});</code></pre>
+                    <h3>Using npm</h3>
+                    <p>npm (Node Package Manager) is used to install and manage packages:</p>
+                    <pre><code>// Initialize a new Node.js project
+npm init -y
+
+// Install a package
+npm install express --save</code></pre>
+                    <h3>Building a Simple Web Server</h3>
+                    <p>Use the Express framework to build a simple web server:</p>
+                    <pre><code>// Install Express
+npm install express --save
+
+// Create a new file app.js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+});</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Testing</button>
+            <div class="collapsible-content" style="background-color: #e0f7fa;">
+                <div class="content">
+                    <h3>Introduction to Testing</h3>
+                    <p>Testing is an important part of software development to ensure that your code works correctly. Use frameworks like Jest and Mocha for testing JavaScript applications:</p>
+                    <pre><code>// Install Jest
+npm install --save-dev jest
+
+// Add a test script to package.json
+// "scripts": {
+//   "test": "jest"
+// }
+
+// Create a test file sum.test.js
+const sum = require('./sum');
+test('adds 1 + 2 to equal 3', () => {
+    expect(sum(1, 2)).toBe(3);
+});
+
+// Run the tests
+npm test</code></pre>
+                    <h3>Using Mocha</h3>
+                    <p>Mocha is another popular testing framework:</p>
+                    <pre><code>// Install Mocha
+npm install --save-dev mocha
+
+// Create a test file test.js
+const assert = require('assert');
+const sum = require('./sum');
+describe('Sum', function() {
+    it('should return 3 when 1 and 2 are added', function() {
+        assert.equal(sum(1, 2), 3);
+    });
+});
+
+// Run the tests
+npx mocha</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Build Tools</button>
+            <div class="collapsible-content" style="background-color: #f0f4c3;">
+                <div class="content">
+                    <h3>Introduction to Build Tools</h3>
+                    <p>Build tools like Webpack, Babel, and Gulp are used to automate tasks in the development workflow:</p>
+                    <h3>Webpack</h3>
+                    <p>Webpack is a static module bundler for modern JavaScript applications:</p>
+                    <pre><code>// Install Webpack
+npm install --save-dev webpack webpack-cli
+
+// Create a webpack.config.js file
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: __dirname + '/dist'
+    },
+    mode: 'development'
+};
+
+// Add a build script to package.json
+// "scripts": {
+//   "build": "webpack"
+// }
+
+// Run the build
+npm run build</code></pre>
+                    <h3>Babel</h3>
+                    <p>Babel is a JavaScript compiler that allows you to use next-generation JavaScript, today. It transforms your ES6+ code into backwards compatible versions:</p>
+                    <pre><code>// Install Babel
+npm install --save-dev @babel/core @babel/preset-env babel-loader
+
+// Create a .babelrc file
+{
+  "presets": ["@babel/preset-env"]
+}
+
+// Update webpack.config.js to use Babel
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: __dirname + '/dist'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    },
+    mode: 'development'
+};
+
+// Run the build
+npm run build</code></pre>
+                    <h3>Gulp</h3>
+                    <p>Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow:</p>
+                    <pre><code>// Install Gulp
+npm install --save-dev gulp
+
+// Create a gulpfile.js
+const gulp = require('gulp');
+
+gulp.task('hello', function(done) {
+    console.log('Hello, world!');
+    done();
+});
+
+// Run the Gulp task
+npx gulp hello</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">React</button>
+            <div class="collapsible-content" style="background-color: #ffe0b2;">
+                <div class="content">
+                    <h3>Introduction to React</h3>
+                    <p>React is a JavaScript library for building user interfaces. It allows you to create reusable UI components:</p>
+                    <pre><code>// Install React
+npx create-react-app my-app
+
+// Change to the project directory
+cd my-app
+
+// Start the development server
+npm start</code></pre>
+                    <h3>Creating Components</h3>
+                    <p>Components are the building blocks of a React application:</p>
+                    <pre><code>// Create a new file src/Hello.js
+import React from 'react';
+
+function Hello(props) {
+    return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+export default Hello;
+
+// Use the component in src/App.js
+import React from 'react';
+import Hello from './Hello';
+
+function App() {
+    return (
+        &lt;div&gt;
+            &lt;Hello name="World" /&gt;
+        &lt;/div&gt;
+    );
+}
+
+export default App;</code></pre>
+                    <h3>State and Props</h3>
+                    <p>State and props are used to manage data in React components:</p>
+                    <pre><code>import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        &lt;div&gt;
+            &lt;p&gt;Count: {count}&lt;/p&gt;
+            &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+        &lt;/div&gt;
+    );
+}
+
+export default Counter;</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Vue.js</button>
+            <div class="collapsible-content" style="background-color: #e8f5e9;">
+                <div class="content">
+                    <h3>Introduction to Vue.js</h3>
+                    <p>Vue.js is a progressive JavaScript framework for building user interfaces. It is designed to be incrementally adoptable:</p>
+                    <pre><code>// Include Vue.js in your HTML file
+&lt;script src="https://cdn.jsdelivr.net/npm/vue@2"&gt;&lt;/script&gt;
+
+// Create a Vue instance
+new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello, Vue!'
+    }
+});</code></pre>
+                    <h3>Creating Components</h3>
+                    <p>Components are the building blocks of a Vue.js application:</p>
+                    <pre><code>&lt;div id="app"&gt;
+  &lt;hello-world&gt;&lt;/hello-world&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+Vue.component('hello-world', {
+    template: '&lt;h1&gt;Hello, World!&lt;/h1&gt;'
+});
+
+new Vue({
+    el: '#app'
+});
+&lt;/script&gt;</code></pre>
+                    <h3>Reactive Data Binding</h3>
+                    <p>Vue.js uses reactive data binding to keep the DOM in sync with your data:</p>
+                    <pre><code>&lt;div id="app"&gt;
+  &lt;p&gt;{{ message }}&lt;/p&gt;
+  &lt;input v-model="message"&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello, Vue!'
+    }
+});
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">Angular</button>
+            <div class="collapsible-content" style="background-color: #ffecb3;">
+                <div class="content">
+                    <h3>Introduction to Angular</h3>
+                    <p>Angular is a platform for building mobile and desktop web applications. It provides a comprehensive framework for building modern web applications:</p>
+                    <pre><code>// Install Angular CLI
+npm install -g @angular/cli
+
+// Create a new Angular project
+ng new my-app
+
+// Change to the project directory
+cd my-app
+
+// Start the development server
+ng serve</code></pre>
+                    <h3>Creating Components</h3>
+                    <p>Components are the building blocks of an Angular application:</p>
+                    <pre><code>// Generate a new component
+ng generate component hello-world
+
+// Use the component in app.component.html
+&lt;hello-world&gt;&lt;/hello-world&gt;
+
+// hello-world.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'hello-world',
+  template: '&lt;h1&gt;Hello, World!&lt;/h1&gt;',
+})
+export class HelloWorldComponent {}</code></pre>
+                    <h3>Data Binding</h3>
+                    <p>Angular supports both one-way and two-way data binding:</p>
+                    <pre><code>// One-way data binding
+&lt;p&gt;{{ message }}&lt;/p&gt;
+
+// Two-way data binding
+&lt;input [(ngModel)]="message"&gt;
+
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  message = 'Hello, Angular!';
+}</code></pre>
+                </div>
+            </div>
+
+            <button class="collapsible">TypeScript</button>
+            <div class="collapsible-content" style="background-color: #e1f5fe;">
+                <div class="content">
+                    <h3>Introduction to TypeScript</h3>
+                    <p>TypeScript is a superset of JavaScript that adds static types. It is designed for the development of large applications and transcompiles to JavaScript:</p>
+                    <pre><code>// Install TypeScript
+npm install -g typescript
+
+// Create a TypeScript file
+// hello.ts
+let message: string = 'Hello, TypeScript!';
+console.log(message);
+
+// Compile the TypeScript file
+tsc hello.ts</code></pre>
+                    <h3>Interfaces and Classes</h3>
+                    <p>TypeScript supports interfaces and classes for object-oriented programming:</p>
+                    <pre><code>// Define an interface
+interface Person {
+    name: string;
+    age: number;
+    greet(): string;
+}
+
+// Implement the interface in a class
+class Student implements Person {
+    constructor(public name: string, public age: number) {}
+
+    greet() {
+        return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    }
+}
+
+let student = new Student('John', 25);
+console.log(student.greet());  // Hello, my name is John and I am 25 years old.</code></pre>
+                    <h3>Generics</h3>
+                    <p>Generics provide a way to create reusable components:</p>
+                    <pre><code>function identity<T>(arg: T): T {
+    return arg;
+}
+
+let output1 = identity<string>('Hello, Generics!');
+let output2 = identity<number>(42);
+
+console.log(output1);  // Hello, Generics!
+console.log(output2);  // 42</code></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const collapsibles = document.querySelectorAll('.collapsible');
+        collapsibles.forEach(collapsible => {
+            collapsible.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

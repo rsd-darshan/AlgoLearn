@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact AlgoLearn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Variables for easy theming */
+        :root {
+            --primary-color: #007ACC;
+            --primary-light: #e3f2fd;
+            --primary-dark: #005fa3;
+            --text-color: #333;
+            --background-color: #f0f0f0;
+            --button-hover-color: #005fa3;
+            --form-background: #fff;
+            --border-color: #ccc;
+        }
+
+        /* Dark theme variables */
+        body.dark-theme {
+            --primary-color: #005fa3;
+            --primary-light: #1a237e;
+            --primary-dark: #003c8f;
+            --text-color: #ddd;
+            --background-color: #333;
+            --button-hover-color: #333;
+            --form-background: #444;
+            --border-color: #666;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .nav-toggle {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            background-color: #ffffff53;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            width: 40px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+        }
+
+       /* Styling for mobile menu */
+@media (max-width: 768px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Initially hidden off-screen */
+        height: 100%;
+        width: 250px;
+        background-color: #007accdb;
+        padding-top: 60px;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+        opacity: 0; /* Initially hidden */
+        transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+    }
+
+    header nav a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(228, 220, 220, 0.785);
+        text-decoration: none;
+        font-size: 18px;
+        text-align: left; /* Align text to the left */
+        transition: background-color 0.3s, transform 0.3s;
+        transform: translateX(0); /* Align text properly */
+        opacity: 0; /* Initially hidden */
+    }
+
+    header nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateX(0); /* Keep hover animation */
+    }
+
+    .nav-open {
+        left: 0;
+        opacity: 1; /* Reveal menu */
+    }
+
+    .nav-open a {
+        transform: translateX(0); /* Slide-in effect */
+        opacity: 1; /* Show links */
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+
+
+        /* Overlay Styling */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none; /* Initially hidden */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out; /* Smooth transition */
+        }
+
+        .overlay.show {
+            display: block; /* Show overlay */
+            opacity: 1;
+        }
+
+        /* Custom theme toggle switch */
+         /* Custom theme toggle switch */
+        .theme-switch {
+            position: absolute;
+            top: 40px;
+            left : 10px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+        .theme-checkbox {
+            display: none;
+        }
+
+        .theme-label {
+            width: 50px;
+            height: 25px;
+            background-color: var(--border-color);
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .theme-ball {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2.5px;
+            left: 2.5px;
+            transition: left 0.3s ease-in-out; /* Smooth transition */
+        }
+
+        .theme-checkbox:checked + .theme-label .theme-ball {
+            left: 27.5px;
+        }
+
+        .theme-checkbox:checked + .theme-label {
+            background-color: var(--primary-color);
+        }
+
+        /* Main Content Styling */
+        .content {
+            text-align: center;
+            padding: 20px;
+            margin-top: 70px;
+        }
+
+        .contact-form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px 20px;
+            background-color: var(--form-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Gap between form fields */
+        }
+
+        body.dark-theme .contact-form {
+            background-color: var(--form-background);
+            color: var(--text-color);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            gap: 5px; /* Space between input and label */
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 0; /* Removed margin-bottom */
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+            font-size: 1rem;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        body.dark-theme .contact-form input, body.dark-theme .contact-form textarea {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            border-color: var(--border-color);
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 122, 204, 0.3);
+        }
+
+        .contact-form button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--button-hover-color);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-theme .contact-form button {
+            background-color: var(--primary-light);
+        }
+
+        body.dark-theme .contact-form button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Floating label styling */
+        .form-group label {
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            font-size: 0.8rem;
+            color: var(--text-color);
+            pointer-events: none;
+            transition: all 0.2s ease-out;
+            opacity: 0.6;
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -15px;
+            left: 5px;
+            font-size: 0.7rem;
+            opacity: 1;
+            background: var(--form-background);
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 15px 15px;
+                margin: 10px;
+            }
+
+            .contact-form input, .contact-form textarea {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .contact-form button {
+                padding: 12px;
+                font-size: 1em;
+            }
+        }
+
+        /* Success and error message styling */
+        .success-message, .error-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--text-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        body.dark-theme .success-message, body.dark-theme .error-message {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #ccc;
+        }
+
+        .success-message.show, .error-message.show {
+            display: block;
+        }
+
+        .close-button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .close-button:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        body.dark-theme .close-button {
+            background-color: var(--primary-light);
+        }
+
+        body.dark-theme .close-button:hover {
+            background-color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-toggle" onclick="toggleNav()">☰</div>
+        <nav id="nav-menu">
+            <a href="index.html">About</a>
+            <a href="Course.html">Courses</a>
+            <a href="Tutors.html">Tutors</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+        <div class="theme-switch">
+            <input type="checkbox" id="toggle-theme" class="theme-checkbox" onclick="toggleTheme()">
+            <label for="toggle-theme" class="theme-label">
+                <span class="theme-ball"></span>
+            </label>
+        </div>
+    </header>
+    <div class="overlay" id="overlay" onclick="toggleNav()"></div> <!-- Overlay for menu -->
+    <main>
+        <div class="content">
+            <h1>Contact Us</h1>
+            <div class="contact-form" id="contact-form">
+                <!-- Form with Formspree integration -->
+                <form action="https://formspree.io/f/xyzgyljz" method="POST" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <input type="email" name="email" required placeholder=" " id="email">
+                        <label for="email">Your email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" required placeholder=" " id="message"></textarea>
+                        <label for="message">Your message</label>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div class="success-message" id="success-message">
+        <h2>Success!</h2>
+        <p>Your message has been sent successfully.</p>
+        <button class="close-button" onclick="closeMessage()">Close</button>
+    </div>
+    <div class="error-message" id="error-message">
+        <h2>Error</h2>
+        <p>There was an error sending your message. Please try again later.</p>
+        <button class="close-button" onclick="closeMessage()">Close</button>
+    </div>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.removeItem('theme');
+            }
+        }
+
+        function toggleNav() {
+            const navMenu = document.getElementById('nav-menu');
+            const overlay = document.getElementById('overlay');
+            navMenu.classList.toggle('nav-open');
+            overlay.classList.toggle('show');
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            const overlay = document.getElementById('overlay');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            overlay.classList.add('show');
+
+            // Simulate a form submission delay
+            setTimeout(() => {
+                fetch(event.target.action, {
+                    method: event.target.method,
+                    body: new FormData(event.target),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        successMessage.classList.add('show');
+                        event.target.reset();
+                    } else {
+                        errorMessage.classList.add('show');
+                    }
+                }).catch(() => {
+                    errorMessage.classList.add('show');
+                }).finally(() => {
+                    overlay.classList.remove('show');
+                });
+            }, 2000);
+        }
+
+        function closeMessage() {
+            const overlay = document.getElementById('overlay');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            overlay.classList.remove('show');
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('toggle-theme').checked = true;
+            }
+        });
+    </script>
+</body>
+</html>
