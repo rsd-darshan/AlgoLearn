@@ -1,7 +1,7 @@
 # AlgoLearn
 
 AlgoLearn is a beginner-friendly, text-based platform designed to simplify computer science education through clear tutorials and hands-on coding exercises.
-
+![AlgoLearn_resized](https://github.com/user-attachments/assets/c2223c0f-bd29-4814-ba7b-e99abe745ce1)
 ## Features
 
 - **Step-by-step tutorials**: Learn programming concepts from scratch.
